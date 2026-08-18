@@ -15,6 +15,19 @@
   transform: translateY(-0.35rem);
 }
 
+.static:hover,
+.static:focus-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.mediaGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
 .tag {
   align-self: flex-end;
   color: var(--color-accent);

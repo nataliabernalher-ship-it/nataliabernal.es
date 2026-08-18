@@ -1,5 +1,5 @@
 .page {
-  padding: 5rem 12px 6.25rem;
+  padding: 5rem 12px 0;
   background: var(--color-bg);
 }
 
@@ -33,6 +33,13 @@
   width: 100%;
 }
 
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 0;
+}
+
 .button {
   display: flex;
   align-items: center;
@@ -40,7 +47,6 @@
   min-width: 13.1875rem;
   height: 3.125rem;
   padding: 0 1.5rem;
-  margin-inline: auto;
   border-radius: 1.5rem;
   background: var(--color-accent);
   color: var(--color-on-dark);
@@ -70,6 +76,6 @@
   }
 
   .grid {
-    gap: 4.5rem;
+    gap: 3.9375rem 4.5rem;
   }
 }

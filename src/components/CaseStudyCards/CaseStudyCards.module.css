@@ -58,6 +58,35 @@
   line-height: 1.5rem;
 }
 
+.kpi .card {
+  min-height: 6.6875rem;
+  border: none;
+  border-radius: 8px;
+}
+
+.kpi .card:nth-child(1) {
+  background: rgba(227, 184, 168, 0.4);
+}
+
+.kpi .card:nth-child(2) {
+  background: rgba(227, 184, 168, 0.8);
+}
+
+.kpi .card:nth-child(3) {
+  background: var(--color-cs-kpi);
+}
+
+.kpi .body,
+.kpi .stat {
+  color: var(--color-titles);
+  font-size: var(--text-body);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: none;
+}
+
 @media (min-width: 48rem) {
   .grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));

@@ -33,7 +33,13 @@ export function CaseStudySection({ locale, block, headingId }: CaseStudySectionP
         </HeadingTag>
       ) : null}
       {block.body ? (
-        <CaseStudyRichText value={block.body} locale={locale} className={styles.body} />
+        block.type === "section" && block.surface === "callout" ? (
+          <div className={styles.callout}>
+            <CaseStudyRichText value={block.body} locale={locale} className={styles.body} />
+          </div>
+        ) : (
+          <CaseStudyRichText value={block.body} locale={locale} className={styles.body} />
+        )
       ) : null}
       {list && list.length > 0 ? (
         <ul className={styles.list}>

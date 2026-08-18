@@ -1,5 +1,6 @@
 import { isLocale, type Locale } from "@/i18n/config";
 import { neetySaas } from "@/data/studies/neety-saas";
+import { noruegaPorTuCuenta } from "@/data/studies/noruega-por-tu-cuenta";
 
 export type LocalizedString = Record<Locale, string>;
 
@@ -26,6 +27,7 @@ export type CaseStudySectionBlock = {
   list?: Record<Locale, string[]>;
   after?: LocalizedRichText;
   spacing?: "default" | "compact" | "loose" | "tight";
+  surface?: "callout";
 };
 
 export type CaseStudyImageBlock = {
@@ -60,7 +62,7 @@ export type CaseStudyCardItem = {
 export type CaseStudyCardsBlock = {
   type: "cards";
   navId: string;
-  variant: "cyan" | "orange" | "stat";
+  variant: "cyan" | "orange" | "stat" | "kpi";
   items: CaseStudyCardItem[];
 };
 
@@ -68,13 +70,20 @@ export type CaseStudyFeatureBlock = {
   type: "feature";
   navId: string;
   number: string;
-  title: LocalizedString;
+  title?: LocalizedString;
   body: LocalizedString;
-  image: {
+  layout?: "default" | "phone";
+  image?: {
     src: string;
     width: number;
     height: number;
     alt: LocalizedString;
+  };
+  video?: {
+    src: string;
+    poster?: string;
+    width: number;
+    height: number;
   };
 };
 
@@ -127,6 +136,7 @@ export type CaseStudy = {
   };
   nav: CaseStudyNavItem[];
   blocks: CaseStudyBlock[];
+  showOnHome?: boolean;
 };
 
 const img = (name: string) => `/images/case-studies/wellness-stay/${name}`;
@@ -532,10 +542,15 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
   neetySaas,
+  noruegaPorTuCuenta,
 ];
 
 export function getCaseStudy(slug: string): CaseStudy | undefined {
   return caseStudies.find((study) => study.slug === slug);
+}
+
+export function getHomeCaseStudies(): CaseStudy[] {
+  return caseStudies.filter((study) => study.showOnHome !== false);
 }
 
 export function getLocalizedValue<T>(

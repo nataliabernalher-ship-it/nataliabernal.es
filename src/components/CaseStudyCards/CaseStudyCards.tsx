@@ -9,12 +9,23 @@ type CaseStudyCardsProps = {
 };
 
 export function CaseStudyCards({ locale, block }: CaseStudyCardsProps) {
+  const isKpi = block.variant === "kpi";
+
   return (
     <ul className={`${styles.grid} ${styles[block.variant]}`}>
       {block.items.map((item, index) => (
         <li key={`${block.variant}-${index}`} className={styles.card}>
-          {item.stat ? <p className={styles.stat}>{item.stat}</p> : null}
-          <p className={styles.body}>{getLocalizedValue(item.body, locale)}</p>
+          {isKpi ? (
+            <>
+              <p className={styles.body}>{getLocalizedValue(item.body, locale)}</p>
+              {item.stat ? <p className={styles.stat}>{item.stat}</p> : null}
+            </>
+          ) : (
+            <>
+              {item.stat ? <p className={styles.stat}>{item.stat}</p> : null}
+              <p className={styles.body}>{getLocalizedValue(item.body, locale)}</p>
+            </>
+          )}
         </li>
       ))}
     </ul>

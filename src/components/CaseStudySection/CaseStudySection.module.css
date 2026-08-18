@@ -86,3 +86,14 @@
 .list li + li {
   margin-top: 0;
 }
+
+.callout {
+  width: 100%;
+  padding: 0.5rem;
+  background: var(--color-cs-callout);
+  border-radius: 8px;
+}
+
+.callout .body {
+  color: var(--color-tertiary);
+}

@@ -12,9 +12,20 @@
   border-radius: 9px;
 }
 
-.image {
+.image,
+.video {
+  display: block;
   width: 100%;
   height: auto;
+}
+
+.phone .media {
+  max-width: 26.5rem;
+}
+
+.phone .video {
+  aspect-ratio: 424 / 491;
+  object-fit: cover;
 }
 
 .copy {
@@ -48,6 +59,11 @@
   .media {
     width: 34.375rem;
     flex-shrink: 0;
+  }
+
+  .phone .media {
+    width: 26.5rem;
+    max-width: none;
   }
 
   .copy {

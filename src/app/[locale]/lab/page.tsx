@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ProjectCard } from "@/components/ProjectCard/ProjectCard";
 import { Reveal } from "@/components/Reveal/Reveal";
-import { caseStudies } from "@/data/case-studies";
+import { labProjects } from "@/data/lab-projects";
 import { isLocale } from "@/i18n/config";
 import { getMessages } from "@/i18n/get-messages";
 import { buildMetadata } from "@/lib/seo";
@@ -46,16 +46,26 @@ export default async function LabPage({ params }: PageProps<"/[locale]/lab">) {
           </h1>
         </Reveal>
         <div className={styles.grid}>
-          {caseStudies.map((study, index) => (
-            <Reveal key={study.slug} delay={index * 140}>
-              <ProjectCard locale={locale} study={study} />
+          {labProjects.map((project, index) => (
+            <Reveal key={project.slug} delay={index * 140}>
+              <ProjectCard
+                locale={locale}
+                study={project}
+                href={
+                  project.caseStudySlug
+                    ? `/${locale}/case-study/${project.caseStudySlug}`
+                    : null
+                }
+              />
             </Reveal>
           ))}
         </div>
         <Reveal delay={220}>
-          <Link className={styles.button} href={`/${locale}`}>
-            {messages.lab.backHome}
-          </Link>
+          <div className={styles.actions}>
+            <Link className={styles.button} href={`/${locale}`}>
+              {messages.lab.backHome}
+            </Link>
+          </div>
         </Reveal>
       </div>
     </section>

@@ -42,6 +42,8 @@
   --color-cs-card-cyan: rgba(132, 172, 184, 0.15);
   --color-cs-card-orange: rgba(255, 210, 194, 0.3);
   --color-cs-card-stat: rgba(255, 219, 207, 0.47);
+  --color-cs-callout: #f1e5e1;
+  --color-cs-kpi: #e3b8a8;
   --content-cs: 48rem;
 
   --space-1: 0.25rem;
