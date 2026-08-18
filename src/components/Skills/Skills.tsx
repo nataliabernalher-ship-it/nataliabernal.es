@@ -10,7 +10,7 @@ export function Skills({ messages }: SkillsProps) {
   const skills = messages.home.skills;
 
   return (
-    <section className={styles.section} id="expertise" aria-labelledby="expertise-title">
+    <section className={styles.section} id="expertise" aria-labelledby="expertise-title" data-cursor-bg="teal">
       <div className={styles.inner}>
         <Reveal>
           <header className={styles.headingRow}>

@@ -11,7 +11,7 @@ export function Cta({ messages }: CtaProps) {
   const cta = messages.home.cta;
 
   return (
-    <section className={styles.section} id="contact" aria-labelledby="contact-title">
+    <section className={styles.section} id="contact" aria-labelledby="contact-title" data-cursor-bg="teal">
       <div className={styles.inner}>
         <Reveal>
           <h2 id="contact-title" className={styles.title}>

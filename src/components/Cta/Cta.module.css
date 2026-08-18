@@ -37,9 +37,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 13.1875rem;
+  width: fit-content;
   height: 3.125rem;
-  padding: 0 1.5rem;
+  padding: 0 6rem;
   margin-inline: auto;
   border-radius: 1.5rem;
   background: var(--color-accent);
@@ -48,6 +48,7 @@
   font-weight: 600;
   line-height: 1.4;
   text-decoration: none;
+  text-transform: uppercase;
   transition: filter var(--duration-fast) var(--ease);
 }
 

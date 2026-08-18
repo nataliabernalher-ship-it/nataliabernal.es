@@ -85,5 +85,8 @@
   },
   "a11y": {
     "skipToContent": "Skip to content"
+  },
+  "cursor": {
+    "viewCaseStudy": "View case-study"
   }
 }

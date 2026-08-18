@@ -48,7 +48,7 @@ export function ProjectCard({ locale, study, href }: ProjectCardProps) {
   if (destination) {
     return (
       <article>
-        <Link className={className} href={destination}>
+        <Link className={className} href={destination} data-cursor="case-study">
           {content}
         </Link>
       </article>

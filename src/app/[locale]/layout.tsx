@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { CaseStudyCursor } from "@/components/CaseStudyCursor/CaseStudyCursor";
 import { AppFooter } from "@/components/Footer/AppFooter";
 import { Nav } from "@/components/Nav/Nav";
 import { SkipLink } from "@/components/SkipLink/SkipLink";
@@ -29,6 +30,7 @@ export default async function LocaleLayout({
     <html lang={locale} className={fontClassNames}>
       <body>
         <SkipLink label={messages.a11y.skipToContent} />
+        <CaseStudyCursor label={messages.cursor.viewCaseStudy} />
         <div className={styles.shell}>
           <Nav locale={locale} messages={messages} />
           <main id="content" className={styles.main}>
