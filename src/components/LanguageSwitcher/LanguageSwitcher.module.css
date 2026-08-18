@@ -1,0 +1,31 @@
+.nav {
+  display: flex;
+  align-items: baseline;
+  font-size: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  text-transform: uppercase;
+}
+
+.link {
+  color: var(--color-tertiary);
+  font-weight: 400;
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease);
+}
+
+.link:hover,
+.link:focus-visible {
+  color: var(--color-accent);
+}
+
+.current {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.separator {
+  color: var(--color-tertiary);
+  font-weight: 400;
+  white-space: pre;
+}

@@ -1,0 +1,61 @@
+:root {
+  --color-bg: #ffffff;
+  --color-bg-subtle: #f7f8f9;
+  --color-titles: #32404f;
+  --color-text: #555c62;
+  --color-tertiary: #858e97;
+  --color-accent: #ff8c8c;
+  --color-teal: #537179;
+  --color-on-dark: #ffffff;
+  --color-stroke: #d5dce2;
+  --color-fg: var(--color-titles);
+  --color-muted: var(--color-text);
+  --color-on-accent: var(--color-on-dark);
+  --color-border: var(--color-stroke);
+
+  --font-sans: var(--font-instrument-sans), system-ui, sans-serif;
+  --font-serif: var(--font-instrument-serif), georgia, serif;
+  --font-script: var(--font-bad-script), cursive;
+
+  --text-h1: clamp(2rem, 4.5vw, 3.375rem);
+  --text-h2: clamp(1.75rem, 3.5vw, 2.875rem);
+  --text-h3: clamp(1.25rem, 2.4vw, 1.75rem);
+  --text-big: 1.125rem;
+  --text-body: 1rem;
+  --text-emphasis: 0.9375rem;
+  --text-small: 0.875rem;
+  --text-kicker: 0.8125rem;
+
+  --leading-heading: 1.26;
+  --leading-body: 1.5;
+  --leading-tight: 1.15;
+  --tracking-heading: -0.0185em;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  --page-gutter: clamp(1.5rem, 16.67vw, 20rem);
+  --page-max: 80rem;
+  --radius-image: 8px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration: 400ms;
+  --duration-fast: 200ms;
+  --duration-reveal: 750ms;
+
+  --focus-ring: 2px solid var(--color-titles);
+}
+
+/*
+  Breakpoints (mobile-first):
+  - tablet: 48rem (768px)
+  - desktop: 64rem (1024px)
+  - wide: 75rem (1200px)
+*/

@@ -1,0 +1,12 @@
+.page {
+  padding: var(--space-8) var(--page-gutter) var(--space-9);
+}
+
+.title {
+  color: var(--color-titles);
+  font-family: var(--font-serif);
+  font-size: var(--text-h1);
+  font-weight: 400;
+  letter-spacing: var(--tracking-heading);
+  line-height: var(--leading-heading);
+}

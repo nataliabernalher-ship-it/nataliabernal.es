@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "title": "Natalia Bernal",
+    "description": "Portfolio de Natalia Bernal, Product & UX/UI Designer."
+  },
+  "nav": {
+    "home": "Inicio",
+    "lab": "Lab",
+    "contact": "Contáctame",
+    "language": "Idioma",
+    "menu": "Menú principal",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
+  },
+  "home": {
+    "greeting": "¡Hola! Soy Natalia Bernal",
+    "role": "Product & UX/UI Designer.",
+    "bio": "Más de 5 años diseñando experiencias digitales en websites, SaaS, CRMs y marketplaces.",
+    "location": "Vivo en el soleado",
+    "locationSr": "Vivo en el soleado Madrid",
+    "scroll": "Scroll para saber más",
+    "portraitAlt": "Natalia Bernal sentada frente a una pared de color terracota",
+    "kicker": "Product designer",
+    "intro": "Más de 5 años diseñando experiencias digitales en websites, SaaS, CRMs y marketplaces.",
+    "workTitle": "Proyectos",
+    "projectsTitle": "Algunos otros proyectos",
+    "skills": {
+      "title": "Áreas de especialización",
+      "items": [
+        "Web & Product Design",
+        "UX Research & Strategy",
+        "CRO & Analytics",
+        "Design Systems",
+        "AI & Design-to-Code",
+        "Front-end & Technical",
+        "CRO/Optimization"
+      ]
+    },
+    "experience": {
+      "title": "Mi última experiencia laboral",
+      "nda": "[proyectos bajo NDA]",
+      "p1": "Durante los últimos cuatro años y medio he trabajado a la vez en dos verticales de la misma empresa, repartiendo mi rol entre TusCasasRurales.com y Pentaweb.",
+      "p2": {
+        "before": "En ",
+        "highlight": "TusCasasRurales.com",
+        "after": " he rediseñado el marketplace de alojamientos rurales, diseñado nuevas funcionalidades como la reserva y el checkout online, rediseñado los dashboards de viajeros y propietarios, y construido un Design System escalable en Figma."
+      },
+      "p3": {
+        "before": "En ",
+        "highlight": "Pentaweb",
+        "after": " he diseñado webs corporativas, productos digitales a medida y aplicaciones web para clientes de distintos sectores, desde requisitos y user flows hasta prototipado y UI responsive. En ambas verticales trabajo codo a codo con desarrollo y negocio para convertir necesidades de usuario y objetivos de negocio en experiencias digitales claras, consistentes y orientadas a la conversión."
+      }
+    },
+    "tools": {
+      "title": "Herramientas principales"
+    },
+    "cta": {
+      "title": "Creemos algo significativo juntas.",
+      "body": "¿Tienes un proyecto en mente o crees que podría encajar en tu equipo?\nMe encantaría saber de ti.",
+      "button": "Hablemos"
+    }
+  },
+  "lab": {
+    "title": "Lab",
+    "description": "Experimentos y proyectos de Natalia Bernal."
+  },
+  "caseStudy": {
+    "back": "Volver",
+    "navLabel": "En esta página",
+    "role": "Rol",
+    "year": "Año"
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "body": "Esta página no existe o ha sido movida.",
+    "cta": "Volver al inicio"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "external": "Se abre en una pestaña nueva"
+  },
+  "a11y": {
+    "skipToContent": "Saltar al contenido"
+  }
+}
