@@ -18,8 +18,12 @@
   padding: 3.75rem 0 1.25rem;
 }
 
+.tight {
+  padding-block: 1.25rem;
+}
+
 .prose {
-  padding-block: 2.5rem;
+  padding-block: 0.75rem;
 }
 
 .emphasis {
@@ -41,6 +45,17 @@
   font-weight: 400;
   letter-spacing: 0;
   line-height: var(--leading-cs-h2);
+}
+
+.heading3 {
+  width: 100%;
+  color: var(--color-titles);
+  font-family: var(--font-serif);
+  font-size: var(--text-cs-h3);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: var(--leading-cs-h3);
 }
 
 .body {

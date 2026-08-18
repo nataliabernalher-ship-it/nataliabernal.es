@@ -3,9 +3,13 @@ import type { CaseStudy, CaseStudyBlock } from "@/data/case-studies";
 import { groupCaseStudyBlocks } from "@/data/case-studies";
 import type { Locale } from "@/i18n/config";
 import type { Messages } from "@/i18n/get-messages";
+import { CaseStudyCards } from "@/components/CaseStudyCards/CaseStudyCards";
+import { CaseStudyFeature } from "@/components/CaseStudyFeature/CaseStudyFeature";
 import { CaseStudyHero } from "@/components/CaseStudyHero/CaseStudyHero";
+import { CaseStudyImagePair } from "@/components/CaseStudyImagePair/CaseStudyImagePair";
 import { CaseStudyMedia } from "@/components/CaseStudyMedia/CaseStudyMedia";
 import { CaseStudyNav } from "@/components/CaseStudyNav/CaseStudyNav";
+import { CaseStudyQuote } from "@/components/CaseStudyQuote/CaseStudyQuote";
 import { CaseStudySection } from "@/components/CaseStudySection/CaseStudySection";
 import { Reveal } from "@/components/Reveal/Reveal";
 import styles from "./CaseStudyLayout.module.css";
@@ -16,29 +20,38 @@ type CaseStudyLayoutProps = {
   study: CaseStudy;
 };
 
+function renderBlock(block: CaseStudyBlock, locale: Locale, key: string, headingId?: string) {
+  switch (block.type) {
+    case "image":
+      return <CaseStudyMedia key={key} locale={locale} block={block} />;
+    case "quote":
+      return <CaseStudyQuote key={key} locale={locale} block={block} />;
+    case "cards":
+      return <CaseStudyCards key={key} locale={locale} block={block} />;
+    case "feature":
+      return <CaseStudyFeature key={key} locale={locale} block={block} />;
+    case "image-pair":
+      return <CaseStudyImagePair key={key} locale={locale} block={block} />;
+    default:
+      return (
+        <CaseStudySection key={key} locale={locale} block={block} headingId={headingId} />
+      );
+  }
+}
+
 function renderBlocks(blocks: CaseStudyBlock[], locale: Locale, groupId: string) {
   let headingAssigned = false;
 
   return blocks.map((block, index) => {
-    if (block.type === "image") {
-      return <CaseStudyMedia key={`${groupId}-image-${index}`} locale={locale} block={block} />;
-    }
-
-    const headingId =
-      !headingAssigned && block.type === "section" ? `${groupId}-title` : undefined;
+    const key = `${groupId}-${block.type}-${index}`;
+    const isSpyHeading = block.type === "section" && (block.level ?? 2) === 2;
+    const headingId = isSpyHeading && !headingAssigned ? `${groupId}-title` : undefined;
 
     if (headingId) {
       headingAssigned = true;
     }
 
-    return (
-      <CaseStudySection
-        key={`${groupId}-text-${index}`}
-        locale={locale}
-        block={block}
-        headingId={headingId}
-      />
-    );
+    return renderBlock(block, locale, key, headingId);
   });
 }
 

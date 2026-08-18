@@ -1,4 +1,5 @@
 import { isLocale, type Locale } from "@/i18n/config";
+import { neetySaas } from "@/data/studies/neety-saas";
 
 export type LocalizedString = Record<Locale, string>;
 
@@ -18,12 +19,13 @@ export type CaseStudyNavItem = {
 export type CaseStudySectionBlock = {
   type: "section";
   navId: string;
+  level?: 2 | 3;
   emphasis?: LocalizedString;
   heading: LocalizedString;
   body?: LocalizedRichText;
   list?: Record<Locale, string[]>;
   after?: LocalizedRichText;
-  spacing?: "default" | "compact" | "loose";
+  spacing?: "default" | "compact" | "loose" | "tight";
 };
 
 export type CaseStudyImageBlock = {
@@ -44,10 +46,62 @@ export type CaseStudyProseBlock = {
   after?: LocalizedRichText;
 };
 
+export type CaseStudyQuoteBlock = {
+  type: "quote";
+  navId: string;
+  text: LocalizedString;
+};
+
+export type CaseStudyCardItem = {
+  stat?: string;
+  body: LocalizedString;
+};
+
+export type CaseStudyCardsBlock = {
+  type: "cards";
+  navId: string;
+  variant: "cyan" | "orange" | "stat";
+  items: CaseStudyCardItem[];
+};
+
+export type CaseStudyFeatureBlock = {
+  type: "feature";
+  navId: string;
+  number: string;
+  title: LocalizedString;
+  body: LocalizedString;
+  image: {
+    src: string;
+    width: number;
+    height: number;
+    alt: LocalizedString;
+  };
+};
+
+export type CaseStudyImagePairBlock = {
+  type: "image-pair";
+  navId: string;
+  images: Array<{
+    src: string;
+    width: number;
+    height: number;
+    alt: LocalizedString;
+  }>;
+};
+
 export type CaseStudyBlock =
   | CaseStudySectionBlock
   | CaseStudyImageBlock
-  | CaseStudyProseBlock;
+  | CaseStudyProseBlock
+  | CaseStudyQuoteBlock
+  | CaseStudyCardsBlock
+  | CaseStudyFeatureBlock
+  | CaseStudyImagePairBlock;
+
+export type CaseStudyMetaItem = {
+  label: LocalizedString;
+  values: string[];
+};
 
 export type CaseStudy = {
   slug: string;
@@ -61,6 +115,7 @@ export type CaseStudy = {
   };
   role: LocalizedString;
   tools: string[];
+  meta?: CaseStudyMetaItem[];
   title: LocalizedString;
   pageTitle: LocalizedString;
   excerpt: LocalizedString;
@@ -476,88 +531,7 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
   },
-  {
-    slug: "neety-saas",
-    year: "2024",
-    tag: {
-      es: "[colaboración]",
-      en: "[collaboration]",
-    },
-    cover: {
-      src: "/images/case-studies/neety-saas.jpg",
-      width: 1500,
-      height: 900,
-      alt: {
-        es: "Captura del dashboard de Neety SaaS",
-        en: "Screenshot of the Neety SaaS dashboard",
-      },
-    },
-    role: {
-      es: "Product design",
-      en: "Product design",
-    },
-    tools: [],
-    title: {
-      es: "Neety SaaS",
-      en: "Neety SaaS",
-    },
-    pageTitle: {
-      es: "Neety SaaS",
-      en: "Neety SaaS",
-    },
-    excerpt: {
-      es: "Rediseño para mejorar la usabilidad y la UX de una herramienta de mensajería comercial automatizada.",
-      en: "Redesign to improve the usability and UX of an automated sales messaging tool.",
-    },
-    nav: [
-      { id: "overview", label: { es: "Contexto", en: "Overview" } },
-      { id: "challenge", label: { es: "Reto", en: "Challenge" } },
-      { id: "approach", label: { es: "Enfoque", en: "Approach" } },
-      { id: "outcome", label: { es: "Resultado", en: "Outcome" } },
-    ],
-    blocks: [
-      {
-        type: "section",
-        navId: "overview",
-        emphasis: { es: "Contexto", en: "Overview" },
-        heading: { es: "Contexto", en: "Overview" },
-        body: {
-          es: "Describe el producto, el problema y el alcance del trabajo.",
-          en: "Describe the product, the problem, and the scope of the work.",
-        },
-      },
-      {
-        type: "section",
-        navId: "challenge",
-        emphasis: { es: "Reto", en: "Challenge" },
-        heading: { es: "Reto", en: "Challenge" },
-        body: {
-          es: "Explica las restricciones, las tensiones de negocio y lo que había que resolver.",
-          en: "Explain the constraints, business tensions, and what needed to be solved.",
-        },
-      },
-      {
-        type: "section",
-        navId: "approach",
-        emphasis: { es: "Enfoque", en: "Approach" },
-        heading: { es: "Enfoque", en: "Approach" },
-        body: {
-          es: "Cuenta cómo se tomaron las decisiones de diseño y qué se exploró por el camino.",
-          en: "Share how design decisions were made and what was explored along the way.",
-        },
-      },
-      {
-        type: "section",
-        navId: "outcome",
-        emphasis: { es: "Resultado", en: "Outcome" },
-        heading: { es: "Resultado", en: "Outcome" },
-        body: {
-          es: "Cierra con el impacto, los aprendizajes y el estado actual del producto.",
-          en: "Close with the impact, learnings, and the current state of the product.",
-        },
-      },
-    ],
-  },
+  neetySaas,
 ];
 
 export function getCaseStudy(slug: string): CaseStudy | undefined {

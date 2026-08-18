@@ -1,0 +1,65 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.625rem;
+  width: 100%;
+  margin: 0.5rem 0 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 9.5rem;
+  padding: 0.75rem;
+  border: 1px solid var(--color-on-dark);
+  border-radius: 12px;
+}
+
+.cyan .card {
+  background: var(--color-cs-card-cyan);
+}
+
+.orange .card {
+  background: var(--color-cs-card-orange);
+}
+
+.stat .card {
+  align-items: flex-start;
+  min-height: 8.9375rem;
+  background: var(--color-cs-card-stat);
+}
+
+.body {
+  color: var(--color-spy);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.stat .body {
+  font-size: var(--text-body);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5rem;
+  text-align: left;
+  text-transform: none;
+}
+
+.stat {
+  color: var(--color-spy);
+  font-size: var(--text-body);
+  line-height: 1.5rem;
+}
+
+@media (min-width: 48rem) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

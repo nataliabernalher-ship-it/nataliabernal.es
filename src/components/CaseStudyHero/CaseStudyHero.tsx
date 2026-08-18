@@ -13,6 +13,13 @@ type CaseStudyHeroProps = {
 
 export function CaseStudyHero({ locale, messages, study }: CaseStudyHeroProps) {
   const labels = messages.caseStudy;
+  const meta = study.meta ?? [
+    { label: { es: labels.role, en: labels.role }, values: [getLocalizedValue(study.role, locale)] },
+    ...(study.tools.length > 0
+      ? [{ label: { es: labels.tools, en: labels.tools }, values: study.tools }]
+      : []),
+    { label: { es: labels.year, en: labels.year }, values: [study.year] },
+  ];
 
   return (
     <header className={styles.hero}>
@@ -31,26 +38,22 @@ export function CaseStudyHero({ locale, messages, study }: CaseStudyHeroProps) {
         </div>
       ) : null}
       <dl className={styles.meta}>
-        <div className={styles.metaItem}>
-          <dt>{labels.role}</dt>
-          <dd>{getLocalizedValue(study.role, locale)}</dd>
-        </div>
-        {study.tools.length > 0 ? (
-          <div className={styles.metaItem}>
-            <dt>{labels.tools}</dt>
+        {meta.map((item) => (
+          <div key={getLocalizedValue(item.label, locale)} className={styles.metaItem}>
+            <dt>{getLocalizedValue(item.label, locale)}</dt>
             <dd>
-              <ul className={styles.tools}>
-                {study.tools.map((tool) => (
-                  <li key={tool}>{tool}</li>
-                ))}
-              </ul>
+              {item.values.length > 1 ? (
+                <ul className={styles.tools}>
+                  {item.values.map((value) => (
+                    <li key={value}>{value}</li>
+                  ))}
+                </ul>
+              ) : (
+                item.values[0]
+              )}
             </dd>
           </div>
-        ) : null}
-        <div className={styles.metaItem}>
-          <dt>{labels.year}</dt>
-          <dd>{study.year}</dd>
-        </div>
+        ))}
       </dl>
     </header>
   );
