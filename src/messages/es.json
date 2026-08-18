@@ -62,13 +62,17 @@
   },
   "lab": {
     "title": "Lab",
-    "description": "Experimentos y proyectos de Natalia Bernal."
+    "heading": "Algunos otros proyectos",
+    "description": "Experimentos y proyectos de Natalia Bernal.",
+    "backHome": "Volver al inicio"
   },
   "caseStudy": {
-    "back": "Volver",
+    "back": "Volver al inicio",
     "navLabel": "En esta página",
     "role": "Rol",
-    "year": "Año"
+    "tools": "Herramientas",
+    "year": "Año",
+    "backHomeCta": "Volver al inicio"
   },
   "notFound": {
     "title": "Página no encontrada",

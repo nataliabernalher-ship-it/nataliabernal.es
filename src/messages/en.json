@@ -62,13 +62,17 @@
   },
   "lab": {
     "title": "Lab",
-    "description": "Experiments and projects by Natalia Bernal."
+    "heading": "Some other projects",
+    "description": "Experiments and projects by Natalia Bernal.",
+    "backHome": "Back to home"
   },
   "caseStudy": {
-    "back": "Back",
+    "back": "Back to home",
     "navLabel": "On this page",
     "role": "Role",
-    "year": "Year"
+    "tools": "Tools",
+    "year": "Year",
+    "backHomeCta": "Back to home"
   },
   "notFound": {
     "title": "Page not found",

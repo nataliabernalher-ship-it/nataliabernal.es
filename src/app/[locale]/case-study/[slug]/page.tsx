@@ -25,7 +25,7 @@ export async function generateMetadata({
   return buildMetadata({
     locale,
     path: `/case-study/${study.slug}`,
-    title: getLocalizedValue(study.title, locale),
+    title: getLocalizedValue(study.pageTitle, locale),
     description: getLocalizedValue(study.excerpt, locale),
   });
 }

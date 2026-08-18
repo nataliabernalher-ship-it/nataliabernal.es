@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useId, useState } from "react";
+import { usePathname } from "next/navigation";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher/LanguageSwitcher";
 import { site } from "@/data/site";
 import type { Locale } from "@/i18n/config";
@@ -16,7 +17,10 @@ type NavProps = {
 
 export function Nav({ locale, messages }: NavProps) {
   const menuId = useId();
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const labHref = `/${locale}/lab`;
+  const labCurrent = pathname === labHref || pathname.startsWith(`${labHref}/`);
 
   useEffect(() => {
     if (!open) {
@@ -50,7 +54,11 @@ export function Nav({ locale, messages }: NavProps) {
         </span>
       </Link>
       <nav className={styles.desktopMenu} aria-label={messages.nav.menu}>
-        <Link className={styles.link} href={`/${locale}/lab`}>
+        <Link
+          className={styles.link}
+          href={labHref}
+          aria-current={labCurrent ? "page" : undefined}
+        >
           {messages.nav.lab}
         </Link>
         <Link className={`${styles.link} ${styles.contact}`} href={`/${locale}#contact`}>
@@ -81,7 +89,12 @@ export function Nav({ locale, messages }: NavProps) {
       </button>
       {open ? (
         <nav id={menuId} className={styles.panel} aria-label={messages.nav.menu}>
-          <Link className={styles.panelLink} href={`/${locale}/lab`} onClick={close}>
+          <Link
+            className={styles.panelLink}
+            href={labHref}
+            aria-current={labCurrent ? "page" : undefined}
+            onClick={close}
+          >
             {messages.nav.lab}
           </Link>
           <Link

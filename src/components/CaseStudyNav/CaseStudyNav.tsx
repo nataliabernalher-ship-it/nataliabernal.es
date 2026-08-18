@@ -1,7 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
-import type { CaseStudySection } from "@/data/case-studies";
+import type { CaseStudyNavItem } from "@/data/case-studies";
 import { getLocalizedValue } from "@/data/case-studies";
 import type { Locale } from "@/i18n/config";
 import styles from "./CaseStudyNav.module.css";
@@ -9,59 +10,65 @@ import styles from "./CaseStudyNav.module.css";
 type CaseStudyNavProps = {
   locale: Locale;
   label: string;
-  sections: CaseStudySection[];
+  backLabel: string;
+  items: CaseStudyNavItem[];
 };
 
-export function CaseStudyNav({ locale, label, sections }: CaseStudyNavProps) {
-  const [activeId, setActiveId] = useState(sections[0]?.id ?? "");
+export function CaseStudyNav({ locale, label, backLabel, items }: CaseStudyNavProps) {
+  const [activeId, setActiveId] = useState(items[0]?.id ?? "");
 
   useEffect(() => {
-    const headings = sections
-      .map((section) => document.getElementById(`${section.id}-emphasis`))
+    const sections = items
+      .map((item) => document.getElementById(item.id))
       .filter((node): node is HTMLElement => Boolean(node));
 
-    if (headings.length === 0) {
+    if (sections.length === 0) {
       return;
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    const update = () => {
+      const marker = window.innerHeight * 0.22;
+      let current = sections[0]?.id ?? "";
 
-        const id = visible?.target.getAttribute("data-section-id");
-
-        if (id) {
-          setActiveId(id);
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= marker) {
+          current = section.id;
         }
-      },
-      {
-        rootMargin: "-20% 0px -65% 0px",
-        threshold: [0, 0.25, 0.5, 1],
-      },
-    );
+      }
 
-    headings.forEach((heading) => observer.observe(heading));
+      setActiveId(current);
+    };
 
-    return () => observer.disconnect();
-  }, [sections]);
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, [items]);
 
   return (
-    <nav className={styles.nav} aria-label={label}>
-      <ul className={styles.list}>
-        {sections.map((section) => (
-          <li key={section.id}>
-            <a
-              className={`${styles.link} ${activeId === section.id ? styles.active : ""}`}
-              href={`#${section.id}`}
-              aria-current={activeId === section.id ? "location" : undefined}
-            >
-              {getLocalizedValue(section.emphasis, locale)}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <div className={styles.sidemenu}>
+      <Link className={styles.back} href={`/${locale}`}>
+        {backLabel}
+      </Link>
+      <nav className={styles.nav} aria-label={label}>
+        <ul className={styles.list}>
+          {items.map((item) => (
+            <li key={item.id}>
+              <a
+                className={`${styles.link} ${activeId === item.id ? styles.active : ""}`}
+                href={`#${item.id}`}
+                aria-current={activeId === item.id ? "location" : undefined}
+              >
+                {getLocalizedValue(item.label, locale)}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
   );
 }

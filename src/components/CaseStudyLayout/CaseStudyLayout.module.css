@@ -1,70 +1,66 @@
-.layout {
-  display: grid;
-  gap: var(--space-6);
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-inline: 12px;
+  background: var(--color-bg);
 }
 
-.header {
-  display: grid;
-  gap: var(--space-4);
-  margin-bottom: var(--space-4);
+.column {
+  width: 100%;
+  max-width: var(--content-cs);
+  margin-inline: auto;
 }
 
-.back {
-  width: fit-content;
-  font-size: var(--text-small);
-  letter-spacing: 0.04em;
+.group {
+  scroll-margin-top: 6rem;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.875rem;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 13.1875rem;
+  height: 3.125rem;
+  padding: 0 1.5rem;
+  border-radius: var(--radius-button);
+  background: var(--color-accent);
+  color: var(--color-on-dark);
+  font-size: var(--text-body);
+  font-weight: 600;
+  line-height: 1.4;
   text-decoration: none;
   text-transform: uppercase;
-  transition: opacity var(--duration-fast) var(--ease);
+  transition: filter var(--duration-fast) var(--ease);
 }
 
-.back:hover,
-.back:focus-visible {
-  opacity: 0.6;
+.button:hover,
+.button:focus-visible {
+  filter: brightness(0.95);
 }
 
-.meta {
-  color: var(--color-muted);
-  font-size: var(--text-small);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.title {
-  font-size: var(--text-h1);
-  font-weight: 500;
-  line-height: var(--leading-tight);
-}
-
-.body {
-  display: grid;
-  gap: var(--space-8);
-}
-
-.section {
-  display: grid;
-  gap: var(--space-3);
-  scroll-margin-top: var(--space-6);
-}
-
-.emphasis {
-  font-size: var(--text-emphasis);
-  font-weight: 500;
-}
-
-.content {
-  max-width: 40rem;
-  color: var(--color-muted);
-}
-
-@media (min-width: 64rem) {
-  .layout {
-    grid-template-columns: 14rem minmax(0, 1fr);
-    align-items: start;
-    gap: var(--space-8);
+@media (min-width: 80rem) {
+  .page {
+    display: grid;
+    grid-template-columns: 1fr var(--content-cs) 1fr;
+    padding-inline: 0;
   }
 
-  .header {
-    grid-column: 1 / -1;
+  .page > :first-child {
+    grid-column: 1;
+    justify-self: start;
+    align-self: start;
+  }
+
+  .column {
+    grid-column: 2;
+    margin-inline: 0;
   }
 }

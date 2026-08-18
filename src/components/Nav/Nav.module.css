@@ -98,6 +98,11 @@
   color: var(--color-accent);
 }
 
+.link[aria-current="page"],
+.panelLink[aria-current="page"] {
+  color: var(--color-titles);
+}
+
 .toggle {
   display: flex;
   flex-shrink: 0;

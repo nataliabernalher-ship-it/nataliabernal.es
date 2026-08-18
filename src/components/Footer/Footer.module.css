@@ -68,3 +68,17 @@
     padding-inline: 0;
   }
 }
+
+.light {
+  background: var(--color-bg);
+  border-top-color: var(--color-stroke);
+  color: var(--color-teal);
+}
+
+.light .link {
+  color: var(--color-teal);
+}
+
+.light :focus-visible {
+  outline-color: var(--color-titles);
+}

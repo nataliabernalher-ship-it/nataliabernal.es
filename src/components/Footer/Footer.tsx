@@ -5,13 +5,14 @@ import styles from "./Footer.module.css";
 
 type FooterProps = {
   messages: Messages;
+  variant?: "dark" | "light";
 };
 
-export function Footer({ messages }: FooterProps) {
+export function Footer({ messages, variant = "dark" }: FooterProps) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className={styles.footer}>
+    <footer className={`${styles.footer} ${variant === "light" ? styles.light : ""}`}>
       <Reveal>
         <ul className={styles.links}>
           {site.socials.map((social) => (

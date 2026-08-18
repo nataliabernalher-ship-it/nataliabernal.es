@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { Footer } from "@/components/Footer/Footer";
+import { AppFooter } from "@/components/Footer/AppFooter";
 import { Nav } from "@/components/Nav/Nav";
 import { SkipLink } from "@/components/SkipLink/SkipLink";
 import { isLocale, locales } from "@/i18n/config";
@@ -34,7 +34,7 @@ export default async function LocaleLayout({
           <main id="content" className={styles.main}>
             {children}
           </main>
-          <Footer messages={messages} />
+          <AppFooter messages={messages} />
         </div>
       </body>
     </html>

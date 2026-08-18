@@ -3,7 +3,8 @@ import { Bad_Script, Instrument_Sans, Instrument_Serif } from "next/font/google"
 export const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
   variable: "--font-instrument-sans",
 });
 
