@@ -53,7 +53,7 @@
 
 .link {
   display: block;
-  color: var(--color-spy);
+  color: var(--color-tertiary);
   font-size: var(--text-body);
   font-weight: 400;
   line-height: 1.5rem;
@@ -63,12 +63,12 @@
 }
 
 .link:hover,
-.link:focus-visible {
-  color: var(--color-teal);
+.link:focus-visible,
+.active {
+  color: var(--color-text);
 }
 
 .active {
-  color: var(--color-teal);
   font-weight: 600;
 }
 
@@ -78,7 +78,7 @@
     top: 0;
     gap: 2rem;
     width: 12.8125rem;
-    padding: 2.5rem 0 0 12px;
+    padding: 2.5rem 0 0 32px;
   }
 
   .nav {
