@@ -17,24 +17,22 @@ export function Intro({ messages }: IntroProps) {
             <h2 id="experience-title" className={styles.title}>
               {copy.title}
             </h2>
+            <p className={styles.nda}>{copy.nda}</p>
           </header>
         </Reveal>
         <Reveal delay={120}>
-          <div className={styles.body}>
-            <p className={styles.nda}>{copy.nda}</p>
-            <div className={styles.copy}>
-              <p>{copy.p1}</p>
-              <p>
-                {copy.p2.before}
-                <span className={styles.mark}>{copy.p2.highlight}</span>
-                {copy.p2.after}
-              </p>
-              <p>
-                {copy.p3.before}
-                <span className={styles.mark}>{copy.p3.highlight}</span>
-                {copy.p3.after}
-              </p>
-            </div>
+          <div className={styles.copy}>
+            <p>{copy.p1}</p>
+            <p>
+              {copy.p2.before}
+              <span className={styles.mark}>{copy.p2.highlight}</span>
+              {copy.p2.after}
+            </p>
+            <p>
+              {copy.p3.before}
+              <span className={styles.mark}>{copy.p3.highlight}</span>
+              {copy.p3.after}
+            </p>
           </div>
         </Reveal>
       </div>

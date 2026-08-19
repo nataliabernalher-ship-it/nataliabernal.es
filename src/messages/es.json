@@ -23,7 +23,7 @@
     "kicker": "Product designer",
     "intro": "Más de 5 años diseñando experiencias digitales en websites, SaaS, CRMs y marketplaces.",
     "workTitle": "Proyectos",
-    "projectsTitle": "Algunos otros proyectos",
+    "projectsTitle": "Otros proyectos",
     "skills": {
       "title": "Áreas de especialización",
       "items": [
@@ -39,16 +39,16 @@
     "experience": {
       "title": "Mi última experiencia laboral",
       "nda": "[proyectos bajo NDA]",
-      "p1": "Durante los últimos cuatro años y medio he trabajado a la vez en dos verticales de la misma empresa, repartiendo mi rol entre TusCasasRurales.com y Pentaweb.",
+      "p1": "Durante los últimos cuatro años y medio he trabajado simultáneamente en dos verticales de la misma empresa, repartiendo mi rol entre TusCasasRurales.com y Pentaweb.",
       "p2": {
         "before": "En ",
         "highlight": "TusCasasRurales.com",
-        "after": " he rediseñado el marketplace de alojamientos rurales, diseñado nuevas funcionalidades como la reserva y el checkout online, rediseñado los dashboards de viajeros y propietarios, y construido un Design System escalable en Figma."
+        "after": ", marketplace de alojamientos rurales, he liderado el rediseño de la interfaz y la creación desde cero de su Design System, ambos actualmente en desarrollo. He diseñado nuevas funcionalidades para el producto, abarcando tanto el front del viajero como las áreas privadas de usuario y las herramientas internas de gestión. Entre ellas, el flujo completo de reserva online, el programa de premios para propietarios y el sistema de carga de guías turísticas para el equipo interno. Como parte de la evolución a largo plazo del producto, también he rediseñado el backoffice de gestión para propietarios, pendiente de desarrollo."
       },
       "p3": {
         "before": "En ",
         "highlight": "Pentaweb",
-        "after": " he diseñado webs corporativas, productos digitales a medida y aplicaciones web para clientes de distintos sectores, desde requisitos y user flows hasta prototipado y UI responsive. En ambas verticales trabajo codo a codo con desarrollo y negocio para convertir necesidades de usuario y objetivos de negocio en experiencias digitales claras, consistentes y orientadas a la conversión."
+        "after": ", agencia de marketing y desarrollo digital, he diseñado más de 30 webs corporativas y desarrollado identidades visuales para empresas de distintos sectores. Además, he participado en el diseño de productos digitales a medida, como CRM y herramientas de gestión, adaptando la experiencia y la interfaz a las necesidades específicas de cada negocio."
       }
     },
     "tools": {

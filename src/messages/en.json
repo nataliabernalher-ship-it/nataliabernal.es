@@ -23,7 +23,7 @@
     "kicker": "Product designer",
     "intro": "5+ years designing digital experiences across websites, SaaS, CRMs and marketplaces.",
     "workTitle": "Work",
-    "projectsTitle": "Some other projects",
+    "projectsTitle": "Other projects",
     "skills": {
       "title": "Areas of expertise",
       "items": [
@@ -39,16 +39,16 @@
     "experience": {
       "title": "My last work experience",
       "nda": "[projects under NDA]",
-      "p1": "For the last four and a half years, I’ve worked simultaneously across two verticals of the same company, splitting my role between TusCasasRurales.com and Pentaweb.",
+      "p1": "Over the past four and a half years, I have worked simultaneously across two verticals within the same company, splitting my role between TusCasasRurales.com and Pentaweb.",
       "p2": {
         "before": "At ",
         "highlight": "TusCasasRurales.com",
-        "after": ", I’ve redesigned the rural accommodation marketplace, designed new features such as online booking and checkout, redesigned the traveler and property owner dashboards, and built a scalable Design System in Figma."
+        "after": ", a rural accommodation marketplace, I have led the interface redesign and built its Design System from scratch, both currently under development. I have designed new product features across the traveler-facing experience, private user areas, and internal management tools. These include the complete online booking flow, a property owner awards program, and a system for the internal team to upload travel guides. As part of the product’s long-term evolution, I have also redesigned the property owner management platform, which is yet to be developed."
       },
       "p3": {
         "before": "At ",
         "highlight": "Pentaweb",
-        "after": ", I’ve designed corporate websites, custom digital products and web applications for clients across different industries, from requirements and user flows to prototyping and responsive UI design. Across both verticals, I work closely with developers and business teams to turn user needs and business goals into clear, consistent and conversion-focused digital experiences."
+        "after": ", a marketing and digital development agency, I have designed more than 30 corporate websites and developed visual identities for companies across different industries. I have also worked on custom digital products, including CRMs and management tools, tailoring the user experience and interface to the specific needs of each business."
       }
     },
     "tools": {

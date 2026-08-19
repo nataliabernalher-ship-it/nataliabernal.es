@@ -15,6 +15,10 @@
 }
 
 .headingRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
   width: 100%;
   padding-bottom: 1.25rem;
   border-bottom: 1px solid var(--color-stroke);
@@ -31,25 +35,19 @@
   text-align: left;
 }
 
-.body {
-  display: flex;
-  flex-direction: column;
-  gap: 0.625rem;
-  width: 100%;
-  max-width: 44.25rem;
-  margin-inline: auto;
-}
-
 .nda {
-  align-self: flex-end;
   color: var(--color-accent);
   font-size: var(--text-emphasis);
   font-weight: 500;
   line-height: 1.5rem;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .copy {
+  width: 100%;
+  max-width: 44.25rem;
+  margin-inline: auto;
   color: var(--color-text);
   font-size: var(--text-big);
   line-height: 1.875rem;
