@@ -23,7 +23,7 @@
 .title {
   font-family: var(--font-serif);
   font-size: var(--text-h2);
-  font-style: italic;
+  font-style: normal;
   font-weight: 400;
   letter-spacing: var(--tracking-heading);
   line-height: 1.48;
