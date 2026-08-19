@@ -25,6 +25,7 @@ export async function generateMetadata({
     locale,
     title: messages.meta.title,
     description: messages.meta.description,
+    absoluteTitle: true,
   });
 }
 

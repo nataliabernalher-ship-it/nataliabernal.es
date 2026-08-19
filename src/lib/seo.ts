@@ -7,6 +7,7 @@ type BuildMetadataInput = {
   path?: string;
   title: string;
   description: string;
+  absoluteTitle?: boolean;
 };
 
 function localizedUrl(locale: Locale, path: string): string {
@@ -19,6 +20,7 @@ export function buildMetadata({
   path = "",
   title,
   description,
+  absoluteTitle = false,
 }: BuildMetadataInput): Metadata {
   const url = localizedUrl(locale, path);
   const languages = Object.fromEntries(
@@ -26,7 +28,7 @@ export function buildMetadata({
   );
 
   return {
-    title,
+    title: absoluteTitle ? { absolute: title } : title,
     description,
     alternates: {
       canonical: url,
