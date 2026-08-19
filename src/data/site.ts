@@ -7,7 +7,7 @@ export type SocialLink = {
 export const site = {
   name: "Natalia Bernal",
   url: "https://nataliabernal.es",
-  email: "hello@nataliabernal.es",
+  email: "nataliabernalher@gmail.com",
   socials: [
     {
       label: "LNKDN",
