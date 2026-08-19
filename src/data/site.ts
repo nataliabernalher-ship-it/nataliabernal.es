@@ -8,6 +8,7 @@ export const site = {
   name: "Natalia Bernal",
   url: "https://nataliabernal.es",
   email: "nataliabernalher@gmail.com",
+  gaId: "G-FWMWZXBM1M",
   socials: [
     {
       label: "LNKDN",
