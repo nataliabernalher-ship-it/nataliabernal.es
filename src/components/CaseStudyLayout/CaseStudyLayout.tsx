@@ -80,7 +80,7 @@ export function CaseStudyLayout({ locale, messages, study }: CaseStudyLayoutProp
           </Reveal>
         ))}
         <div className={styles.cta}>
-          <Link className={styles.button} href={`/${locale}`}>
+          <Link className={styles.button} href={`/${locale}/lab`}>
             {messages.caseStudy.backHomeCta}
           </Link>
         </div>
