@@ -58,6 +58,7 @@
 .copy {
   max-width: 37.75rem;
   margin-inline: auto;
+  color: inherit;
   font-size: var(--text-body);
   line-height: 1.5rem;
   text-align: center;
