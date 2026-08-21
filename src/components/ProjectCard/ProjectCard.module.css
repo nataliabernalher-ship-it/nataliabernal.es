@@ -56,21 +56,22 @@
 .text {
   display: flex;
   flex-direction: column;
+  gap: var(--space-1);
 }
 
-.title {
-  color: var(--color-titles);
+.kicker {
+  color: var(--color-tertiary);
   font-size: var(--text-emphasis);
-  font-weight: 600;
-  letter-spacing: -0.04em;
+  font-weight: 400;
+  letter-spacing: -1px;
   line-height: 1.5625rem;
   text-transform: uppercase;
 }
 
-.excerpt {
-  color: var(--color-text);
-  font-size: var(--text-emphasis);
-  font-weight: 400;
+.title {
+  color: var(--color-titles);
+  font-size: var(--text-big);
+  font-weight: 600;
   line-height: 1.5625rem;
 }
 

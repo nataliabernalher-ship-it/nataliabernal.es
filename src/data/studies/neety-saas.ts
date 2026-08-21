@@ -46,8 +46,8 @@ export const neetySaas: CaseStudy = {
     en: "Neety is an AI-powered message automation tool for prospecting and selling through LinkedIn messages.",
   },
   excerpt: {
-    es: "Rediseño para mejorar la usabilidad y la UX de una herramienta de mensajería comercial automatizada.",
-    en: "Redesign to improve the usability and UX of an automated sales messaging tool.",
+    es: "Simplificando La Prospección Comercial: Rediseño De Una Herramienta De Ventas Con IA",
+    en: "Redesigning an AI-Powered Sales Tool for a Simpler, More Intuitive Experience",
   },
   heroImage: {
     src: img("hero.png"),

@@ -172,8 +172,8 @@ export const caseStudies: CaseStudy[] = [
       en: "Design system for Wellness Stay",
     },
     excerpt: {
-      es: "Creación del design system e implementación en un IDE para desarrollo automatizado.",
-      en: "Creation of the design system and implementation within an IDE for automated development.",
+      es: "De Figma A Código: Construyendo Un Design System Escalable Para Un Marketplace De Retiros De Bienestar",
+      en: "From Figma to Code: Building a Scalable Design System for a Wellness Retreat Marketplace",
     },
     heroImage: {
       src: img("hero.png"),

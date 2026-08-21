@@ -39,8 +39,8 @@ export function ProjectCard({ locale, study, href }: ProjectCardProps) {
         <p className={styles.tag}>{getLocalizedValue(study.tag, locale)}</p>
       </div>
       <div className={styles.text}>
-        <h3 className={styles.title}>{getLocalizedValue(study.title, locale)}</h3>
-        <p className={styles.excerpt}>{getLocalizedValue(study.excerpt, locale)}</p>
+        <p className={styles.kicker}>{getLocalizedValue(study.title, locale)}</p>
+        <h3 className={styles.title}>{getLocalizedValue(study.excerpt, locale)}</h3>
       </div>
     </>
   );

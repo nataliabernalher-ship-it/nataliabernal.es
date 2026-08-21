@@ -48,8 +48,8 @@ export const noruegaPorTuCuenta: CaseStudy = {
     en: "Noruega por tu cuenta",
   },
   excerpt: {
-    es: "Rediseño para mejorar la usabilidad y la UX de un blog de ayuda para viajar a Noruega por tu cuenta.",
-    en: "Redesign to improve the usability and UX of a self-guided Norway travel blog.",
+    es: "Uso de métricas UX para mejorar la interacción en una plataforma de contenidos de viajes",
+    en: "Using UX Metrics to Improve Engagement on a Travel Content Platform",
   },
   heroImage: {
     src: img("hero.png"),
