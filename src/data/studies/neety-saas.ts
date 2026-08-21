@@ -5,6 +5,7 @@ const img = (name: string) => `/images/case-studies/neety-saas/${name}`;
 export const neetySaas: CaseStudy = {
   slug: "neety-saas",
   year: "2024",
+  showOnHome: false,
   tag: {
     es: "[colaboración]",
     en: "[collaboration]",
