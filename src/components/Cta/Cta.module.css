@@ -40,6 +40,7 @@
   width: fit-content;
   height: 3.125rem;
   padding: 0 6rem;
+  margin-top: var(--space-2);
   margin-inline: auto;
   border-radius: 1.5rem;
   background: var(--color-accent);
