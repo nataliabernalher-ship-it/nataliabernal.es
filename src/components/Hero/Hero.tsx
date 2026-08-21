@@ -23,8 +23,8 @@ export function Hero({ messages }: HeroProps) {
               <Image
                 src="/images/hero/stamp.png"
                 alt=""
-                width={226}
-                height={158}
+                width={140}
+                height={107}
                 className={styles.stampImg}
               />
             </span>
