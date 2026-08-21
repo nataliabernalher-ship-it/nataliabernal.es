@@ -39,16 +39,27 @@
     "experience": {
       "title": "My last work experience",
       "nda": "[projects under NDA]",
-      "p1": "Over the past four and a half years, I have worked simultaneously across two verticals within the same company, splitting my role between TusCasasRurales.com and Pentaweb.",
+      "p1": "Over the past four and a half years, I have worked across two verticals within the same company, splitting my role between TusCasasRurales.com and Pentaweb.",
       "p2": {
         "before": "At ",
         "highlight": "TusCasasRurales.com",
-        "after": ", a rural accommodation marketplace, I have led the interface redesign and built its Design System from scratch, both currently under development. I have designed new product features across the traveler-facing experience, private user areas, and internal management tools. These include the complete online booking flow, a property owner awards program, and a system for the internal team to upload travel guides. As part of the product’s long-term evolution, I have also redesigned the property owner management platform, which is yet to be developed."
+        "after": ", a rural accommodation marketplace, I:",
+        "items": [
+          "Led the interface redesign and built its Design System from scratch, which is currently being implemented.",
+          "Designed new features across the traveler experience, private user areas, and internal administration tools.",
+          "Redesigned the property owner management platform as part of the product’s long-term evolution, currently awaiting development."
+        ]
       },
       "p3": {
         "before": "At ",
-        "highlight": "Pentaweb",
-        "after": ", a marketing and digital development agency, I have designed more than 30 corporate websites and developed visual identities for companies across different industries. I have also worked on custom digital products, including CRMs and management tools, tailoring the user experience and interface to the specific needs of each business."
+        "highlight": "PentaWeb",
+        "after": ", a digital marketing and development agency, I:",
+        "items": [
+          "Designed 30+ corporate websites across different industries, as well as custom digital solutions such as CRMs and management tools.",
+          "Created visual identities and brand guidelines for businesses and digital products.",
+          "Translated business requirements into user flows, interfaces, and functional solutions.",
+          "Collaborated closely with developers throughout the design and implementation process."
+        ]
       }
     },
     "tools": {

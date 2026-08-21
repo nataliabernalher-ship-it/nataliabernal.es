@@ -46,19 +46,25 @@
 
 .copy {
   width: 100%;
-  max-width: 44.25rem;
+  max-width: 47.875rem;
   margin-inline: auto;
   color: var(--color-text);
   font-size: var(--text-big);
   line-height: 1.875rem;
 }
 
-.copy p + p {
+.copy > * + * {
   margin-top: 1.875rem;
+}
+
+.list {
+  margin: 0;
+  padding-inline-start: 1.6875rem;
 }
 
 .mark {
   color: var(--color-accent);
+  font-weight: 700;
 }
 
 @media (min-width: 80rem) {

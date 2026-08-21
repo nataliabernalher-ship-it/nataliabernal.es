@@ -6,6 +6,25 @@ type IntroProps = {
   messages: Messages;
 };
 
+type ExperienceBlock = Messages["home"]["experience"]["p2"];
+
+function ExperienceBlockCopy({ block }: { block: ExperienceBlock }) {
+  return (
+    <div className={styles.block}>
+      <p>
+        {block.before}
+        <span className={styles.mark}>{block.highlight}</span>
+        {block.after}
+      </p>
+      <ul className={styles.list}>
+        {block.items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export function Intro({ messages }: IntroProps) {
   const copy = messages.home.experience;
 
@@ -23,16 +42,8 @@ export function Intro({ messages }: IntroProps) {
         <Reveal delay={120}>
           <div className={styles.copy}>
             <p>{copy.p1}</p>
-            <p>
-              {copy.p2.before}
-              <span className={styles.mark}>{copy.p2.highlight}</span>
-              {copy.p2.after}
-            </p>
-            <p>
-              {copy.p3.before}
-              <span className={styles.mark}>{copy.p3.highlight}</span>
-              {copy.p3.after}
-            </p>
+            <ExperienceBlockCopy block={copy.p2} />
+            <ExperienceBlockCopy block={copy.p3} />
           </div>
         </Reveal>
       </div>

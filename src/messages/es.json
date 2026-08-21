@@ -39,16 +39,27 @@
     "experience": {
       "title": "Mi última experiencia laboral",
       "nda": "[proyectos bajo NDA]",
-      "p1": "Durante los últimos cuatro años y medio he trabajado simultáneamente en dos verticales de la misma empresa, repartiendo mi rol entre TusCasasRurales.com y Pentaweb.",
+      "p1": "Durante los últimos cuatro años y medio he trabajado en dos verticales de la misma empresa, repartiendo mi rol entre TusCasasRurales.com y Pentaweb.",
       "p2": {
         "before": "En ",
         "highlight": "TusCasasRurales.com",
-        "after": ", marketplace de alojamientos rurales, he liderado el rediseño de la interfaz (en desarrollo) y la creación desde cero de su Design System. He diseñado nuevas funcionalidades, abarcando tanto el front del viajero como las áreas privadas de viajero y propietario y el área de gestión interna del equipo."
+        "after": ", marketplace de alojamientos rurales:",
+        "items": [
+          "Lideré el rediseño de la interfaz y construí su Design System desde cero, actualmente en desarrollo.",
+          "Diseñé nuevas funcionalidades para el front de viajero, área privada de propietarios y viajeros, y de la gestión interna de empleados.",
+          "Rediseñé la plataforma de gestión de propietarios como parte de la evolución a largo plazo del producto, pendiente de desarrollo."
+        ]
       },
       "p3": {
         "before": "En ",
-        "highlight": "Pentaweb",
-        "after": ", agencia de marketing y desarrollo digital, he diseñado más de 30 webs corporativas y desarrollado identidades visuales para empresas de distintos sectores. Además, he participado en el diseño de productos digitales a medida, como CRM y herramientas de gestión, adaptando la experiencia y la interfaz a las necesidades específicas de cada negocio."
+        "highlight": "PentaWeb",
+        "after": ", agencia de marketing y desarrollo web:",
+        "items": [
+          "Diseñé más de 30 webs corporativas de distintos sectores, además de soluciones digitales a medida como CRMs.",
+          "Creé identidades visuales y brand guidelines para empresas.",
+          "Traduje requisitos de negocio en user flows, prototipos y soluciones funcionales.",
+          "Colaboré con desarrollo durante todo el proceso de diseño e implementación."
+        ]
       }
     },
     "tools": {
