@@ -6,6 +6,25 @@ type HeroProps = {
   messages: Messages;
 };
 
+const COMMERCE_TERM = "e-commerce";
+
+function HeroBio({ text }: { text: string }) {
+  const index = text.indexOf(COMMERCE_TERM);
+
+  if (index === -1) {
+    return text;
+  }
+
+  return (
+    <>
+      {text.slice(0, index)}
+      <br className={styles.bioBreak} />
+      <span className={styles.nowrap}>{COMMERCE_TERM}</span>
+      {text.slice(index + COMMERCE_TERM.length)}
+    </>
+  );
+}
+
 export function Hero({ messages }: HeroProps) {
   return (
     <section className={styles.hero} aria-labelledby="hero-heading">
@@ -14,21 +33,10 @@ export function Hero({ messages }: HeroProps) {
           <h1 id="hero-heading" className={styles.heading}>
             <span>{messages.home.greeting}</span>
             <span className={styles.role}>{messages.home.role}</span>
-            <span>{messages.home.bio}</span>
-          </h1>
-          <p className={styles.location}>
-            <span aria-hidden="true">{messages.home.location}</span>
-            <span className="srOnly">{messages.home.locationSr}</span>
-            <span className={styles.stamp} aria-hidden="true">
-              <Image
-                src="/images/hero/stamp.png"
-                alt=""
-                width={140}
-                height={107}
-                className={styles.stampImg}
-              />
+            <span>
+              <HeroBio text={messages.home.bio} />
             </span>
-          </p>
+          </h1>
         </div>
         <div className={styles.scrollCue}>
           <a className={styles.scroll} href="#experience">
