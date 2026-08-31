@@ -68,6 +68,10 @@
       "title": "¿Crees que podría encajar en tu equipo?",
       "body": "Me encantaría que habláramos.",
       "button": "Hablemos"
+    },
+    "location": {
+      "text": "Vivo en el soleado",
+      "sr": "Vivo en el soleado Madrid"
     }
   },
   "lab": {
