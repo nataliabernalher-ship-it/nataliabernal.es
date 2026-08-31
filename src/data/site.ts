@@ -16,9 +16,9 @@ export const site = {
       href: "https://www.linkedin.com/in/natalia-bernal-herrero",
     },
     {
-      label: "INSTA",
-      name: "Instagram",
-      href: "https://www.instagram.com/nataliabernalher",
+      label: "GITHUB",
+      name: "GitHub",
+      href: "https://github.com/nataliabernalher-ship-it",
     },
     {
       label: "Bē",
