@@ -31,14 +31,14 @@
 }
 
 .logos {
+  --logo-scale: 0.58;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  column-gap: clamp(1.5rem, 8vw, 5.3125rem);
-  row-gap: 2.5rem;
+  column-gap: 1.25rem;
+  row-gap: 1.75rem;
   width: 100%;
-  max-width: 33.75rem;
   margin: 0 auto;
   padding: 2.5rem 0;
   list-style: none;
@@ -46,17 +46,40 @@
 
 .logo {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  height: 2.5rem;
+  width: calc(var(--logo-w) * var(--logo-scale));
+  height: calc(var(--logo-h) * var(--logo-scale));
 }
 
 .icon {
   display: block;
-  width: auto;
-  height: auto;
-  max-height: 2.5rem;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+}
+
+@media (min-width: 30rem) {
+  .logos {
+    --logo-scale: 0.68;
+    column-gap: 1.5rem;
+    row-gap: 2rem;
+  }
+}
+
+@media (min-width: 48rem) {
+  .logos {
+    --logo-scale: 0.82;
+    column-gap: 1.75rem;
+    row-gap: 2.5rem;
+  }
+}
+
+@media (min-width: 75rem) {
+  .logos {
+    --logo-scale: 1;
+  }
 }
 
 @media (min-width: 80rem) {

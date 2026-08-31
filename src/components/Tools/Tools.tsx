@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import { Reveal } from "@/components/Reveal/Reveal";
 import { tools } from "@/data/tools";
 import type { Messages } from "@/i18n/get-messages";
@@ -22,14 +23,23 @@ export function Tools({ messages }: ToolsProps) {
         <Reveal delay={140}>
           <ul className={styles.logos}>
             {tools.map((tool) => (
-              <li key={tool.name} className={styles.logo}>
+              <li
+                key={tool.name}
+                className={styles.logo}
+                style={
+                  {
+                    "--logo-w": `${tool.width}px`,
+                    "--logo-h": `${tool.height}px`,
+                  } as CSSProperties
+                }
+              >
                 <Image
                   src={tool.src}
                   alt={tool.name}
                   width={tool.width}
                   height={tool.height}
                   className={styles.icon}
-                  unoptimized={tool.src.endsWith(".svg")}
+                  unoptimized
                 />
               </li>
             ))}
