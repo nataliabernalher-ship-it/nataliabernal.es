@@ -206,8 +206,8 @@ export const caseStudies: CaseStudy[] = [
           en: "What is Wellness Stay?",
         },
         body: {
-          es: "Wellness Stay es un proyecto experimental para poner en práctica nuevas herramientas de IA dentro del proceso de creación y diseño de un producto digital. Wellness Stay es un proyecto ficticio que simula una plataforma digital o marketplace de reservas de retiros de bienestar: yoga, mindfulness, detox, etc.",
-          en: "Wellness Stay is an experimental project to put new AI tools into practice within the process of creating and designing a digital product. It is a fictional marketplace for booking wellness retreats: yoga, mindfulness, detox, and more.",
+          es: "Wellness Stay es un marketplace de reservas de retiros de bienestar que desarrollé como proyecto experimental para explorar cómo construir un producto digital escalable desde Figma hasta código.\n\nDiseñé desde cero sus foundations, arquitectura de tokens y componentes, y definí un flujo de trabajo Design-to-Code apoyado en IA para mantener la consistencia entre diseño, documentación e implementación.",
+          en: "Wellness Stay is a wellness retreat booking marketplace that I developed as an experimental project to explore how to build a scalable digital product from Figma to code.\n\nI designed its foundations, token architecture, and components from scratch, and defined an AI-supported Design-to-Code workflow to keep design, documentation, and implementation consistent.",
         },
       },
       {
