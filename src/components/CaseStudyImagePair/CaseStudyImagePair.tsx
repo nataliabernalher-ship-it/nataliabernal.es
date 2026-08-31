@@ -10,8 +10,10 @@ type CaseStudyImagePairProps = {
 };
 
 export function CaseStudyImagePair({ locale, block }: CaseStudyImagePairProps) {
+  const stacked = block.layout === "stack";
+
   return (
-    <div className={styles.pair}>
+    <div className={`${styles.pair} ${stacked ? styles.stack : ""}`}>
       {block.images.map((image) => (
         <figure key={image.src} className={styles.figure}>
           <Image
@@ -20,7 +22,11 @@ export function CaseStudyImagePair({ locale, block }: CaseStudyImagePairProps) {
             width={image.width}
             height={image.height}
             className={styles.image}
-            sizes="(min-width: 48rem) 380px, calc(100vw - 24px)"
+            sizes={
+              stacked
+                ? "(min-width: 48rem) 768px, calc(100vw - 24px)"
+                : "(min-width: 48rem) 380px, calc(100vw - 24px)"
+            }
           />
         </figure>
       ))}

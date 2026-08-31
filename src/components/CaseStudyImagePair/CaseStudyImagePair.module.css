@@ -16,8 +16,12 @@
   height: auto;
 }
 
+.stack {
+  gap: 1.5rem;
+}
+
 @media (min-width: 48rem) {
-  .pair {
+  .pair:not(.stack) {
     grid-template-columns: 1fr 1fr;
   }
 }

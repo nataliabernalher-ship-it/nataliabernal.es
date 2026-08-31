@@ -23,6 +23,15 @@ export function CaseStudyHero({ locale, messages, study }: CaseStudyHeroProps) {
 
   return (
     <header className={styles.hero}>
+      {study.tags.length > 0 ? (
+        <p className={styles.tags}>
+          {study.tags.map((tag) => (
+            <span key={getLocalizedValue(tag, locale)} className={styles.tag}>
+              {getLocalizedValue(tag, locale)}
+            </span>
+          ))}
+        </p>
+      ) : null}
       <h1 className={styles.title}>{getLocalizedValue(study.pageTitle, locale)}</h1>
       {study.heroImage ? (
         <div className={styles.media}>

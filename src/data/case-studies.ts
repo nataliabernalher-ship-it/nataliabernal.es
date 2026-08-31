@@ -90,6 +90,7 @@ export type CaseStudyFeatureBlock = {
 export type CaseStudyImagePairBlock = {
   type: "image-pair";
   navId: string;
+  layout?: "row" | "stack";
   images: Array<{
     src: string;
     width: number;
@@ -150,17 +151,17 @@ export const caseStudies: CaseStudy[] = [
       { es: "[sistema de diseño]", en: "[design system]" },
     ],
     cover: {
-      src: img("hero.png"),
+      src: img("portada.png"),
       width: 768,
-      height: 427,
+      height: 500,
       alt: {
-        es: "Captura de Wellness Stay, marketplace de retiros de salud y bienestar",
-        en: "Screenshot of Wellness Stay, a health and wellness retreat marketplace",
+        es: "Portada de Wellness Stay: piscina infinita, wordmark y buscador de destinos",
+        en: "Wellness Stay cover: infinity pool, wordmark and destination search",
       },
     },
     role: {
-      es: "Diseñadora UX/UI",
-      en: "UX/UI designer",
+      es: "Product Designer",
+      en: "Product Designer",
     },
     tools: ["Figma", "ChatGPT", "Cursor", "Github", "Storybook"],
     title: {
@@ -176,12 +177,12 @@ export const caseStudies: CaseStudy[] = [
       en: "From Figma to Code: Building a Scalable Design System for a Wellness Retreat Marketplace",
     },
     heroImage: {
-      src: img("hero.png"),
+      src: img("portada.png"),
       width: 768,
-      height: 427,
+      height: 500,
       alt: {
-        es: "Home de Wellness Stay con buscador de retiros de bienestar",
-        en: "Wellness Stay homepage with a wellness retreat search",
+        es: "Portada de Wellness Stay: piscina infinita, wordmark y buscador de destinos",
+        en: "Wellness Stay cover: infinity pool, wordmark and destination search",
       },
     },
     nav: [
@@ -215,32 +216,12 @@ export const caseStudies: CaseStudy[] = [
         navId: "objetivo",
         emphasis: { es: "Objetivo", en: "Objective" },
         heading: {
-          es: "Nuevas herramientas de IA en los procesos de diseño",
-          en: "New AI tools in design processes",
+          es: "Diseñar un marketplace de reservas",
+          en: "Design a booking marketplace",
         },
         body: {
-          es: "El propósito de este caso de estudio es la creación de un sistema de diseño desde cero — bases de diseño, tokens y componentes — para la construcción automatizada de la interfaz mediante herramientas de IA, así como la creación de la documentación para proporcionar el contexto y los requerimientos necesarios.",
-          en: "The purpose of this case study is to create a design system from scratch — foundations, tokens and components — so the interface can be built automatically with AI tools, along with the documentation needed to provide context and requirements.",
-        },
-        list: {
-          es: [
-            "Comprender el mercado y analizar los principales flujos y patrones UI",
-            "Definir el usuario objetivo",
-            "Construir una base visual (foundations) y sistema de diseño escalable (tokens + componentes)",
-            "Implementar los assets y documentación para desarrollo",
-            "Creación en entorno real con IDE",
-            "Subida al repositorio",
-            "Creación de Storybook como fuente de la verdad",
-          ],
-          en: [
-            "Understand the market and analyze the main flows and UI patterns",
-            "Define the target user",
-            "Build a visual foundation and a scalable design system (tokens + components)",
-            "Implement the assets and documentation for development",
-            "Build in a real environment with an IDE",
-            "Push to the repository",
-            "Create Storybook as the source of truth",
-          ],
+          es: "El propósito de este caso de estudio es la creación de un sistema de diseño desde cero — bases de diseño, tokens y componentes — para la construcción automatizada de la interfaz mediante herramientas de IA, así como la creación de la documentación para proporcionar el contexto y los requerimientos necesarios.\n\nSe busca reducir la distancia entre Figma y el código y facilitar la evolución — en rapidez y consistencia — del producto a medida que surjan nuevas necesidades.",
+          en: "The purpose of this case study is to create a design system from scratch — foundations, tokens and components — so the interface can be built automatically with AI tools, along with the documentation needed to provide context and requirements.\n\nThe aim is to shorten the gap between Figma and code and make it easier for the product to evolve — in speed and consistency — as new needs arise.",
         },
         spacing: "default",
       },
@@ -289,21 +270,35 @@ export const caseStudies: CaseStudy[] = [
           en: "What is the profile of the person who books these services?",
         },
         body: {
-          es: "Pude identificar dos grupos de segmentos de user persona principales que resumí en estos dos perfiles:",
-          en: "I identified two main user-persona segments, which I summarized in these two profiles:",
+          es: "Al tratarse de un proyecto experimental sin acceso a usuarios reales, no realicé entrevistas en esta fase. A partir del análisis del mercado y de las hipótesis iniciales sobre los potenciales usuarios, definí dos proto-personas con diferentes necesidades y motivaciones para orientar las primeras decisiones de diseño.\n\nEstas proto-personas funcionan como hipótesis de partida que deberían validarse posteriormente mediante investigación con usuarios reales.",
+          en: "Because this was an experimental project without access to real users, I did not run interviews at this stage. From market analysis and initial hypotheses about potential users, I defined two proto-personas with different needs and motivations to guide the first design decisions.\n\nThese proto-personas are starting hypotheses that should later be validated through research with real users.",
         },
         spacing: "compact",
       },
       {
-        type: "image",
+        type: "image-pair",
         navId: "research",
-        src: img("img-3.png"),
-        width: 767,
-        height: 442,
-        alt: {
-          es: "Dos user personas del marketplace de retiros",
-          en: "Two user personas for the retreat marketplace",
-        },
+        layout: "stack",
+        images: [
+          {
+            src: img("persona-buscadora-de-equilibrio.png"),
+            width: 1536,
+            height: 1024,
+            alt: {
+              es: "Proto-persona Buscadora de equilibrio",
+              en: "Proto-persona Balance seeker",
+            },
+          },
+          {
+            src: img("persona-ejecutivo-en-pausa.png"),
+            width: 1536,
+            height: 1024,
+            alt: {
+              es: "Proto-persona Ejecutivo en pausa",
+              en: "Proto-persona Executive on pause",
+            },
+          },
+        ],
       },
       {
         type: "section",
@@ -332,7 +327,7 @@ export const caseStudies: CaseStudy[] = [
         navId: "sistema-de-diseno",
         emphasis: { es: "Sistema de diseño", en: "Design system" },
         heading: {
-          es: "Creación de las bases de diseño",
+          es: "Creación de las Bases de diseño",
           en: "Creating the design foundations",
         },
         body: {
@@ -417,8 +412,8 @@ export const caseStudies: CaseStudy[] = [
         navId: "documentacion",
         emphasis: { es: "Documentación", en: "Documentation" },
         heading: {
-          es: "Documentación técnica",
-          en: "Technical documentation",
+          es: "La importancia de proporcionar contexto y reglas",
+          en: "The importance of providing context and rules",
         },
         body: {
           es: "El siguiente paso fue generar la documentación en formato README.md para incluir en el proyecto. En este documento se explica en qué consiste el proyecto.",
@@ -510,7 +505,7 @@ export const caseStudies: CaseStudy[] = [
           ],
         },
         after: {
-          es: "Además de esto, generé el Storybook como fuente de la verdad, donde almacenar todos los elementos de la interfaz. En un futuro, podrá ir siendo actualizado según requerimientos nuevos del producto.",
+          es: "Además de esto, generé el storybook como fuente de la verdad, donde almacenar todos los elementos de la interfaz. En un futuro, podrá ir siendo actualizado según requerimientos nuevos del producto.",
           en: "I also generated Storybook as the source of truth for every interface element. It can be updated later as new product requirements appear.",
         },
       },
@@ -534,8 +529,8 @@ export const caseStudies: CaseStudy[] = [
           en: "Learnings from the project.",
         },
         body: {
-          es: "Este proyecto me permitió practicar la creación de sistemas de diseño y su implementación en IA que permitan generar la interfaz y todos sus elementos de manera sistemática, consistente y eficaz.\n\nDesde esta perspectiva estratégica y estructurada, utilizando este flujo de trabajo, es posible escalar un producto de forma sistemática y consistente.",
-          en: "This project let me practice creating design systems and implementing them with AI so the interface and all of its elements can be generated in a systematic, consistent and effective way.\n\nFrom this strategic, structured perspective, this workflow makes it possible to scale a product systematically and consistently.",
+          es: "Este proyecto me permitió abordar el Design System no como una colección de componentes, sino como una infraestructura de producto que conecta diseño, desarrollo y escalabilidad.\n\nLa IA actuó como acelerador del proceso Design-to-Code, pero también reforzó un aprendizaje clave: la velocidad solo aporta valor cuando existe una arquitectura definida, reglas claras y criterio de diseño detrás. En un contexto real, el siguiente paso sería validar las hipótesis planteadas con usuarios y evolucionar el sistema a partir de las necesidades reales del producto.",
+          en: "This project let me approach the Design System not as a collection of components, but as product infrastructure that connects design, development and scalability.\n\nAI sped up the Design-to-Code process, but it also reinforced a key lesson: speed only adds value when there is a defined architecture, clear rules and design judgment behind it. In a real context, the next step would be to validate the hypotheses with users and evolve the system from the product’s actual needs.",
         },
         spacing: "loose",
       },
