@@ -2,7 +2,7 @@ import { caseStudies, type LocalizedString } from "@/data/case-studies";
 
 export type LabProject = {
   slug: string;
-  tag: LocalizedString;
+  tags: LocalizedString[];
   title: LocalizedString;
   excerpt: LocalizedString;
   cover: {
@@ -16,7 +16,7 @@ export type LabProject = {
 
 export const labProjects: LabProject[] = caseStudies.map((study) => ({
   slug: study.slug,
-  tag: study.tag,
+  tags: study.tags,
   title: study.title,
   excerpt: study.excerpt,
   cover: study.cover,

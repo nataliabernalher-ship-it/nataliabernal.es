@@ -6,10 +6,9 @@ export const neetySaas: CaseStudy = {
   slug: "neety-saas",
   year: "2024",
   showOnHome: false,
-  tag: {
-    es: "[colaboración]",
-    en: "[collaboration]",
-  },
+  tags: [
+    { es: "[colaboración]", en: "[collaboration]" },
+  ],
   cover: {
     src: img("hero.png"),
     width: 768,

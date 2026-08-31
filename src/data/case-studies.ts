@@ -115,7 +115,7 @@ export type CaseStudyMetaItem = {
 export type CaseStudy = {
   slug: string;
   year: string;
-  tag: LocalizedString;
+  tags: LocalizedString[];
   cover: {
     src: string;
     width: number;
@@ -145,10 +145,10 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "wellness-stay",
     year: "2026",
-    tag: {
-      es: "[proyecto paralelo de experimentación]",
-      en: "[side project for experimentation]",
-    },
+    tags: [
+      { es: "[marketplace de viajes]", en: "[travel marketplace]" },
+      { es: "[sistema de diseño]", en: "[design system]" },
+    ],
     cover: {
       src: img("hero.png"),
       width: 768,

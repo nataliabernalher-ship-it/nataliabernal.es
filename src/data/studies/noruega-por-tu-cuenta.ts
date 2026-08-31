@@ -6,10 +6,10 @@ const video = (name: string) => `/videos/case-studies/noruega-por-tu-cuenta/${na
 export const noruegaPorTuCuenta: CaseStudy = {
   slug: "noruega-por-tu-cuenta",
   year: "2024",
-  tag: {
-    es: "[diseño UX]",
-    en: "[UX design]",
-  },
+  tags: [
+    { es: "[diseño basado en datos]", en: "[data-informed design]" },
+    { es: "[diseño UX]", en: "[UX design]" },
+  ],
   cover: {
     src: img("hero.png"),
     width: 768,

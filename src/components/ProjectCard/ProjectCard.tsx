@@ -8,7 +8,7 @@ import styles from "./ProjectCard.module.css";
 
 export type ProjectCardStudy = Pick<
   CaseStudy,
-  "slug" | "tag" | "title" | "excerpt" | "cover"
+  "slug" | "tags" | "title" | "excerpt" | "cover"
 >;
 
 type ProjectCardProps = {
@@ -36,7 +36,13 @@ export function ProjectCard({ locale, study, href }: ProjectCardProps) {
             sizes="(min-width: 80rem) 604px, (min-width: 48rem) calc(50vw - 2rem), calc(100vw - 24px)"
           />
         </div>
-        <p className={styles.tag}>{getLocalizedValue(study.tag, locale)}</p>
+        <div className={styles.tags}>
+          {study.tags.map((tag) => (
+            <p key={getLocalizedValue(tag, locale)} className={styles.tag}>
+              {getLocalizedValue(tag, locale)}
+            </p>
+          ))}
+        </div>
       </div>
       <div className={styles.text}>
         <p className={styles.kicker}>{getLocalizedValue(study.title, locale)}</p>

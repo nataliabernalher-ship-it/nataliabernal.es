@@ -27,13 +27,20 @@
   width: 100%;
 }
 
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.625rem;
+  width: 100%;
+}
+
 .tag {
-  align-self: flex-end;
   color: var(--color-accent);
   font-size: var(--text-emphasis);
   font-weight: 500;
   line-height: 1.5rem;
-  text-align: right;
   text-transform: uppercase;
 }
 
