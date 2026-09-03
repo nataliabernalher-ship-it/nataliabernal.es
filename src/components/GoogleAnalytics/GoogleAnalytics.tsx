@@ -1,8 +1,11 @@
 "use client";
 
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
+
+const EXCLUDE_STORAGE_KEY = "exclude_from_analytics";
+const EXCLUDE_STORAGE_VALUE = "true";
 
 type GoogleAnalyticsProps = {
   measurementId: string;
@@ -12,10 +15,24 @@ declare global {
   interface Window {
     dataLayer?: unknown[];
     gtag?: (...args: unknown[]) => void;
+    excludeFromAnalytics?: () => void;
   }
 }
 
 let lastPagePath: string | null = null;
+
+function isAnalyticsExcluded() {
+  try {
+    return window.localStorage.getItem(EXCLUDE_STORAGE_KEY) === EXCLUDE_STORAGE_VALUE;
+  } catch {
+    return false;
+  }
+}
+
+function excludeFromAnalytics() {
+  window.localStorage.setItem(EXCLUDE_STORAGE_KEY, EXCLUDE_STORAGE_VALUE);
+  window.location.reload();
+}
 
 function getPagePath(pathname: string, searchParams: URLSearchParams) {
   const search = searchParams.toString();
@@ -23,6 +40,10 @@ function getPagePath(pathname: string, searchParams: URLSearchParams) {
 }
 
 function sendPageView(measurementId: string, pagePath: string) {
+  if (isAnalyticsExcluded()) {
+    return;
+  }
+
   const payload = {
     send_to: measurementId,
     page_path: pagePath,
@@ -58,6 +79,20 @@ function AnalyticsPageViews({ measurementId }: GoogleAnalyticsProps) {
 }
 
 export function GoogleAnalytics({ measurementId }: GoogleAnalyticsProps) {
+  const [enabled, setEnabled] = useState(false);
+
+  useEffect(() => {
+    window.excludeFromAnalytics = excludeFromAnalytics;
+
+    if (!isAnalyticsExcluded()) {
+      setEnabled(true);
+    }
+  }, []);
+
+  if (!enabled) {
+    return null;
+  }
+
   return (
     <>
       <Script
