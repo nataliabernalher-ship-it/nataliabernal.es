@@ -11,7 +11,7 @@ type ToolsProps = {
 
 export function Tools({ messages }: ToolsProps) {
   return (
-    <section className={styles.section} id="tools" aria-labelledby="tools-title" data-cursor-bg="teal">
+    <section className={styles.section} id="tools" aria-labelledby="tools-title">
       <div className={styles.inner}>
         <Reveal>
           <header className={styles.headingRow}>

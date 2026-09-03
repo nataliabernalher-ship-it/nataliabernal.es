@@ -11,10 +11,7 @@ export function Footer({ messages, variant = "dark" }: FooterProps) {
   const year = new Date().getFullYear();
 
   return (
-    <footer
-      className={`${styles.footer} ${variant === "light" ? styles.light : ""}`}
-      data-cursor-bg={variant === "dark" ? "teal" : undefined}
-    >
+    <footer className={`${styles.footer} ${variant === "light" ? styles.light : ""}`}>
       <ul className={styles.links}>
         {site.socials.map((social) => (
           <li key={social.name}>

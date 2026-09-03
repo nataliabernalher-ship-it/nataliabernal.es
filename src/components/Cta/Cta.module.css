@@ -1,7 +1,7 @@
 .section {
   padding: 6.25rem 12px 4rem;
-  background: var(--color-teal);
-  color: var(--color-on-dark);
+  background: var(--color-bg);
+  color: var(--color-titles);
 }
 
 .inner {

@@ -11,7 +11,7 @@ export function Location({ messages }: LocationProps) {
   const copy = messages.home.location;
 
   return (
-    <section className={styles.section} aria-labelledby="location-heading" data-cursor-bg="teal">
+    <section className={styles.section} aria-labelledby="location-heading">
       <Reveal>
         <div className={styles.inner}>
           <p id="location-heading" className={styles.text}>

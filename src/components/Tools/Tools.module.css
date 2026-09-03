@@ -1,13 +1,14 @@
 .section {
-  padding: 5rem 12px;
-  background: var(--color-teal);
-  color: var(--color-on-dark);
+  padding: 6.25rem 12px;
+  background: var(--color-bg);
+  color: var(--color-titles);
+  border-bottom: 1px solid var(--color-text);
 }
 
 .inner {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 2.5rem;
   width: 100%;
   max-width: var(--page-max);
@@ -16,8 +17,6 @@
 
 .headingRow {
   width: 100%;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--color-stroke);
 }
 
 .title {
@@ -31,15 +30,15 @@
 }
 
 .logos {
-  --logo-scale: 0.58;
+  --logo-scale: 0.464;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  column-gap: 1.25rem;
-  row-gap: 1.75rem;
+  justify-content: flex-start;
+  column-gap: 1.75rem;
+  row-gap: 2.5rem;
   width: 100%;
-  margin: 0 auto;
+  margin: 0;
   padding: 2.5rem 0;
   list-style: none;
 }
@@ -62,23 +61,20 @@
 
 @media (min-width: 30rem) {
   .logos {
-    --logo-scale: 0.68;
-    column-gap: 1.5rem;
-    row-gap: 2rem;
+    --logo-scale: 0.544;
   }
 }
 
 @media (min-width: 48rem) {
   .logos {
-    --logo-scale: 0.82;
-    column-gap: 1.75rem;
-    row-gap: 2.5rem;
+    --logo-scale: 0.656;
   }
 }
 
 @media (min-width: 75rem) {
   .logos {
-    --logo-scale: 1;
+    --logo-scale: 0.8;
+    column-gap: 1.75rem;
   }
 }
 

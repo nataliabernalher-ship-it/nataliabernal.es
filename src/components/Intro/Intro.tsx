@@ -8,19 +8,18 @@ type IntroProps = {
 
 type ExperienceBlock = Messages["home"]["experience"]["p2"];
 
-function ExperienceBlockCopy({ block }: { block: ExperienceBlock }) {
+function ExperienceCard({ block, tag }: { block: ExperienceBlock; tag: string }) {
   return (
-    <div className={styles.block}>
-      <p>
-        {block.before}
-        <span className={styles.mark}>{block.highlight}</span>
-        {block.after}
-      </p>
-      <ul className={styles.list}>
-        {block.items.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
+    <div className={styles.card}>
+      <div className={styles.cardTag}>{tag}</div>
+      <div className={styles.cardBody}>
+        <p className={styles.cardTitle}>{block.highlight}</p>
+        <ul className={styles.list}>
+          {block.items.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
@@ -37,13 +36,13 @@ export function Intro({ messages }: IntroProps) {
               {copy.title}
             </h2>
             <p className={styles.nda}>{copy.nda}</p>
+            <p className={styles.intro}>{copy.p1}</p>
           </header>
         </Reveal>
         <Reveal delay={120}>
-          <div className={styles.copy}>
-            <p>{copy.p1}</p>
-            <ExperienceBlockCopy block={copy.p2} />
-            <ExperienceBlockCopy block={copy.p3} />
+          <div className={styles.cards}>
+            <ExperienceCard block={copy.p2} tag="[accommodation marketplace]" />
+            <ExperienceCard block={copy.p3} tag="[web agency]" />
           </div>
         </Reveal>
       </div>

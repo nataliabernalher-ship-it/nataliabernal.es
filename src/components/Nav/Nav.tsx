@@ -44,12 +44,13 @@ export function Nav({ locale, messages }: NavProps) {
       <Link className={styles.logoBox} href={`/${locale}`} aria-label={site.name}>
         <span className={styles.logo}>
           <Image
-            src="/images/nav/logo.png"
+            src="/images/nav/logo-nb.svg"
             alt=""
-            width={125}
-            height={125}
+            width={71}
+            height={47}
             className={styles.logoImg}
             priority
+            unoptimized
           />
         </span>
       </Link>

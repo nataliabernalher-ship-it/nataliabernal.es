@@ -6,64 +6,52 @@ type HeroProps = {
   messages: Messages;
 };
 
-const COMMERCE_TERM = "e-commerce";
-
-function HeroBio({ text }: { text: string }) {
-  const index = text.indexOf(COMMERCE_TERM);
-
-  if (index === -1) {
-    return text;
-  }
-
-  return (
-    <>
-      {text.slice(0, index)}
-      <br className={styles.bioBreak} />
-      <span className={styles.nowrap}>{COMMERCE_TERM}</span>
-      {text.slice(index + COMMERCE_TERM.length)}
-    </>
-  );
-}
+const TAGS = ["DESIGN SYSTEM", "MARKETPLACES", "TRAVEL", "AI"];
 
 export function Hero({ messages }: HeroProps) {
   return (
     <section className={styles.hero} aria-labelledby="hero-heading">
-      <div className={styles.content}>
-        <div className={styles.intro}>
+      <div className={styles.wrapper}>
+        {/* Línea 1: saludo + foto */}
+        <div className={styles.greetingRow}>
           <h1 id="hero-heading" className={styles.heading}>
-            <span>{messages.home.greeting}</span>
-            <span className={styles.role}>{messages.home.role}</span>
-            <span>
-              <HeroBio text={messages.home.bio} />
+            <span className={styles.greetingLine}>
+              <span className={styles.greeting}>{messages.home.greeting}</span>
+              <span className={styles.portraitFrame}>
+                <Image
+                  src="/images/hero/portrait-circle.png"
+                  alt={messages.home.portraitAlt}
+                  width={63}
+                  height={63}
+                  priority
+                  unoptimized
+                  className={styles.portrait}
+                />
+              </span>
             </span>
+            <span className={styles.role}>{messages.home.role}</span>
+            <span className={styles.bio}>{messages.home.bio}</span>
           </h1>
         </div>
-        <div className={styles.scrollCue}>
-          <a className={styles.scroll} href="#experience">
-            {messages.home.scroll}
-            <span className={styles.arrowWrap}>
-              <Image
-                className={styles.arrow}
-                src="/images/hero/scroll-arrow.svg"
-                alt=""
-                width={14}
-                height={16}
-                unoptimized
-              />
-            </span>
-          </a>
-        </div>
-      </div>
-      <div className={styles.portraitFrame}>
-        <Image
-          src="/images/hero/portrait.png"
-          alt={messages.home.portraitAlt}
-          width={520}
-          height={616}
-          priority
-          unoptimized
-          className={styles.portrait}
-        />
+
+        {/* Tags */}
+        <ul className={styles.tags} aria-label="Especialidades">
+          {TAGS.map((tag, i) => (
+            <li key={tag} className={styles.tagItem}>
+              {i > 0 && (
+                <Image
+                  src="/images/hero/separator.svg"
+                  alt=""
+                  width={16}
+                  height={16}
+                  className={styles.separator}
+                  unoptimized
+                />
+              )}
+              <span>{tag}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
