@@ -15,10 +15,9 @@
   margin-inline: auto;
 }
 
-/* Header: 3 columnas en desktop */
 .headingRow {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: var(--space-4);
   width: 100%;
 }
@@ -33,84 +32,37 @@
   line-height: 1.48;
 }
 
-.nda {
-  color: var(--color-tertiary);
-  font-size: var(--text-emphasis);
-  font-weight: 500;
-  line-height: 1.5rem;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
 .intro {
   color: var(--color-text);
-  font-size: var(--text-small);
-  line-height: 1.45;
+  font-size: 0.8125rem;
+  line-height: 1.1875rem;
 }
 
-/* Tarjetas */
 .cards {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 2.5rem;
   width: 100%;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1.875rem;
-  border: 1px solid var(--color-text);
-}
-
-.cardTag {
-  text-align: right;
-  color: var(--color-accent);
-  font-size: var(--text-emphasis);
-  font-weight: 500;
-  line-height: 1.5rem;
-  text-transform: uppercase;
-}
-
-.cardBody {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.cardTitle {
-  color: var(--color-titles);
-  font-size: var(--text-emphasis);
-  font-weight: 600;
-  line-height: 1.5rem;
-  text-transform: uppercase;
-}
-
-.list {
-  margin: 0;
-  padding-inline-start: 1.6875rem;
-  color: var(--color-text);
-  font-size: var(--text-big);
-  line-height: 1.875rem;
 }
 
 @media (min-width: 48rem) {
   .cards {
     grid-template-columns: 1fr 1fr;
+    gap: 2.5rem 1.5rem;
   }
 }
 
 @media (min-width: 64rem) {
   .headingRow {
-    grid-template-columns: auto auto 1fr;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     gap: var(--space-6);
   }
 
   .intro {
-    max-width: 21rem;
-    justify-self: end;
+    max-width: 21.0625rem;
+    flex-shrink: 0;
   }
 }
 

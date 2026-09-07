@@ -42,7 +42,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   return (
     <>
       <Hero messages={messages} />
-      <Intro messages={messages} />
+      <Intro locale={locale} messages={messages} />
       <CaseStudies locale={locale} messages={messages} />
       <Skills messages={messages} />
       <Tools messages={messages} />

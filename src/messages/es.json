@@ -57,29 +57,21 @@
     },
     "experience": {
       "title": "Mi última experiencia laboral",
-      "nda": "[proyectos bajo NDA]",
       "p1": "Durante los últimos cuatro años y medio he trabajado en dos verticales de la misma empresa, repartiendo mi rol entre TusCasasRurales.com y Pentaweb.",
-      "p2": {
-        "before": "En ",
-        "highlight": "TusCasasRurales.com",
-        "after": ", marketplace de alojamientos rurales:",
-        "items": [
-          "Lideré el rediseño de la interfaz y construí su Design System desde cero, actualmente en desarrollo.",
-          "Diseñé nuevas funcionalidades para el front de viajero, área privada de propietarios y viajeros, y de la gestión interna de empleados.",
-          "Rediseñé la plataforma de gestión de propietarios como parte de la evolución a largo plazo del producto, pendiente de desarrollo."
-        ]
-      },
-      "p3": {
-        "before": "En ",
-        "highlight": "PentaWeb",
-        "after": ", agencia de marketing y desarrollo web:",
-        "items": [
-          "Diseñé más de 30 webs corporativas de distintos sectores, además de soluciones digitales a medida como CRMs.",
-          "Creé identidades visuales y brand guidelines para empresas.",
-          "Traduje requisitos de negocio en user flows, prototipos y soluciones funcionales.",
-          "Colaboré con desarrollo durante todo el proceso de diseño e implementación."
-        ]
-      }
+      "cards": [
+        {
+          "id": "tuscasasrurales",
+          "name": "TUSCASASRURALES.COM",
+          "tag": "[proyectos bajo NDA]",
+          "description": "Lideré el rediseño de la interfaz y construí su Design System y nuevas funcionalidades como la reserva online."
+        },
+        {
+          "id": "pentasys",
+          "name": "PENTASYS",
+          "tag": "[proyectos bajo NDA]",
+          "description": "Diseñé más de 30 webs corporativas de distintos sectores, además de soluciones digitales a medida como CRMs y herramientas de gestión."
+        }
+      ]
     },
     "tools": {
       "title": "Herramientas principales"

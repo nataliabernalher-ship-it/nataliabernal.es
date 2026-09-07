@@ -1,7 +1,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
   width: 100%;
   text-decoration: none;
   transition:
@@ -20,30 +20,6 @@
   transform: none;
 }
 
-.mediaGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  width: 100%;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.625rem;
-  width: 100%;
-}
-
-.tag {
-  color: var(--color-accent);
-  font-size: var(--text-emphasis);
-  font-weight: 500;
-  line-height: 1.5rem;
-  text-transform: uppercase;
-}
-
 .media {
   position: relative;
   width: 100%;
@@ -60,19 +36,200 @@
   transition: transform var(--duration) var(--ease);
 }
 
+.brandCover {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.brandCoverBlue {
+  background:
+    radial-gradient(ellipse 45% 40% at 18% 28%, rgba(37, 99, 235, 0.45), transparent 55%),
+    radial-gradient(ellipse 40% 45% at 82% 22%, rgba(30, 64, 175, 0.5), transparent 50%),
+    radial-gradient(ellipse 50% 40% at 70% 78%, rgba(29, 78, 216, 0.4), transparent 55%),
+    radial-gradient(ellipse 35% 35% at 12% 85%, rgba(30, 58, 138, 0.55), transparent 50%),
+    #011555;
+}
+
+/* Solo las tonalidades claras: se mueven solas, el fondo oscuro queda fijo */
+.brandCoverBlue::before {
+  content: "";
+  position: absolute;
+  inset: -45%;
+  background:
+    radial-gradient(ellipse 42% 36% at 28% 32%, rgba(147, 197, 253, 0.5), transparent 58%),
+    radial-gradient(ellipse 38% 42% at 72% 28%, rgba(125, 211, 252, 0.42), transparent 55%),
+    radial-gradient(ellipse 36% 34% at 68% 72%, rgba(186, 230, 253, 0.32), transparent 52%),
+    radial-gradient(ellipse 30% 28% at 22% 78%, rgba(96, 165, 250, 0.38), transparent 50%);
+  animation: blue-light-drift 16s ease-in-out infinite alternate;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.brandCoverBlue::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgb(1 21 85 / 0);
+  transition: background-color 300ms ease-in-out;
+  pointer-events: none;
+}
+
+.card:hover .brandCoverBlue::after,
+.card:focus-visible .brandCoverBlue::after {
+  background-color: rgb(1 21 85 / 0.35);
+}
+
+@keyframes blue-light-drift {
+  0% {
+    transform: translate3d(-7%, -5%, 0);
+  }
+
+  100% {
+    transform: translate3d(8%, 6%, 0);
+  }
+}
+
+.brandCoverGreen {
+  background: #0b5202;
+}
+
+.brandCoverGreen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgb(11 82 2 / 0);
+  transition: background-color 300ms ease-in-out;
+  pointer-events: none;
+}
+
+.card:hover .brandCoverGreen::after,
+.card:focus-visible .brandCoverGreen::after {
+  background-color: rgb(11 82 2 / 0.35);
+}
+
+.brandLogo {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(18.75rem, 72%);
+  max-height: 2.75rem;
+  object-fit: contain;
+}
+
+.brandLogoGreen {
+  animation: brand-logo-green 9s ease-in-out infinite alternate;
+  will-change: transform, filter, opacity;
+}
+
+.brandLogoBlue {
+  animation: brand-logo-blue 9s ease-in-out infinite alternate;
+  will-change: transform, filter, opacity;
+}
+
+@keyframes brand-logo-green {
+  0% {
+    transform: translate3d(0, 2px, 0) scale(1);
+    opacity: 0.9;
+    filter:
+      drop-shadow(0 0 6px rgb(167 243 208 / 0.15))
+      brightness(0.96);
+  }
+
+  100% {
+    transform: translate3d(0, -4px, 0) scale(1.03);
+    opacity: 1;
+    filter:
+      drop-shadow(0 0 16px rgb(190 242 100 / 0.35))
+      brightness(1.08);
+  }
+}
+
+@keyframes brand-logo-blue {
+  0% {
+    transform: translate3d(0, 2px, 0) scale(1);
+    opacity: 0.9;
+    filter:
+      drop-shadow(0 0 6px rgb(147 197 253 / 0.2))
+      brightness(0.96);
+  }
+
+  100% {
+    transform: translate3d(0, -4px, 0) scale(1.03);
+    opacity: 1;
+    filter:
+      drop-shadow(0 0 16px rgb(125 211 252 / 0.4))
+      brightness(1.08);
+  }
+}
+
+.brandLabel {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  font-family: var(--font-serif);
+  font-size: 1.375rem;
+  font-weight: 400;
+  line-height: 1.5625rem;
+  white-space: nowrap;
+}
+
 .text {
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 0.75rem;
+  width: 100%;
 }
 
 .kicker {
   color: var(--color-tertiary);
   font-size: var(--text-emphasis);
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: -1px;
   line-height: 1.5625rem;
   text-transform: uppercase;
+}
+
+.kickerStrong {
+  color: var(--color-text);
+  letter-spacing: 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.625rem;
+  margin-left: auto;
+}
+
+.tag {
+  color: var(--color-accent);
+  font-size: var(--text-emphasis);
+  font-weight: 500;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tagMuted {
+  color: var(--color-tertiary);
 }
 
 .title {
@@ -90,5 +247,24 @@
   .card:focus-visible .image {
     transform: none;
     transition: none;
+  }
+
+  .brandCoverBlue::before {
+    animation: none;
+    will-change: auto;
+  }
+
+  .brandCoverBlue::after,
+  .brandCoverGreen::after {
+    transition: none;
+  }
+
+  .brandLogoGreen,
+  .brandLogoBlue {
+    animation: none;
+    will-change: auto;
+    opacity: 1;
+    filter: none;
+    transform: none;
   }
 }
