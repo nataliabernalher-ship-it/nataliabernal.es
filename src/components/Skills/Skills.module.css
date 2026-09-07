@@ -18,6 +18,10 @@
   width: 100%;
 }
 
+.listCol {
+  width: 100%;
+}
+
 .title {
   font-family: var(--font-serif);
   font-size: var(--text-h2);
@@ -99,11 +103,13 @@
   .titleCol {
     flex: 0 0 30%;
     max-width: 30%;
+    width: auto;
   }
 
-  .list {
-    flex: 1;
+  .listCol {
+    flex: 1 1 70%;
     min-width: 0;
+    max-width: 70%;
   }
 }
 
