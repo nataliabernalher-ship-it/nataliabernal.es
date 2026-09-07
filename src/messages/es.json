@@ -25,14 +25,34 @@
     "skills": {
       "title": "Áreas de especialización",
       "items": [
-        "Web & Product Design",
-        "UX Research & Strategy",
-        "Design Systems",
-        "Prototyping & Usability Testing",
-        "Data-Informed Design & Analytics",
-        "CRO/Optimization",
-        "AI & Design-to-Code",
-        "E-commerce & Booking Experiences"
+        {
+          "title": "Product & UX Design",
+          "description": "Diseño experiencias digitales end-to-end, desde la definición del problema y los user flows hasta interacción, UI y prototipado."
+        },
+        {
+          "title": "UX Research & Strategy",
+          "description": "Utilizo investigación cualitativa, análisis del comportamiento y conocimiento del negocio para identificar problemas y convertir insights en oportunidades de producto."
+        },
+        {
+          "title": "Data-Informed Design & Analytics",
+          "description": "Utilizo métricas de producto y UX para detectar fricciones, formular hipótesis y evaluar el impacto de las decisiones de diseño."
+        },
+        {
+          "title": "CRO & Optimización",
+          "description": "Diseño y priorizo mejoras orientadas a reducir fricción y mejorar conversión, definiendo hipótesis, KPIs y métodos de validación."
+        },
+        {
+          "title": "Design Systems",
+          "description": "Creo y evoluciono foundations, componentes y patrones para construir productos más consistentes, accesibles y escalables."
+        },
+        {
+          "title": "Prototyping & Usability Testing",
+          "description": "Transformo hipótesis en prototipos y los valido con usuarios antes de avanzar hacia implementación."
+        },
+        {
+          "title": "AI & Design-to-Code",
+          "description": "Integro IA en distintas fases del proceso de diseño y exploro workflows que conectan diseño, documentación y código."
+        }
       ]
     },
     "experience": {

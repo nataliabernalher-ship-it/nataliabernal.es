@@ -23,16 +23,19 @@ export function Skills({ messages }: SkillsProps) {
         <Reveal delay={140}>
           <ul className={styles.list}>
             {skills.items.map((item) => (
-              <li key={item} className={styles.item}>
-                <Image
-                  src="/images/skills/bullet.svg"
-                  alt=""
-                  width={16}
-                  height={16}
-                  className={styles.bullet}
-                  unoptimized
-                />
-                <span>{item}</span>
+              <li key={item.title} className={styles.item}>
+                <div className={styles.itemTitle}>
+                  <Image
+                    src="/images/skills/bullet.svg"
+                    alt=""
+                    width={16}
+                    height={16}
+                    className={styles.bullet}
+                    unoptimized
+                  />
+                  <span>{item.title}</span>
+                </div>
+                <p className={styles.itemDescription}>{item.description}</p>
               </li>
             ))}
           </ul>
