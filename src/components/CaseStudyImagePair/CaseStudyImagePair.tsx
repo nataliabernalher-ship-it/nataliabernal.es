@@ -10,10 +10,17 @@ type CaseStudyImagePairProps = {
 };
 
 export function CaseStudyImagePair({ locale, block }: CaseStudyImagePairProps) {
-  const stacked = block.layout === "stack";
+  const layout = block.layout ?? "row";
+  const isCarousel = layout === "carousel";
+  const stacked = layout === "stack";
 
   return (
-    <div className={`${styles.pair} ${stacked ? styles.stack : ""}`}>
+    <div
+      className={`${styles.pair} ${stacked ? styles.stack : ""} ${isCarousel ? styles.carousel : ""}`}
+      role={isCarousel ? "region" : undefined}
+      aria-label={isCarousel ? "User personas" : undefined}
+      tabIndex={isCarousel ? 0 : undefined}
+    >
       {block.images.map((image) => (
         <figure key={image.src} className={styles.figure}>
           <Image
@@ -23,9 +30,11 @@ export function CaseStudyImagePair({ locale, block }: CaseStudyImagePairProps) {
             height={image.height}
             className={styles.image}
             sizes={
-              stacked
-                ? "(min-width: 48rem) 768px, calc(100vw - 24px)"
-                : "(min-width: 48rem) 380px, calc(100vw - 24px)"
+              isCarousel
+                ? "(min-width: 48rem) 586px, 85vw"
+                : stacked
+                  ? "(min-width: 48rem) 768px, calc(100vw - 24px)"
+                  : "(min-width: 48rem) 380px, calc(100vw - 24px)"
             }
           />
         </figure>

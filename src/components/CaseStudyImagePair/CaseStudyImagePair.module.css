@@ -14,14 +14,50 @@
 .image {
   width: 100%;
   height: auto;
+  display: block;
 }
 
 .stack {
   gap: 1.5rem;
 }
 
+.carousel {
+  display: flex;
+  grid-template-columns: none;
+  gap: 1.5rem; /* 24px — Figma */
+  width: 100%;
+  margin-block: 0.5rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.carousel:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.carousel .figure {
+  flex: 0 0 auto;
+  width: min(36.65rem, calc(100% - 3rem));
+  scroll-snap-align: start;
+}
+
+.carousel .image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 @media (min-width: 48rem) {
-  .pair:not(.stack) {
+  .pair:not(.stack):not(.carousel) {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .carousel .figure {
+    width: 36.65rem; /* ~586px Figma */
   }
 }

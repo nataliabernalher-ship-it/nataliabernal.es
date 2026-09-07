@@ -90,7 +90,7 @@ export type CaseStudyFeatureBlock = {
 export type CaseStudyImagePairBlock = {
   type: "image-pair";
   navId: string;
-  layout?: "row" | "stack";
+  layout?: "row" | "stack" | "carousel";
   images: Array<{
     src: string;
     width: number;
@@ -278,7 +278,7 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "image-pair",
         navId: "research",
-        layout: "stack",
+        layout: "carousel",
         images: [
           {
             src: img("persona-buscadora-de-equilibrio.png"),
