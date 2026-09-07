@@ -169,12 +169,12 @@ export const caseStudies: CaseStudy[] = [
       en: "Wellness Stay",
     },
     pageTitle: {
-      es: "Sistema de diseño para Wellness Stay",
-      en: "Design system for Wellness Stay",
+      es: "De Figma a Código: construyendo un Design System escalable",
+      en: "From Figma to Code: building a scalable Design System",
     },
     excerpt: {
-      es: "De Figma A Código: Construyendo Un Design System Escalable Para Un Marketplace De Retiros De Bienestar",
-      en: "From Figma to Code: Building a Scalable Design System for a Wellness Retreat Marketplace",
+      es: "De Figma a Código: construyendo un Design System escalable",
+      en: "From Figma to Code: building a scalable Design System",
     },
     heroImage: {
       src: img("portada.png"),
@@ -203,8 +203,8 @@ export const caseStudies: CaseStudy[] = [
         navId: "contexto",
         emphasis: { es: "Contexto", en: "Context" },
         heading: {
-          es: "¿Qué es Wellness Stay?",
-          en: "What is Wellness Stay?",
+          es: "Proyecto de experimentación",
+          en: "Experimental project",
         },
         body: {
           es: "Wellness Stay es un marketplace de reservas de retiros de bienestar que desarrollé como proyecto experimental para explorar cómo construir un producto digital escalable desde Figma hasta código.\n\nDiseñé desde cero sus foundations, arquitectura de tokens y componentes, y definí un flujo de trabajo Design-to-Code apoyado en IA para mantener la consistencia entre diseño, documentación e implementación.",
@@ -216,8 +216,8 @@ export const caseStudies: CaseStudy[] = [
         navId: "objetivo",
         emphasis: { es: "Objetivo", en: "Objective" },
         heading: {
-          es: "Diseñar un marketplace de reservas",
-          en: "Design a booking marketplace",
+          es: "Preparar un Design System IA-ready desde cero",
+          en: "Prepare an AI-ready Design System from scratch",
         },
         body: {
           es: "El propósito de este caso de estudio es la creación de un sistema de diseño desde cero — bases de diseño, tokens y componentes — para la construcción automatizada de la interfaz mediante herramientas de IA, así como la creación de la documentación para proporcionar el contexto y los requerimientos necesarios.\n\nSe busca reducir la distancia entre Figma y el código y facilitar la evolución — en rapidez y consistencia — del producto a medida que surjan nuevas necesidades.",

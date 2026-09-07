@@ -1,7 +1,7 @@
 .hero {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1.5rem;
   width: 100%;
   padding: 2.5rem 0;
 }
@@ -37,7 +37,6 @@
 
 .media {
   width: 100%;
-  margin-block: 0.5rem;
   overflow: hidden;
 }
 
