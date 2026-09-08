@@ -93,11 +93,12 @@ export const labProjects: LabProject[] = [
       width: 604,
       height: 389,
       alt: {
-        es: "Wordmark de TusCasasRurales.com sobre fondo verde",
-        en: "TusCasasRurales.com wordmark on green background",
+        es: "Casa rural con wordmark de TusCasasRurales.com",
+        en: "Rural house with TusCasasRurales.com wordmark",
       },
       brand: {
-        background: "#0b5202",
+        background: "#073801",
+        imageSrc: "/images/lab/tuscasasrurales-cover.jpg",
         logoSrc: "/images/lab/tuscasasrurales-logo.svg",
         logoWidth: 300,
         logoHeight: 24,

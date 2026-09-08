@@ -13,6 +13,7 @@ export type ProjectCardCover = {
   alt: CaseStudy["cover"]["alt"];
   brand?: {
     background: string;
+    imageSrc?: string;
     logoSrc?: string;
     logoWidth?: number;
     logoHeight?: number;
@@ -83,6 +84,15 @@ export function ProjectCard({
             role="img"
             aria-label={getLocalizedValue(study.cover.alt, locale)}
           >
+            {brand.imageSrc ? (
+              <Image
+                src={brand.imageSrc}
+                alt=""
+                fill
+                className={styles.brandPhoto}
+                sizes="(min-width: 80rem) 604px, (min-width: 48rem) calc(50vw - 2rem), calc(100vw - 24px)"
+              />
+            ) : null}
             {brand.logoSrc ? (
               <Image
                 src={brand.logoSrc}

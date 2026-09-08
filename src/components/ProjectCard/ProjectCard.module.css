@@ -95,26 +95,46 @@
 }
 
 .brandCoverGreen {
-  background: #0b5202;
+  background: #073801;
+}
+
+.brandCoverGreen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: url("/images/lab/tuscasasrurales-vignette.svg") center / 100% 100% no-repeat;
+  pointer-events: none;
 }
 
 .brandCoverGreen::after {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgb(11 82 2 / 0);
+  z-index: 1;
+  background-color: rgb(7 56 1 / 0);
   transition: background-color 300ms ease-in-out;
   pointer-events: none;
 }
 
 .card:hover .brandCoverGreen::after,
 .card:focus-visible .brandCoverGreen::after {
-  background-color: rgb(11 82 2 / 0.35);
+  background-color: rgb(7 56 1 / 0.35);
+}
+
+.brandPhoto {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
 }
 
 .brandLogo {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: block;
   width: auto;
   height: auto;
