@@ -23,15 +23,15 @@ export const noruegaPorTuCuenta: CaseStudy = {
     es: "Diseñadora UX/UI",
     en: "UX/UI designer",
   },
-  tools: ["UX/UI research", "Figma", "After Effects"],
+  tools: ["Figma", "Google Analytics", "Hotjar"],
   meta: [
     {
       label: { es: "Rol", en: "Role" },
       values: ["Diseñadora UX/UI"],
     },
     {
-      label: { es: "Responsabilidades", en: "Responsibilities" },
-      values: ["UX/UI research", "Figma", "After Effects"],
+      label: { es: "Métodos y herramientas", en: "Methods and tools" },
+      values: ["Figma", "Google Analytics", "Hotjar"],
     },
     {
       label: { es: "Año", en: "Year" },
@@ -43,8 +43,8 @@ export const noruegaPorTuCuenta: CaseStudy = {
     en: "Noruega por tu cuenta",
   },
   pageTitle: {
-    es: "Noruega por tu cuenta",
-    en: "Noruega por tu cuenta",
+    es: "Uso de métricas UX para mejorar la interacción en una plataforma de contenidos de viajes",
+    en: "Using UX Metrics to Improve Engagement on a Travel Content Platform",
   },
   excerpt: {
     es: "Uso de métricas UX para mejorar la interacción en una plataforma de contenidos de viajes",
