@@ -37,7 +37,7 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 1.6875rem; /* 27px */
+  gap: 1.6875rem; /* 27px — espacio tras el divider */
   width: 100%;
   margin: 0;
   padding: 0;
@@ -50,6 +50,13 @@
   align-items: flex-start;
   gap: 0.5rem; /* 8px */
   width: 100%;
+  padding-bottom: 1.6875rem; /* 27px — espacio antes del divider */
+  border-bottom: 1px solid var(--color-text);
+}
+
+.item:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
 .itemTitle {
@@ -72,7 +79,7 @@
 
 .itemDescription {
   margin: 0;
-  color: var(--color-titles);
+  color: var(--color-text);
   font-size: 0.875rem; /* 14px */
   font-weight: 400;
   line-height: 1.125rem; /* 18px */
@@ -104,25 +111,25 @@
   }
 }
 
-/* Figma: 640px title + 40px gap + 650px content */
+/* Figma: 630px title + 20px gap + 630px content */
 @media (min-width: 75rem) {
   .inner {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 2.5rem;
+    gap: 1.25rem;
   }
 
   .titleCol {
-    flex: 640 1 0;
+    flex: 1 1 0;
     width: auto;
-    max-width: none;
+    max-width: 39.375rem;
   }
 
   .listCol {
-    flex: 650 1 0;
+    flex: 1 1 0;
     width: auto;
-    max-width: none;
+    max-width: 39.375rem;
   }
 }
 

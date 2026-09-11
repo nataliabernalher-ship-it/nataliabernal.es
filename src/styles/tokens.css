@@ -58,6 +58,7 @@
 
   --page-gutter: clamp(1.5rem, 16.67vw, 20rem);
   --page-max: 80rem;
+  --page-max-wide: 113.75rem;
   --radius-image: 8px;
   --radius-cs-media: 20px;
   --radius-button: 1.5rem;

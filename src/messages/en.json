@@ -13,6 +13,17 @@
     "closeMenu": "Close menu"
   },
   "home": {
+    "hero": {
+      "headlineItalic": "UX/Product Designer",
+      "headlineRest": " specialized in user experience and conversion on travel platforms",
+      "tagsLabel": "Specialties",
+      "tags": [
+        "DESIGN SYSTEM",
+        "MARKETPLACES",
+        "SECTOR TRAVEL",
+        "BUSINESS"
+      ]
+    },
     "greeting": "Hello! I'm Natalia Bernal.",
     "role": "Product & UX/UI Designer.",
     "bio": "5+ years designing digital experiences.",
@@ -22,6 +33,10 @@
     "intro": "5+ years designing digital experiences across websites, SaaS, CRMs and marketplaces.",
     "workTitle": "Work",
     "projectsTitle": "Side projects & Lab",
+    "featured": {
+      "title": "Featured work in the Travel sector",
+      "description": "With over 20 years of experience linked to the Travel sector and more than 6 designing digital products and experiences, these are some of the projects within the sector."
+    },
     "skills": {
       "title": "Areas of expertise",
       "items": [

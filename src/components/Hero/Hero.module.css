@@ -1,7 +1,7 @@
 .hero {
   width: 100%;
   background: var(--color-bg);
-  padding-block: clamp(3.5rem, 6vw, 6.25rem);
+  padding-block: 6.25rem;
   padding-inline: 12px;
 }
 
@@ -9,83 +9,36 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.625rem;
+  gap: 0.5rem;
   width: 100%;
-  max-width: var(--page-max);
+  max-width: 41.875rem;
   margin-inline: auto;
 }
 
-/* Bloque heading */
-.greetingRow {
-  width: 100%;
-  text-align: center;
-  /* Oculta el overflow para el clip de entrada lateral */
-  overflow: hidden;
-}
-
 .heading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-2);
+  width: 100%;
+  margin: 0;
+  color: var(--color-titles);
   font-family: var(--font-serif);
   font-size: var(--text-h2);
   font-weight: 400;
+  font-style: normal;
   letter-spacing: var(--tracking-heading);
   line-height: 1.26;
-  color: var(--color-titles);
-}
-
-/* Línea 1: texto + avatar inline */
-.greetingLine {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-/* ── FASE 1: texto h1 entra de izquierda a derecha ──────────────── */
-.greeting {
+  text-align: center;
   opacity: 0;
   animation: slide-in-left 0.75s var(--ease) 0.1s both;
 }
 
-.role {
-  color: var(--color-accent);
-  font-style: italic;
-  opacity: 0;
-  animation: slide-in-left 0.75s var(--ease) 0.28s both;
-}
-
-.bio {
-  max-width: 54.5rem;
-  text-align: center;
-  opacity: 0;
-  animation: slide-in-left 0.75s var(--ease) 0.46s both;
-}
-
-/* ── FASE 2: avatar aparece en fade (empieza cuando acaba el texto) */
-.portraitFrame {
-  display: inline-flex;
-  flex-shrink: 0;
-  width: 3.9rem;
-  height: 3.9rem;
-  border-radius: 50%;
-  overflow: hidden;
-  opacity: 0;
-  animation: fade-in 0.6s var(--ease) 0.72s both;
-}
-
-.portrait {
+.headline {
   display: block;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  object-fit: cover;
 }
 
-/* ── FASE 3: tags entran desde abajo (como antes) ───────────────── */
+.headlineItalic {
+  font-style: italic;
+  font-weight: 400;
+}
+
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -96,7 +49,7 @@
   padding: 0;
   list-style: none;
   opacity: 0;
-  animation: enter-up 0.85s var(--ease) 1s both;
+  animation: enter-up 0.85s var(--ease) 0.55s both;
 }
 
 .tagItem {
@@ -107,8 +60,9 @@
   font-family: var(--font-sans);
   font-size: var(--text-emphasis);
   font-weight: 400;
-  letter-spacing: 0.02em;
+  line-height: 1.4375rem;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .separator {
@@ -118,9 +72,6 @@
   flex-shrink: 0;
 }
 
-/* ── Keyframes ───────────────────────────────────────────────────── */
-
-/* Fase 1: desliza desde la izquierda */
 @keyframes slide-in-left {
   from {
     opacity: 0;
@@ -133,18 +84,6 @@
   }
 }
 
-/* Fase 2: solo opacidad */
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-/* Fase 3: sube desde abajo */
 @keyframes enter-up {
   from {
     opacity: 0;
@@ -157,12 +96,8 @@
   }
 }
 
-/* Respeto por reduced-motion */
 @media (prefers-reduced-motion: reduce) {
-  .greeting,
-  .role,
-  .bio,
-  .portraitFrame,
+  .heading,
   .tags {
     opacity: 1;
     transform: none;
@@ -173,6 +108,7 @@
 @media (min-width: 48rem) {
   .heading {
     font-size: var(--text-h1);
+    line-height: 4.25rem;
   }
 }
 

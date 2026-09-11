@@ -1,7 +1,9 @@
 .section {
-  padding: 5rem 12px 6.25rem;
+  padding-block: 6.25rem;
+  padding-inline: 12px;
   background: var(--color-bg);
-  border-bottom: 1px solid var(--color-tertiary);
+  border-top: 1px solid var(--color-text);
+  border-bottom: 1px solid var(--color-text);
 }
 
 .inner {
@@ -9,11 +11,14 @@
   flex-direction: column;
   gap: 2.5rem;
   width: 100%;
-  max-width: var(--page-max);
+  max-width: var(--page-max-wide);
   margin-inline: auto;
 }
 
 .headingRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
   width: 100%;
 }
 
@@ -28,21 +33,47 @@
   text-align: left;
 }
 
+.intro {
+  color: var(--color-text);
+  font-size: 0.8125rem;
+  line-height: 1.1875rem;
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2.5rem;
+  gap: 2.5rem 1.25rem;
+  width: 100%;
 }
 
 @media (min-width: 48rem) {
   .grid {
     grid-template-columns: 1fr 1fr;
-    gap: 2.5rem 1.5rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .headingRow {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+  }
+
+  .intro {
+    max-width: 24.0625rem;
+    flex-shrink: 0;
   }
 }
 
 @media (min-width: 80rem) {
   .section {
-    padding-inline: 0;
+    padding-inline: 1.25rem;
+  }
+}
+
+@media (min-width: 90rem) {
+  .section {
+    padding-inline: 2.5rem;
   }
 }

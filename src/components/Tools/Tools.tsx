@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { CSSProperties } from "react";
+import { Fragment, type CSSProperties } from "react";
 import { Reveal } from "@/components/Reveal/Reveal";
 import { tools } from "@/data/tools";
 import type { Messages } from "@/i18n/get-messages";
@@ -22,26 +22,30 @@ export function Tools({ messages }: ToolsProps) {
         </Reveal>
         <Reveal delay={140}>
           <ul className={styles.logos}>
-            {tools.map((tool) => (
-              <li
-                key={tool.name}
-                className={styles.logo}
-                style={
-                  {
-                    "--logo-w": `${tool.width}px`,
-                    "--logo-h": `${tool.height}px`,
-                  } as CSSProperties
-                }
-              >
-                <Image
-                  src={tool.src}
-                  alt={tool.name}
-                  width={tool.width}
-                  height={tool.height}
-                  className={styles.icon}
-                  unoptimized
-                />
-              </li>
+            {tools.map((tool, index) => (
+              <Fragment key={tool.name}>
+                {index > 0 ? (
+                  <li className={styles.divider} aria-hidden="true" />
+                ) : null}
+                <li
+                  className={styles.logo}
+                  style={
+                    {
+                      "--logo-w": `${tool.width}px`,
+                      "--logo-h": `${tool.height}px`,
+                    } as CSSProperties
+                  }
+                >
+                  <Image
+                    src={tool.src}
+                    alt={tool.name}
+                    width={tool.width}
+                    height={tool.height}
+                    className={styles.icon}
+                    unoptimized
+                  />
+                </li>
+              </Fragment>
             ))}
           </ul>
         </Reveal>

@@ -42,17 +42,7 @@ export function Nav({ locale, messages }: NavProps) {
   return (
     <header className={styles.header}>
       <Link className={styles.logoBox} href={`/${locale}`} aria-label={site.name}>
-        <span className={styles.logo}>
-          <Image
-            src="/images/nav/logo-nb.svg"
-            alt=""
-            width={71}
-            height={47}
-            className={styles.logoImg}
-            priority
-            unoptimized
-          />
-        </span>
+        <span className={styles.logo}>NATALIA{"  "}BERNAL</span>
       </Link>
       <nav className={styles.desktopMenu} aria-label={messages.nav.menu}>
         <Link

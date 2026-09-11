@@ -6,39 +6,23 @@ type HeroProps = {
   messages: Messages;
 };
 
-const TAGS = ["DESIGN SYSTEM", "MARKETPLACES", "TRAVEL", "AI"];
-
 export function Hero({ messages }: HeroProps) {
+  const { headlineItalic, headlineRest, tags, tagsLabel } = messages.home.hero;
+
   return (
     <section className={styles.hero} aria-labelledby="hero-heading">
       <div className={styles.wrapper}>
-        {/* Línea 1: saludo + foto */}
-        <div className={styles.greetingRow}>
-          <h1 id="hero-heading" className={styles.heading}>
-            <span className={styles.greetingLine}>
-              <span className={styles.greeting}>{messages.home.greeting}</span>
-              <span className={styles.portraitFrame}>
-                <Image
-                  src="/images/hero/portrait-circle.png"
-                  alt={messages.home.portraitAlt}
-                  width={63}
-                  height={63}
-                  priority
-                  unoptimized
-                  className={styles.portrait}
-                />
-              </span>
-            </span>
-            <span className={styles.role}>{messages.home.role}</span>
-            <span className={styles.bio}>{messages.home.bio}</span>
-          </h1>
-        </div>
+        <h1 id="hero-heading" className={styles.heading}>
+          <span className={styles.headline}>
+            <em className={styles.headlineItalic}>{headlineItalic}</em>
+            {headlineRest}
+          </span>
+        </h1>
 
-        {/* Tags */}
-        <ul className={styles.tags} aria-label="Especialidades">
-          {TAGS.map((tag, i) => (
+        <ul className={styles.tags} aria-label={tagsLabel}>
+          {tags.map((tag, i) => (
             <li key={tag} className={styles.tagItem}>
-              {i > 0 && (
+              {i > 0 ? (
                 <Image
                   src="/images/hero/separator.svg"
                   alt=""
@@ -47,7 +31,7 @@ export function Hero({ messages }: HeroProps) {
                   className={styles.separator}
                   unoptimized
                 />
-              )}
+              ) : null}
               <span>{tag}</span>
             </li>
           ))}

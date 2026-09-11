@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import type { CaseStudy } from "@/data/case-studies";
+import type { CaseStudy, LocalizedString } from "@/data/case-studies";
 import { getLocalizedValue } from "@/data/case-studies";
 import type { Locale } from "@/i18n/config";
 import styles from "./ProjectCard.module.css";
@@ -19,6 +19,10 @@ export type ProjectCardCover = {
     logoHeight?: number;
     label?: string;
     effect?: "blue-gradient" | "green-gradient";
+    overlay?: {
+      title: LocalizedString;
+      subtitle?: LocalizedString;
+    };
   };
 };
 
@@ -38,6 +42,10 @@ type ProjectCardProps = {
   mutedTags?: boolean;
   /** Company name uses body text color instead of tertiary */
   strongKicker?: boolean;
+  /** Project name uses accent color */
+  accentKicker?: boolean;
+  /** Larger media ratio for featured home grid */
+  featured?: boolean;
 };
 
 export function ProjectCard({
@@ -46,12 +54,18 @@ export function ProjectCard({
   href,
   mutedTags = false,
   strongKicker = false,
+  accentKicker = false,
+  featured = false,
 }: ProjectCardProps) {
   const destination =
     href === undefined ? `/${locale}/case-study/${study.slug}` : href;
-  const className = destination
-    ? styles.card
-    : `${styles.card} ${styles.static}`;
+  const className = [
+    styles.card,
+    !destination ? styles.static : "",
+    featured ? styles.featured : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
   const brand = study.cover.brand;
   const brandEffectClass =
     brand?.effect === "blue-gradient"
@@ -65,10 +79,17 @@ export function ProjectCard({
       : brand?.effect === "blue-gradient"
         ? `${styles.brandLogo} ${styles.brandLogoBlue}`
         : styles.brandLogo;
-  const kickerClass = strongKicker
-    ? `${styles.kicker} ${styles.kickerStrong}`
-    : styles.kicker;
+  const kickerClass = [
+    styles.kicker,
+    strongKicker ? styles.kickerStrong : "",
+    accentKicker ? styles.kickerAccent : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
   const tagClass = mutedTags ? `${styles.tag} ${styles.tagMuted}` : styles.tag;
+  const mediaSizes = featured
+    ? "(min-width: 80rem) 900px, (min-width: 48rem) calc(50vw - 1.5rem), calc(100vw - 24px)"
+    : "(min-width: 80rem) 604px, (min-width: 48rem) calc(50vw - 2rem), calc(100vw - 24px)";
 
   const content: ReactNode = (
     <>
@@ -90,7 +111,7 @@ export function ProjectCard({
                 alt=""
                 fill
                 className={styles.brandPhoto}
-                sizes="(min-width: 80rem) 604px, (min-width: 48rem) calc(50vw - 2rem), calc(100vw - 24px)"
+                sizes={mediaSizes}
               />
             ) : null}
             {brand.logoSrc ? (
@@ -106,6 +127,18 @@ export function ProjectCard({
             {brand.label ? (
               <span className={styles.brandLabel}>{brand.label}</span>
             ) : null}
+            {brand.overlay ? (
+              <div className={styles.brandOverlay}>
+                <p className={styles.brandOverlayTitle}>
+                  {getLocalizedValue(brand.overlay.title, locale)}
+                </p>
+                {brand.overlay.subtitle ? (
+                  <p className={styles.brandOverlaySubtitle}>
+                    {getLocalizedValue(brand.overlay.subtitle, locale)}
+                  </p>
+                ) : null}
+              </div>
+            ) : null}
           </div>
         ) : study.cover.src ? (
           <Image
@@ -113,7 +146,7 @@ export function ProjectCard({
             alt={getLocalizedValue(study.cover.alt, locale)}
             fill
             className={styles.image}
-            sizes="(min-width: 80rem) 604px, (min-width: 48rem) calc(50vw - 2rem), calc(100vw - 24px)"
+            sizes={mediaSizes}
           />
         ) : null}
       </div>

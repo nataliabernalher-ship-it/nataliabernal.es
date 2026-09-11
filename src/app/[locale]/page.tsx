@@ -2,7 +2,6 @@ import { CaseStudies } from "@/components/CaseStudies/CaseStudies";
 import { Cta } from "@/components/Cta/Cta";
 import { Hero } from "@/components/Hero/Hero";
 import { Location } from "@/components/Location/Location";
-import { Intro } from "@/components/Intro/Intro";
 import { Skills } from "@/components/Skills/Skills";
 import { Tools } from "@/components/Tools/Tools";
 import { isLocale } from "@/i18n/config";
@@ -42,7 +41,6 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   return (
     <>
       <Hero messages={messages} />
-      <Intro locale={locale} messages={messages} />
       <CaseStudies locale={locale} messages={messages} />
       <Skills messages={messages} />
       <Tools messages={messages} />
