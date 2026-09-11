@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1.5rem;
   width: 100%;
   max-width: 41.875rem;
   margin-inline: auto;
@@ -27,7 +27,7 @@
   line-height: 1.26;
   text-align: center;
   opacity: 0;
-  animation: slide-in-left 0.75s var(--ease) 0.1s both;
+  animation: enter-up 0.85s var(--ease) 0.1s both;
 }
 
 .headline {
@@ -70,18 +70,6 @@
   width: 16px;
   height: 16px;
   flex-shrink: 0;
-}
-
-@keyframes slide-in-left {
-  from {
-    opacity: 0;
-    transform: translateX(-2rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: none;
-  }
 }
 
 @keyframes enter-up {
