@@ -12,7 +12,7 @@ export type LabProject = {
 
 function fromCaseStudy(
   slug: string,
-  overrides: Partial<Pick<LabProject, "tags" | "excerpt" | "title">>,
+  overrides: Partial<Pick<LabProject, "tags" | "excerpt" | "title" | "cover">>,
 ): LabProject {
   const study = caseStudies.find((item) => item.slug === slug);
 
@@ -25,7 +25,7 @@ function fromCaseStudy(
     tags: overrides.tags ?? study.tags,
     title: overrides.title ?? study.title,
     excerpt: overrides.excerpt ?? study.excerpt,
-    cover: study.cover,
+    cover: overrides.cover ?? study.cover,
     caseStudySlug: study.slug,
   };
 }
@@ -42,6 +42,15 @@ export const labProjects: LabProject[] = [
       es: "Creación del design system e implementación en un IDE para desarrollo automatizado.",
       en: "Creation of the design system and implementation within an IDE for automated development.",
     },
+    cover: {
+      src: "/images/home/wellness-stay-cover.png",
+      width: 900,
+      height: 570,
+      alt: {
+        es: "Portada de Wellness Stay: piscina infinita, wordmark y buscador",
+        en: "Wellness Stay cover: infinity pool, wordmark and destination search",
+      },
+    },
   }),
   fromCaseStudy("neety-saas", {
     tags: [{ es: "[colaboración]", en: "[collaboration]" }],
@@ -55,6 +64,30 @@ export const labProjects: LabProject[] = [
     excerpt: {
       es: "Uso de métricas UX para mejorar la interacción en una plataforma de contenidos de viajes",
       en: "Using UX Metrics to Improve Engagement on a Travel Content Platform",
+    },
+    cover: {
+      width: 900,
+      height: 571,
+      alt: {
+        es: "Mockups móviles de noruegaportucuenta.com sobre fondo verde",
+        en: "Mobile mockups of noruegaportucuenta.com on a green background",
+      },
+      devices: {
+        background: "#357171",
+        left: {
+          kind: "image",
+          src: "/images/home/noruega-phone-left.png",
+          width: 238,
+          height: 471,
+        },
+        right: {
+          kind: "video",
+          src: "/videos/home/noruega-routes.mp4",
+          poster: "/images/home/noruega-routes-poster.png",
+          width: 222,
+          height: 471,
+        },
+      },
     },
   }),
   {
@@ -90,19 +123,12 @@ export const labProjects: LabProject[] = [
       en: "Led the interface redesign and built its Design System and new features as online reservation",
     },
     cover: {
-      width: 604,
-      height: 389,
+      src: "/images/home/tuscasasrurales-cover.png",
+      width: 900,
+      height: 570,
       alt: {
-        es: "Casa rural con wordmark de TusCasasRurales.com",
-        en: "Rural house with TusCasasRurales.com wordmark",
-      },
-      brand: {
-        background: "#073801",
-        imageSrc: "/images/lab/tuscasasrurales-cover.jpg",
-        logoSrc: "/images/lab/tuscasasrurales-logo.svg",
-        logoWidth: 300,
-        logoHeight: 24,
-        effect: "green-gradient",
+        es: "Portada de TusCasasRurales.com: casa rural y buscador de alojamientos",
+        en: "TusCasasRurales.com cover: rural house and accommodation search",
       },
     },
   },

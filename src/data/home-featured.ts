@@ -6,6 +6,35 @@ export type HomeFeaturedProject = ProjectCardStudy & {
 
 export const homeFeaturedProjects: HomeFeaturedProject[] = [
   {
+    slug: "ux-research-2026",
+    href: "https://viajes-2026-natalia.nataliabernalher.chatgpt.site/",
+    tags: [
+      {
+        es: "[case study in progress]",
+        en: "[case study in progress]",
+      },
+    ],
+    title: { es: "UX RESEARCH", en: "UX RESEARCH" },
+    excerpt: {
+      es: "Caso de investigación: cómo descubren, planifican y reservan viajes los viajeros en 2026",
+      en: "Case research: How Travelers Discover, Plan and Book Trips in 2026",
+    },
+    cover: {
+      src: "/images/home/como-viajamos-poster.png",
+      width: 900,
+      height: 571,
+      alt: {
+        es: "Estudio Cómo viajamos: cómo organizamos y reservamos nuestros viajes en 2026",
+        en: "Cómo viajamos study: how we plan and book trips in 2026",
+      },
+      video: {
+        src: "/videos/home/como-viajamos.mp4",
+        poster: "/images/home/como-viajamos-frame.png",
+        overlay: "panel",
+      },
+    },
+  },
+  {
     slug: "tuscasasrurales",
     href: null,
     tags: [
@@ -20,19 +49,48 @@ export const homeFeaturedProjects: HomeFeaturedProject[] = [
       en: "Led the interface redesign and built its Design System and new features as online reservation",
     },
     cover: {
+      src: "/images/home/tuscasasrurales-cover.png",
       width: 900,
-      height: 600,
+      height: 570,
       alt: {
-        es: "Casa rural con wordmark de TusCasasRurales.com",
-        en: "Rural house with TusCasasRurales.com wordmark",
+        es: "Portada de TusCasasRurales.com: casa rural y buscador de alojamientos",
+        en: "TusCasasRurales.com cover: rural house and accommodation search",
       },
-      brand: {
-        background: "#073801",
-        imageSrc: "/images/lab/tuscasasrurales-cover.jpg",
-        logoSrc: "/images/lab/tuscasasrurales-logo.svg",
-        logoWidth: 460,
-        logoHeight: 37,
-        effect: "green-gradient",
+    },
+  },
+  {
+    slug: "noruega-por-tu-cuenta",
+    tags: [{ es: "[UX design]", en: "[UX design]" }],
+    title: {
+      es: "noruegaportucuenta.com",
+      en: "noruegaportucuenta.com",
+    },
+    excerpt: {
+      es: "Uso de métricas UX para mejorar la interacción en una plataforma de contenidos de viajes",
+      en: "Using UX Metrics to Improve Engagement on a Travel Content Platform",
+    },
+    cover: {
+      width: 900,
+      height: 571,
+      alt: {
+        es: "Mockups móviles de noruegaportucuenta.com sobre fondo verde",
+        en: "Mobile mockups of noruegaportucuenta.com on a green background",
+      },
+      devices: {
+        background: "#357171",
+        left: {
+          kind: "image",
+          src: "/images/home/noruega-phone-left.png",
+          width: 238,
+          height: 471,
+        },
+        right: {
+          kind: "video",
+          src: "/videos/home/noruega-routes.mp4",
+          poster: "/images/home/noruega-routes-poster.png",
+          width: 222,
+          height: 471,
+        },
       },
     },
   },
@@ -50,69 +108,12 @@ export const homeFeaturedProjects: HomeFeaturedProject[] = [
       en: "From Figma to Code: building a scalable Design System",
     },
     cover: {
-      src: "/images/case-studies/wellness-stay/portada.png",
-      width: 900,
-      height: 600,
-      alt: {
-        es: "Portada de Wellness Stay: piscina infinita, wordmark y buscador",
-        en: "Wellness Stay cover: infinity pool, wordmark and destination search",
-      },
-    },
-  },
-  {
-    slug: "noruega-por-tu-cuenta",
-    tags: [{ es: "[UX design]", en: "[UX design]" }],
-    title: {
-      es: "noruegaportucuenta.com",
-      en: "noruegaportucuenta.com",
-    },
-    excerpt: {
-      es: "Uso de métricas UX para mejorar la interacción en una plataforma de contenidos de viajes",
-      en: "Using UX Metrics to Improve Engagement on a Travel Content Platform",
-    },
-    cover: {
-      src: "/images/home/noruega-cover.jpg",
+      src: "/images/home/wellness-stay-cover.png",
       width: 900,
       height: 570,
       alt: {
-        es: "Mockup de noruegaportucuenta.com sobre paisaje nórdico",
-        en: "noruegaportucuenta.com mockup over a Nordic landscape",
-      },
-    },
-  },
-  {
-    slug: "ux-research-2026",
-    href: null,
-    tags: [
-      {
-        es: "[case study in progress]",
-        en: "[case study in progress]",
-      },
-    ],
-    title: { es: "UX RESEARCH", en: "UX RESEARCH" },
-    excerpt: {
-      es: "How Travelers Discover, Plan and Book Trips in 2026",
-      en: "How Travelers Discover, Plan and Book Trips in 2026",
-    },
-    cover: {
-      width: 900,
-      height: 571,
-      alt: {
-        es: "Case study en progreso sobre investigación UX en viajes 2026",
-        en: "Case study in progress on travel UX research 2026",
-      },
-      brand: {
-        background: "#012d3f",
-        overlay: {
-          title: {
-            es: "How Travelers Discover, Plan and Book Trips in 2026",
-            en: "How Travelers Discover, Plan and Book Trips in 2026",
-          },
-          subtitle: {
-            es: "case study in progress",
-            en: "case study in progress",
-          },
-        },
+        es: "Portada de Wellness Stay: piscina infinita, wordmark y buscador",
+        en: "Wellness Stay cover: infinity pool, wordmark and destination search",
       },
     },
   },

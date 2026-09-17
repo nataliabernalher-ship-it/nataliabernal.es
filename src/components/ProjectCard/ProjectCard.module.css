@@ -9,8 +9,8 @@
     transform var(--duration) var(--ease);
 }
 
-.card:hover .image,
-.card:focus-visible .image {
+.card:hover .mediaSurface,
+.card:focus-visible .mediaSurface {
   transform: scale(1.03);
 }
 
@@ -23,13 +23,17 @@
 .media {
   position: relative;
   width: 100%;
-  aspect-ratio: 604 / 389;
+  aspect-ratio: 900 / 571;
   overflow: hidden;
   border-radius: 0;
+  container-type: inline-size;
 }
 
-.featured .media {
-  aspect-ratio: 3 / 2;
+.mediaSurface {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  transition: transform var(--duration) var(--ease);
 }
 
 .image {
@@ -37,7 +41,76 @@
   height: 100%;
   max-width: none;
   object-fit: cover;
-  transition: transform var(--duration) var(--ease);
+}
+
+.videoOverlay {
+  position: absolute;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.videoOverlayPanel {
+  top: 10.32%;
+  left: 4%;
+  width: 92%;
+  height: 79.35%;
+  border-radius: 16px;
+}
+
+.devicePair {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  isolation: isolate;
+}
+
+.deviceLeft,
+.deviceRight {
+  position: relative;
+  height: 82.487%;
+  border-radius: calc(14.633 / 900 * 100cqw);
+}
+
+.deviceLeft {
+  z-index: 2;
+  aspect-ratio: 237.812 / 471;
+  margin-right: calc(-20 / 900 * 100cqw);
+  box-shadow: calc(18 / 900 * 100cqw) calc(20 / 900 * 100cqw) calc(40 / 900 * 100cqw)
+    rgb(0 0 0 / 0.6);
+}
+
+.deviceRight {
+  z-index: 1;
+  aspect-ratio: 222.252 / 471;
+  box-shadow: calc(10 / 900 * 100cqw) calc(10 / 900 * 100cqw) calc(16 / 900 * 100cqw)
+    rgb(0 0 0 / 0.25);
+}
+
+.deviceClip {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.deviceMedia {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.deviceRight .deviceVideo {
+  top: -5.6%;
+  bottom: auto;
+  height: 119.3%;
+  object-position: center 38%;
 }
 
 .brandCover {
@@ -296,6 +369,18 @@
   color: var(--color-tertiary);
 }
 
+.externalNote {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .title {
   color: var(--color-titles);
   font-size: var(--text-big);
@@ -307,10 +392,15 @@
   .card,
   .card:hover,
   .card:focus-visible,
-  .card:hover .image,
-  .card:focus-visible .image {
+  .card:hover .mediaSurface,
+  .card:focus-visible .mediaSurface {
     transform: none;
     transition: none;
+  }
+
+  .videoOverlay,
+  .deviceVideo {
+    display: none;
   }
 
   .brandCoverBlue::before {

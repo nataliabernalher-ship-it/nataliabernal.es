@@ -4,13 +4,32 @@ import type { ReactNode } from "react";
 import type { CaseStudy, LocalizedString } from "@/data/case-studies";
 import { getLocalizedValue } from "@/data/case-studies";
 import type { Locale } from "@/i18n/config";
+import { getMessages } from "@/i18n/get-messages";
 import styles from "./ProjectCard.module.css";
+
+export type ProjectCardDevice = {
+  kind: "image" | "video";
+  src: string;
+  poster?: string;
+  width: number;
+  height: number;
+};
 
 export type ProjectCardCover = {
   src?: string;
   width: number;
   height: number;
   alt: CaseStudy["cover"]["alt"];
+  video?: {
+    src: string;
+    poster?: string;
+    overlay: "panel" | "device";
+  };
+  devices?: {
+    background: string;
+    left: ProjectCardDevice;
+    right: ProjectCardDevice;
+  };
   brand?: {
     background: string;
     imageSrc?: string;
@@ -47,6 +66,55 @@ type ProjectCardProps = {
   /** Larger media ratio for featured home grid */
   featured?: boolean;
 };
+
+function DeviceFrame({
+  device,
+  className,
+  sizes,
+}: {
+  device: ProjectCardDevice;
+  className: string;
+  sizes: string;
+}) {
+  return (
+    <div className={className}>
+      <div className={styles.deviceClip}>
+        {device.kind === "video" ? (
+          <>
+            {device.poster ? (
+              <Image
+                src={device.poster}
+                alt=""
+                fill
+                className={styles.deviceMedia}
+                sizes={sizes}
+              />
+            ) : null}
+            <video
+              className={`${styles.deviceMedia} ${styles.deviceVideo}`}
+              src={device.src}
+              poster={device.poster}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-hidden
+            />
+          </>
+        ) : (
+          <Image
+            src={device.src}
+            alt=""
+            fill
+            className={styles.deviceMedia}
+            sizes={sizes}
+          />
+        )}
+      </div>
+    </div>
+  );
+}
 
 export function ProjectCard({
   locale,
@@ -90,20 +158,27 @@ export function ProjectCard({
   const mediaSizes = featured
     ? "(min-width: 80rem) 900px, (min-width: 48rem) calc(50vw - 1.5rem), calc(100vw - 24px)"
     : "(min-width: 80rem) 604px, (min-width: 48rem) calc(50vw - 2rem), calc(100vw - 24px)";
+  const alt = getLocalizedValue(study.cover.alt, locale);
+  const videoOverlayClass =
+    study.cover.video?.overlay === "device"
+      ? styles.videoOverlayDevice
+      : study.cover.video?.overlay === "panel"
+        ? styles.videoOverlayPanel
+        : "";
 
   const content: ReactNode = (
     <>
       <div className={styles.media}>
         {brand ? (
           <div
-            className={`${styles.brandCover}${brandEffectClass ? ` ${brandEffectClass}` : ""}`}
+            className={`${styles.mediaSurface} ${styles.brandCover}${brandEffectClass ? ` ${brandEffectClass}` : ""}`}
             style={
               brand.effect === "blue-gradient" || brand.effect === "green-gradient"
                 ? undefined
                 : { background: brand.background }
             }
             role="img"
-            aria-label={getLocalizedValue(study.cover.alt, locale)}
+            aria-label={alt}
           >
             {brand.imageSrc ? (
               <Image
@@ -140,14 +215,49 @@ export function ProjectCard({
               </div>
             ) : null}
           </div>
+        ) : study.cover.devices ? (
+          <div
+            className={styles.mediaSurface}
+            style={{ background: study.cover.devices.background }}
+            role="img"
+            aria-label={alt}
+          >
+            <div className={styles.devicePair}>
+              <DeviceFrame
+                device={study.cover.devices.left}
+                className={styles.deviceLeft}
+                sizes={mediaSizes}
+              />
+              <DeviceFrame
+                device={study.cover.devices.right}
+                className={styles.deviceRight}
+                sizes={mediaSizes}
+              />
+            </div>
+          </div>
         ) : study.cover.src ? (
-          <Image
-            src={study.cover.src}
-            alt={getLocalizedValue(study.cover.alt, locale)}
-            fill
-            className={styles.image}
-            sizes={mediaSizes}
-          />
+          <div className={styles.mediaSurface}>
+            <Image
+              src={study.cover.src}
+              alt={alt}
+              fill
+              className={styles.image}
+              sizes={mediaSizes}
+            />
+            {study.cover.video ? (
+              <video
+                className={`${styles.videoOverlay} ${videoOverlayClass}`}
+                src={study.cover.video.src}
+                poster={study.cover.video.poster}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-hidden
+              />
+            ) : null}
+          </div>
         ) : null}
       </div>
       <div className={styles.text}>
@@ -167,10 +277,28 @@ export function ProjectCard({
   );
 
   if (destination) {
+    const isExternal = /^https?:\/\//.test(destination);
+    const linkProps = isExternal
+      ? {
+          target: "_blank" as const,
+          rel: "noopener noreferrer",
+        }
+      : {};
+
     return (
       <article>
-        <Link className={className} href={destination} data-cursor="case-study">
+        <Link
+          className={className}
+          href={destination}
+          data-cursor="case-study"
+          {...linkProps}
+        >
           {content}
+          {isExternal ? (
+            <span className={styles.externalNote}>
+              {getMessages(locale).footer.external}
+            </span>
+          ) : null}
         </Link>
       </article>
     );
