@@ -81,6 +81,7 @@ export const noruegaPorTuCuenta: CaseStudy = {
         es: "Noruega Por Tu Cuenta es un blog de viajes enfocado en inspirar y ayudar a planificar viajes a Noruega. El producto se basa en contenido informacional con tráfico orgánico.\n\nMi rol fue analizar el comportamiento del usuario y optimizar la experiencia para aumentar el tiempo de permanencia y la interacción con el contenido.",
         en: "Noruega Por Tu Cuenta is a travel blog focused on inspiring people and helping them plan trips to Norway. The product is based on informational content with organic traffic.\n\nMy role was to analyze user behavior and optimize the experience to increase time on page and interaction with the content.",
       },
+      spacing: "start",
     },
     {
       type: "section",

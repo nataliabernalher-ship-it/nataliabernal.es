@@ -22,6 +22,10 @@
   padding-block: 1.25rem;
 }
 
+.start {
+  padding: 5rem 0 2.5rem;
+}
+
 .prose {
   padding-block: 0.75rem;
 }
@@ -45,6 +49,13 @@
   font-weight: 400;
   letter-spacing: 0;
   line-height: var(--leading-cs-h2);
+}
+
+.heading em,
+.heading3 em {
+  font-family: inherit;
+  font-style: italic;
+  font-weight: 400;
 }
 
 .heading3 {

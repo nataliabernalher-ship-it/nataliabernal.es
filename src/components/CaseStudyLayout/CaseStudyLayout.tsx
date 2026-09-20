@@ -7,6 +7,7 @@ import { CaseStudyCards } from "@/components/CaseStudyCards/CaseStudyCards";
 import { CaseStudyFeature } from "@/components/CaseStudyFeature/CaseStudyFeature";
 import { CaseStudyHero } from "@/components/CaseStudyHero/CaseStudyHero";
 import { CaseStudyImagePair } from "@/components/CaseStudyImagePair/CaseStudyImagePair";
+import { CaseStudyLink } from "@/components/CaseStudyLink/CaseStudyLink";
 import { CaseStudyMedia } from "@/components/CaseStudyMedia/CaseStudyMedia";
 import { CaseStudyNav } from "@/components/CaseStudyNav/CaseStudyNav";
 import { CaseStudyQuote } from "@/components/CaseStudyQuote/CaseStudyQuote";
@@ -32,6 +33,8 @@ function renderBlock(block: CaseStudyBlock, locale: Locale, key: string, heading
       return <CaseStudyFeature key={key} locale={locale} block={block} />;
     case "image-pair":
       return <CaseStudyImagePair key={key} locale={locale} block={block} />;
+    case "link":
+      return <CaseStudyLink key={key} locale={locale} block={block} />;
     default:
       return (
         <CaseStudySection key={key} locale={locale} block={block} headingId={headingId} />
@@ -60,29 +63,36 @@ export function CaseStudyLayout({ locale, messages, study }: CaseStudyLayoutProp
 
   return (
     <article className={styles.page}>
-      <CaseStudyNav
-        locale={locale}
-        label={messages.caseStudy.navLabel}
-        backLabel={messages.caseStudy.back}
-        items={study.nav}
-      />
-      <div className={styles.column}>
+      <div className={styles.main}>
         <CaseStudyHero locale={locale} messages={messages} study={study} />
-        {groups.map((group, index) => (
-          <Reveal key={group.id} delay={Math.min(index * 40, 160)}>
-            <section
-              id={group.id}
-              className={styles.group}
-              aria-labelledby={`${group.id}-title`}
-            >
-              {renderBlocks(group.blocks, locale, group.id)}
-            </section>
-          </Reveal>
-        ))}
-        <div className={styles.cta}>
-          <Link className={styles.button} href={`/${locale}/lab`}>
-            {messages.caseStudy.backHomeCta}
-          </Link>
+      </div>
+      <div className={styles.body}>
+        <div className={styles.sidebar}>
+          <CaseStudyNav
+            locale={locale}
+            label={messages.caseStudy.navLabel}
+            items={study.nav}
+          />
+        </div>
+        <div className={styles.main}>
+          <div className={styles.column}>
+            {groups.map((group, index) => (
+              <Reveal key={group.id} delay={Math.min(index * 40, 160)}>
+                <section
+                  id={group.id}
+                  className={styles.group}
+                  aria-labelledby={`${group.id}-title`}
+                >
+                  {renderBlocks(group.blocks, locale, group.id)}
+                </section>
+              </Reveal>
+            ))}
+            <div className={styles.cta}>
+              <Link className={styles.button} href={`/${locale}/lab`}>
+                {messages.caseStudy.backHomeCta}
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </article>

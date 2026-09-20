@@ -4,7 +4,10 @@ import type {
 } from "@/data/case-studies";
 import { getLocalizedValue } from "@/data/case-studies";
 import type { Locale } from "@/i18n/config";
-import { CaseStudyRichText } from "@/components/CaseStudyRichText/CaseStudyRichText";
+import {
+  CaseStudyRichText,
+  renderRichInline,
+} from "@/components/CaseStudyRichText/CaseStudyRichText";
 import styles from "./CaseStudySection.module.css";
 
 type CaseStudySectionProps = {
@@ -29,7 +32,7 @@ export function CaseStudySection({ locale, block, headingId }: CaseStudySectionP
           id={headingId}
           className={isH3 ? styles.heading3 : styles.heading}
         >
-          {getLocalizedValue(block.heading, locale)}
+          {renderRichInline(getLocalizedValue(block.heading, locale))}
         </HeadingTag>
       ) : null}
       {block.body ? (

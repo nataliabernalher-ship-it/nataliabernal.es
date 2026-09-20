@@ -1,9 +1,20 @@
 .page {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
   padding-inline: 12px;
   background: var(--color-bg);
+}
+
+.main {
+  width: 100%;
+  max-width: var(--content-cs-hero);
+  margin-inline: auto;
+}
+
+.body {
+  position: relative;
 }
 
 .column {
@@ -46,21 +57,15 @@
   filter: brightness(0.95);
 }
 
-@media (min-width: 80rem) {
+@media (min-width: 1400px) {
   .page {
-    display: grid;
-    grid-template-columns: 1fr var(--content-cs) 1fr;
     padding-inline: 0;
   }
 
-  .page > :first-child {
-    grid-column: 1;
-    justify-self: start;
-    align-self: start;
-  }
-
-  .column {
-    grid-column: 2;
-    margin-inline: 0;
+  .sidebar {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 12.8125rem;
+    z-index: 1;
   }
 }

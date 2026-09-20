@@ -1,0 +1,46 @@
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.default {
+  padding: 2.5rem 0 1.25rem;
+}
+
+.compact {
+  padding: 1rem 0 2.5rem;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--color-text);
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: 1.5rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--duration-fast) var(--ease);
+}
+
+.link:hover,
+.link:focus-visible {
+  color: var(--color-titles);
+}
+
+.icon {
+  display: block;
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: currentColor;
+  mask: url("/images/icons/external-24.svg") no-repeat center / contain;
+  -webkit-mask: url("/images/icons/external-24.svg") no-repeat center / contain;
+}

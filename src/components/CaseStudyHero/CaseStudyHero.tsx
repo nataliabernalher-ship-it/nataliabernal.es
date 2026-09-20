@@ -38,10 +38,9 @@ export function CaseStudyHero({ locale, messages, study }: CaseStudyHeroProps) {
           <Image
             src={study.heroImage.src}
             alt={getLocalizedValue(study.heroImage.alt, locale)}
-            width={study.heroImage.width}
-            height={study.heroImage.height}
+            fill
             className={styles.image}
-            sizes="(min-width: 48rem) 768px, calc(100vw - 24px)"
+            sizes="(min-width: 67.5rem) 1080px, calc(100vw - 24px)"
             priority
           />
         </div>

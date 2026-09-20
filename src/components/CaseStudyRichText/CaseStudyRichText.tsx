@@ -6,7 +6,7 @@ function isRichSpan(value: string | RichSpan[]): value is RichSpan[] {
   return Array.isArray(value);
 }
 
-function renderInline(value: string | RichSpan[]) {
+export function renderRichInline(value: string | RichSpan[]) {
   if (!isRichSpan(value)) {
     return value;
   }
@@ -41,5 +41,5 @@ export function CaseStudyRichText({ value, locale, className }: CaseStudyRichTex
     ));
   }
 
-  return <p className={className}>{renderInline(content)}</p>;
+  return <p className={className}>{renderRichInline(content)}</p>;
 }

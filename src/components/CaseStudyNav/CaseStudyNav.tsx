@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { CaseStudyNavItem } from "@/data/case-studies";
 import { getLocalizedValue } from "@/data/case-studies";
@@ -10,11 +9,10 @@ import styles from "./CaseStudyNav.module.css";
 type CaseStudyNavProps = {
   locale: Locale;
   label: string;
-  backLabel: string;
   items: CaseStudyNavItem[];
 };
 
-export function CaseStudyNav({ locale, label, backLabel, items }: CaseStudyNavProps) {
+export function CaseStudyNav({ locale, label, items }: CaseStudyNavProps) {
   const [activeId, setActiveId] = useState(items[0]?.id ?? "");
 
   useEffect(() => {
@@ -51,9 +49,6 @@ export function CaseStudyNav({ locale, label, backLabel, items }: CaseStudyNavPr
 
   return (
     <div className={styles.sidemenu}>
-      <Link className={styles.back} href={`/${locale}`}>
-        {backLabel}
-      </Link>
       <nav className={styles.nav} aria-label={label}>
         <ul className={styles.list}>
           {items.map((item) => (

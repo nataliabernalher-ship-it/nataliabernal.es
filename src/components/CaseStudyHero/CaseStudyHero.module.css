@@ -4,6 +4,7 @@
   gap: 1.5rem;
   width: 100%;
   padding: 2.5rem 0;
+  border-bottom: 1px solid var(--color-text);
 }
 
 .tags {
@@ -17,7 +18,7 @@
 .tag {
   color: var(--color-accent);
   font-size: var(--text-emphasis);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.5rem;
   text-transform: uppercase;
   white-space: nowrap;
@@ -36,13 +37,19 @@
 }
 
 .media {
+  position: relative;
   width: 100%;
+  aspect-ratio: 1080 / 674;
   overflow: hidden;
+  border-radius: var(--radius-image);
 }
 
 .image {
   width: 100%;
-  height: auto;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
 }
 
 .meta {
@@ -88,10 +95,5 @@
     align-items: flex-start;
     justify-content: space-between;
     gap: 1.5rem;
-  }
-
-  .metaItem:nth-child(2) {
-    flex: 1;
-    max-width: 28rem;
   }
 }

@@ -22,11 +22,11 @@ export type CaseStudySectionBlock = {
   navId: string;
   level?: 2 | 3;
   emphasis?: LocalizedString;
-  heading: LocalizedString;
+  heading: LocalizedRichText;
   body?: LocalizedRichText;
   list?: Record<Locale, string[]>;
   after?: LocalizedRichText;
-  spacing?: "default" | "compact" | "loose" | "tight";
+  spacing?: "default" | "compact" | "loose" | "tight" | "start";
   surface?: "callout";
 };
 
@@ -46,6 +46,14 @@ export type CaseStudyProseBlock = {
   body: LocalizedRichText;
   list?: Record<Locale, string[]>;
   after?: LocalizedRichText;
+};
+
+export type CaseStudyLinkBlock = {
+  type: "link";
+  navId: string;
+  href: string;
+  label: LocalizedString;
+  spacing?: "default" | "compact";
 };
 
 export type CaseStudyQuoteBlock = {
@@ -103,6 +111,7 @@ export type CaseStudyBlock =
   | CaseStudySectionBlock
   | CaseStudyImageBlock
   | CaseStudyProseBlock
+  | CaseStudyLinkBlock
   | CaseStudyQuoteBlock
   | CaseStudyCardsBlock
   | CaseStudyFeatureBlock
@@ -177,12 +186,12 @@ export const caseStudies: CaseStudy[] = [
       en: "From Figma to Code: building a scalable Design System",
     },
     heroImage: {
-      src: img("portada.png"),
-      width: 768,
-      height: 500,
+      src: img("hero.png"),
+      width: 1080,
+      height: 674,
       alt: {
-        es: "Portada de Wellness Stay: piscina infinita, wordmark y buscador de destinos",
-        en: "Wellness Stay cover: infinity pool, wordmark and destination search",
+        es: "Portada de Wellness Stay: piscina infinita frente al mar, wordmark y buscador de destinos",
+        en: "Wellness Stay cover: infinity pool facing the sea, wordmark and destination search",
       },
     },
     nav: [
@@ -210,31 +219,41 @@ export const caseStudies: CaseStudy[] = [
           es: "Wellness Stay es un marketplace de reservas de retiros de bienestar que desarrollé como proyecto experimental para explorar cómo construir un producto digital escalable desde Figma hasta código.\n\nDiseñé desde cero sus foundations, arquitectura de tokens y componentes, y definí un flujo de trabajo Design-to-Code apoyado en IA para mantener la consistencia entre diseño, documentación e implementación.",
           en: "Wellness Stay is a wellness retreat booking marketplace that I developed as an experimental project to explore how to build a scalable digital product from Figma to code.\n\nI designed its foundations, token architecture, and components from scratch, and defined an AI-supported Design-to-Code workflow to keep design, documentation, and implementation consistent.",
         },
+        spacing: "start",
       },
       {
         type: "section",
         navId: "objetivo",
         emphasis: { es: "Objetivo", en: "Objective" },
         heading: {
-          es: "Preparar un Design System IA-ready desde cero",
-          en: "Prepare an AI-ready Design System from scratch",
+          es: [
+            { text: "Generar un Design System" },
+            { text: " IA-ready ", italic: true },
+            { text: "desde cero" },
+          ],
+          en: [
+            { text: "Generate an" },
+            { text: " AI-ready ", italic: true },
+            { text: "Design System from scratch" },
+          ],
         },
         body: {
-          es: "El propósito de este caso de estudio es la creación de un sistema de diseño desde cero — bases de diseño, tokens y componentes — para la construcción automatizada de la interfaz mediante herramientas de IA, así como la creación de la documentación para proporcionar el contexto y los requerimientos necesarios.\n\nSe busca reducir la distancia entre Figma y el código y facilitar la evolución — en rapidez y consistencia — del producto a medida que surjan nuevas necesidades.",
-          en: "The purpose of this case study is to create a design system from scratch — foundations, tokens and components — so the interface can be built automatically with AI tools, along with the documentation needed to provide context and requirements.\n\nThe aim is to shorten the gap between Figma and code and make it easier for the product to evolve — in speed and consistency — as new needs arise.",
+          es: "El propósito de este caso de estudio es la creación de un sistema de diseño desde cero - bases de diseño, tokens y componentes - para la construcción automatizada de la interfaz mediante herramientas de IA, así como la creación de la documentación para proporcionar el contexto y los requerimientos necesarios.\n\nSe busca reducir la distancia entre Figma y el código y facilitar la evolución - en rapidez y consistecia - del producto a medida que surjan nuevas necesidad.",
+          en: "The purpose of this case study is to create a design system from scratch - design foundations, tokens and components - so the interface can be built automatically with AI tools, along with the documentation needed to provide context and requirements.\n\nThe aim is to shorten the gap between Figma and code and make it easier for the product to evolve - in speed and consistency - as new needs arise.",
         },
         spacing: "default",
       },
       {
         type: "image",
         navId: "objetivo",
-        src: img("img-1.png"),
-        width: 1024,
-        height: 438,
+        src: img("ws-1.jpg"),
+        width: 768,
+        height: 348,
         alt: {
-          es: "Captura del proceso y la interfaz de Wellness Stay",
-          en: "Screenshot of the Wellness Stay process and interface",
+          es: "Flujo de creación de un Design System con IA: investigar, diseñar, implementar, versionar y documentar",
+          en: "AI-assisted Design System workflow: research, design, implement, version and document",
         },
+        radius: 8,
       },
       {
         type: "section",
@@ -253,60 +272,48 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "image",
         navId: "research",
-        src: img("img-2.png"),
-        width: 768,
-        height: 427,
+        src: img("ws-2.jpg"),
+        width: 763,
+        height: 469,
         alt: {
-          es: "Análisis visual de competidores en travel y wellness",
-          en: "Visual analysis of travel and wellness competitors",
+          es: "Benchmark visual de bookretreats.com, wellbeingescapes.com, retreat.guru y vacayouwellnesssolutions.com",
+          en: "Visual benchmark of bookretreats.com, wellbeingescapes.com, retreat.guru and vacayouwellnesssolutions.com",
         },
+        radius: 8,
       },
       {
         type: "section",
         navId: "research",
-        emphasis: { es: "User persona", en: "User persona" },
+        emphasis: { es: "Definición", en: "Definition" },
         heading: {
-          es: "¿Qué perfil tiene el usuario que reserva estos servicios?",
-          en: "What is the profile of the person who books these services?",
+          es: "Task flow del usuario",
+          en: "User task flow",
         },
         body: {
-          es: "Al tratarse de un proyecto experimental sin acceso a usuarios reales, no realicé entrevistas en esta fase. A partir del análisis del mercado y de las hipótesis iniciales sobre los potenciales usuarios, definí dos proto-personas con diferentes necesidades y motivaciones para orientar las primeras decisiones de diseño.\n\nEstas proto-personas funcionan como hipótesis de partida que deberían validarse posteriormente mediante investigación con usuarios reales.",
-          en: "Because this was an experimental project without access to real users, I did not run interviews at this stage. From market analysis and initial hypotheses about potential users, I defined two proto-personas with different needs and motivations to guide the first design decisions.\n\nThese proto-personas are starting hypotheses that should later be validated through research with real users.",
+          es: "Tras la investigación de marketplaces del mismo nicho, realicé un task flow para conocer las pantallas principales por las que pasa el usuario desde que llega a la plataforma hasta que hace la reserva.",
+          en: "After researching marketplaces in the same niche, I mapped a task flow to identify the main screens a user goes through from arriving on the platform to completing a booking.",
         },
         spacing: "compact",
       },
       {
-        type: "image-pair",
+        type: "image",
         navId: "research",
-        layout: "carousel",
-        images: [
-          {
-            src: img("persona-buscadora-de-equilibrio.png"),
-            width: 1536,
-            height: 1024,
-            alt: {
-              es: "Proto-persona Buscadora de equilibrio",
-              en: "Proto-persona Balance seeker",
-            },
-          },
-          {
-            src: img("persona-ejecutivo-en-pausa.png"),
-            width: 1536,
-            height: 1024,
-            alt: {
-              es: "Proto-persona Ejecutivo en pausa",
-              en: "Proto-persona Executive on pause",
-            },
-          },
-        ],
+        src: img("ws-3.jpg"),
+        width: 768,
+        height: 204,
+        alt: {
+          es: "Task flow del usuario: Home, Búsqueda, Resultados, Ficha del retiro y Reservar",
+          en: "User task flow: Home, Search, Results, Retreat detail and Book",
+        },
+        radius: 8,
       },
       {
         type: "section",
         navId: "research",
         emphasis: { es: "Dirección visual", en: "Visual direction" },
-        heading: { es: "Moodboard", en: "Moodboard" },
+        heading: { es: "Referencias visuales", en: "Visual references" },
         body: {
-          es: "Teniendo en cuenta el perfil de usuario, el estilo de los competidores y el tipo de producto, desarrollé un moodboard para definir la dirección visual:",
+          es: "Teniendo en cuenta el perfil de usuario, el estilo de los competidores y el tipo de producto, desarrolló un moodboard para definir la dirección visual:",
           en: "Taking the user profile, competitor styles and product type into account, I developed a moodboard to define the visual direction:",
         },
         spacing: "compact",
@@ -314,21 +321,30 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "image",
         navId: "research",
-        src: img("img-4.png"),
+        src: img("ws-4.jpg"),
         width: 768,
         height: 427,
         alt: {
-          es: "Moodboard de la dirección visual de Wellness Stay",
-          en: "Moodboard for the Wellness Stay visual direction",
+          es: "Moodboard con referencias visuales de viajes, wellness, calendario y cards",
+          en: "Moodboard with visual references for travel, wellness, calendar and cards",
         },
+        radius: 8,
       },
       {
         type: "section",
         navId: "sistema-de-diseno",
         emphasis: { es: "Sistema de diseño", en: "Design system" },
         heading: {
-          es: "Creación de las Bases de diseño",
-          en: "Creating the design foundations",
+          es: [
+            { text: "Creación de las " },
+            { text: "foundations", italic: true },
+            { text: " diseño en Figma" },
+          ],
+          en: [
+            { text: "Creating the design " },
+            { text: "foundations", italic: true },
+            { text: " in Figma" },
+          ],
         },
         body: {
           es: [
@@ -342,7 +358,7 @@ export const caseStudies: CaseStudy[] = [
             { text: "I started by establishing the " },
             { text: "foundations", italic: true },
             {
-              text: " — the fundamental visual elements of the interface: color, typography, icons, grids, spacing (margins and paddings), corner radii and border widths.",
+              text: ", the fundamental visual elements of the interface: color, typography, icons, grids, spacing (margins and paddings), corner radii and border widths.",
             },
           ],
         },
@@ -351,105 +367,152 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "image",
         navId: "sistema-de-diseno",
-        src: img("img-5.png"),
-        width: 910,
-        height: 555,
+        src: img("ws-5.jpg"),
+        width: 768,
+        height: 426,
         alt: {
-          es: "Foundations del sistema de diseño: color, tipografía y espaciado",
-          en: "Design-system foundations: color, typography and spacing",
+          es: "Foundations de diseño en Figma: color, tipografía, espaciado y sombras",
+          en: "Design foundations in Figma: color, typography, spacing and shadows",
         },
+        radius: 8,
       },
       {
         type: "section",
         navId: "sistema-de-diseno",
         heading: {
-          es: "Arquitectura de tokens",
-          en: "Token architecture",
+          es: "Diseño a medida de componentes en Figma",
+          en: "Custom component design in Figma",
         },
         body: {
-          es: "Traduje las foundations a una arquitectura de tokens: color, tipografía, espaciado, radios de esquina y grosor de bordes. Nombrar cada decisión visual permite reutilizarla de forma consistente en Figma y en código.",
-          en: "I translated the foundations into a token architecture: color, typography, spacing, corner radii and border widths. Naming every visual decision makes it reusable and consistent in both Figma and code.",
+          es: "Con el objetivo de construir una interfaz única y a medida, diseñé los componentes básicos que contienen todo marketplace de alojamientos - buscador, cards, botones y navegación - y los integré en el editor de código median el MPC de Figma. Previamente creé los specs de los elementos para proporcionar la máxima información al IDE.",
+          en: "To build a unique, tailored interface, I designed the core components of an accommodation marketplace - search, cards, buttons and navigation - and brought them into the code editor through the Figma MCP. I first wrote specs for each element so the IDE had as much context as possible.",
         },
         spacing: "compact",
       },
       {
         type: "image",
         navId: "sistema-de-diseno",
-        src: img("img-6.png"),
-        width: 871,
-        height: 544,
+        src: img("ws-6.jpg"),
+        width: 768,
+        height: 426,
         alt: {
-          es: "Arquitectura de tokens del sistema de diseño",
-          en: "Design-system token architecture",
+          es: "Collage de componentes a medida: buscador, card, newsletter, calendario y botones",
+          en: "Custom component collage: search, card, newsletter, calendar and buttons",
         },
+        radius: 8,
       },
       {
         type: "section",
         navId: "sistema-de-diseno",
         heading: {
-          es: "Arquitectura de componentes",
-          en: "Component architecture",
+          es: "Creación de varialbes de estilo en Figma",
+          en: "Creating style variables in Figma",
         },
         body: {
-          es: "Con el objetivo de construir una interfaz única y a medida, diseñé los componentes básicos que contiene todo marketplace de alojamientos — buscador, cards, botones y navegación — y los integré en el editor de código mediante el MCP de Figma. Previamente creé los specs de los elementos para proporcionar la máxima información al IDE.",
-          en: "To build a unique, tailored interface, I designed the core components of an accommodation marketplace — search, cards, buttons and navigation — and brought them into the code editor through the Figma MCP. I first wrote specs for each element so the IDE had as much context as possible.",
+          es: [
+            { text: "Comencé estableciendo las " },
+            { text: "foundations", italic: true },
+            {
+              text: ", los elementos visuales fundamentales de la interfaz: el color, la tipografía, los iconos, las grillas, los espaciados (márgenes y paddings), radios de esquina y grosor de los bordes.",
+            },
+          ],
+          en: [
+            { text: "I started by establishing the " },
+            { text: "foundations", italic: true },
+            {
+              text: ", the fundamental visual elements of the interface: color, typography, icons, grids, spacing (margins and paddings), corner radii and border widths.",
+            },
+          ],
         },
         spacing: "compact",
       },
       {
         type: "image",
         navId: "sistema-de-diseno",
-        src: img("img-7.png"),
-        width: 1024,
-        height: 686,
+        src: img("ws-7.jpg"),
+        width: 768,
+        height: 333,
         alt: {
-          es: "Arquitectura de componentes del marketplace",
-          en: "Marketplace component architecture",
+          es: "Arquitectura de tokens: primitives, semantic y components",
+          en: "Token architecture: primitives, semantic and components",
         },
+        radius: 8,
       },
       {
         type: "section",
         navId: "documentacion",
-        emphasis: { es: "Documentación", en: "Documentation" },
+        emphasis: { es: "Implementación en IDE", en: "IDE implementation" },
         heading: {
-          es: "La importancia de proporcionar contexto y reglas",
-          en: "The importance of providing context and rules",
+          es: "Documentación técnica para la IA y para el equipo",
+          en: "Technical documentation for AI and the team",
         },
         body: {
-          es: "El siguiente paso fue generar la documentación en formato README.md para incluir en el proyecto. En este documento se explica en qué consiste el proyecto.",
-          en: "The next step was to generate README.md documentation for the project, explaining what it consists of.",
+          es: "Para que una IA pueda generar interfaces coherentes, no basta con proporcionarle acceso a los componentes de Figma. También necesita comprender el contexto del sistema, sus reglas de uso y sus limitaciones. Esta indicaciones la realicé documentos AGENTS.md y SKILLS.md\n\nEl siguiente pasó fue generar la documentación formato README.md para incluir en el proyecto. En este documento se explica en qué consiste el proyecto.",
+          en: "For an AI to generate coherent interfaces, access to Figma components is not enough. It also needs to understand the system context, usage rules and constraints. I captured those instructions in AGENTS.md and SKILLS.md.\n\nThe next step was to generate README.md documentation for the project, explaining what it consists of.",
         },
         spacing: "loose",
       },
       {
         type: "image",
         navId: "documentacion",
-        src: img("img-8.png"),
-        width: 868,
-        height: 647,
+        src: img("w-8.jpg"),
+        width: 768,
+        height: 237,
         alt: {
-          es: "Documentación README del proyecto Wellness Stay",
-          en: "README documentation for the Wellness Stay project",
+          es: "Árbol de skills de Cursor: figma-to-storybook, validate-design-system y create-component",
+          en: "Cursor skills tree: figma-to-storybook, validate-design-system and create-component",
         },
-        radius: 20,
+        radius: 8,
       },
       {
         type: "section",
         navId: "implementacion",
-        emphasis: { es: "Implementación", en: "Implementation" },
         heading: {
-          es: "De diseño a código",
-          en: "From design to code",
+          es: "Creación del código de los componentes con el MCP y generación de Storybook",
+          en: "Generating component code with MCP and creating Storybook",
+        },
+        body: {
+          es: "El siguiente pasó fue generar la documentación formato README.md para incluir en el proyecto. En este documento se explica en qué consiste el proyecto.",
+          en: "The next step was to generate README.md documentation for the project, explaining what it consists of.",
+        },
+        spacing: "compact",
+      },
+      {
+        type: "image",
+        navId: "implementacion",
+        src: img("w-9.jpg"),
+        width: 768,
+        height: 427,
+        alt: {
+          es: "Código de tokens y componentes generado en el IDE",
+          en: "Token and component code generated in the IDE",
+        },
+        radius: 20,
+      },
+      {
+        type: "link",
+        navId: "implementacion",
+        href: "https://wellness-stay.vercel.app/?path=/docs/foundations-color--docs",
+        label: {
+          es: "Enlace al Storybook",
+          en: "Link to Storybook",
+        },
+      },
+      {
+        type: "section",
+        navId: "implementacion",
+        emphasis: { es: "Desarrollo", en: "Development" },
+        heading: {
+          es: "Generación automatizada de las pantallas del marketplace",
+          en: "Automated generation of the marketplace screens",
         },
         body: {
           es: [
             {
-              text: "Una vez creado el archivo del proyecto, integré lo anterior para validar el sistema de diseño en un entorno real. Decidí implementarlo utilizando ",
+              text: "Una vez creados el archivo del proyecto, integré lo anterior para validar el sistema de diseño en un entorno real, decidí implementarlo utilizando ",
             },
             { text: "Cursor", bold: true },
-            {
-              text: " como IDE. No utilicé frameworks, sino que opté por una ",
-            },
+            { text: " como IDE. No utilicé frameworks, sino que opté por una " },
             {
               text: "implementación en HTML, CSS y JavaScript con los elementos previamente creados.",
               bold: true,
@@ -457,7 +520,7 @@ export const caseStudies: CaseStudy[] = [
           ],
           en: [
             {
-              text: "Once the project file was set up, I integrated the work above to validate the design system in a real environment. I implemented it using ",
+              text: "Once the project file was set up, I integrated the work above to validate the design system in a real environment and implemented it using ",
             },
             { text: "Cursor", bold: true },
             {
@@ -474,14 +537,23 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "image",
         navId: "implementacion",
-        src: img("img-9.png"),
-        width: 809,
-        height: 512,
+        src: img("ws-home.jpg"),
+        width: 768,
+        height: 536,
         alt: {
-          es: "Implementación del sistema de diseño en Cursor",
-          en: "Design-system implementation in Cursor",
+          es: "Pantalla home del marketplace Wellness Stay generada a partir del sistema de diseño",
+          en: "Wellness Stay marketplace homepage generated from the design system",
         },
-        radius: 20,
+        radius: 8,
+      },
+      {
+        type: "link",
+        navId: "implementacion",
+        href: "https://wellness-stay-web.vercel.app/index.html",
+        label: {
+          es: "Enlace a la web",
+          en: "Link to the website",
+        },
       },
       {
         type: "prose",
@@ -507,17 +579,6 @@ export const caseStudies: CaseStudy[] = [
         after: {
           es: "Además de esto, generé el storybook como fuente de la verdad, donde almacenar todos los elementos de la interfaz. En un futuro, podrá ir siendo actualizado según requerimientos nuevos del producto.",
           en: "I also generated Storybook as the source of truth for every interface element. It can be updated later as new product requirements appear.",
-        },
-      },
-      {
-        type: "image",
-        navId: "implementacion",
-        src: img("img-10.png"),
-        width: 768,
-        height: 374,
-        alt: {
-          es: "Storybook con los elementos de la interfaz de Wellness Stay",
-          en: "Storybook with Wellness Stay interface elements",
         },
       },
       {

@@ -344,6 +344,7 @@
 
 .kickerAccent {
   color: var(--color-accent);
+  font-weight: 400;
   letter-spacing: 0;
 }
 
@@ -359,7 +360,7 @@
 .tag {
   color: var(--color-accent);
   font-size: var(--text-emphasis);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.5rem;
   text-transform: uppercase;
   white-space: nowrap;
