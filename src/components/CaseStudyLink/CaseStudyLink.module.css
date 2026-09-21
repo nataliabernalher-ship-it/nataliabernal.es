@@ -13,6 +13,10 @@
   padding: 1rem 0 2.5rem;
 }
 
+.even {
+  padding-block: 2.5rem;
+}
+
 .link {
   display: flex;
   align-items: center;

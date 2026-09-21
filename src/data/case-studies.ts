@@ -22,11 +22,13 @@ export type CaseStudySectionBlock = {
   navId: string;
   level?: 2 | 3;
   emphasis?: LocalizedString;
-  heading: LocalizedRichText;
+  intro?: LocalizedRichText;
+  heading?: LocalizedRichText;
   body?: LocalizedRichText;
   list?: Record<Locale, string[]>;
   after?: LocalizedRichText;
-  spacing?: "default" | "compact" | "loose" | "tight" | "start";
+  quote?: LocalizedString;
+  spacing?: "default" | "compact" | "loose" | "tight" | "start" | "lead";
   surface?: "callout";
 };
 
@@ -53,7 +55,7 @@ export type CaseStudyLinkBlock = {
   navId: string;
   href: string;
   label: LocalizedString;
-  spacing?: "default" | "compact";
+  spacing?: "default" | "compact" | "even";
 };
 
 export type CaseStudyQuoteBlock = {
@@ -202,8 +204,8 @@ export const caseStudies: CaseStudy[] = [
         id: "sistema-de-diseno",
         label: { es: "Sistema de diseño", en: "Design system" },
       },
-      { id: "documentacion", label: { es: "Documentación", en: "Documentation" } },
       { id: "implementacion", label: { es: "Implementación", en: "Implementation" } },
+      { id: "desarrollo", label: { es: "Desarrollo", en: "Development" } },
       { id: "conclusion", label: { es: "Conclusión", en: "Conclusion" } },
     ],
     blocks: [
@@ -216,8 +218,12 @@ export const caseStudies: CaseStudy[] = [
           en: "Experimental project",
         },
         body: {
-          es: "Wellness Stay es un marketplace de reservas de retiros de bienestar que desarrollé como proyecto experimental para explorar cómo construir un producto digital escalable desde Figma hasta código.\n\nDiseñé desde cero sus foundations, arquitectura de tokens y componentes, y definí un flujo de trabajo Design-to-Code apoyado en IA para mantener la consistencia entre diseño, documentación e implementación.",
-          en: "Wellness Stay is a wellness retreat booking marketplace that I developed as an experimental project to explore how to build a scalable digital product from Figma to code.\n\nI designed its foundations, token architecture, and components from scratch, and defined an AI-supported Design-to-Code workflow to keep design, documentation, and implementation consistent.",
+          es: "En este proyecto he llevado a cabo la creación de un sistema de diseño desde cero en Figma para posteriormente, por medio del MCP y con el agente asistido de Cursor, realizar la implementación en código.\n\nAdemás de la generación de la interfaz del producto, también he creado el Storybook del proyecto, donde se recoge de forma visible a modo de librería y fuente de la verdad para el equipo, la documentación técnica de componentes y tokens.",
+          en: "In this project I built a design system from scratch in Figma and then implemented it in code with MCP and Cursor’s assisted agent.\n\nBesides generating the product interface, I also created the project Storybook: a visible library and source of truth for the team, with technical documentation for components and tokens.",
+        },
+        quote: {
+          es: "Se busca reducir la distancia entre Figma y el código y facilitar la evolución - en rapidez y consistencia - del producto a medida que surjan nuevas necesidades.",
+          en: "The aim is to shorten the gap between Figma and code and make it easier for the product to evolve - in speed and consistency - as new needs arise.",
         },
         spacing: "start",
       },
@@ -238,8 +244,8 @@ export const caseStudies: CaseStudy[] = [
           ],
         },
         body: {
-          es: "El propósito de este caso de estudio es la creación de un sistema de diseño desde cero - bases de diseño, tokens y componentes - para la construcción automatizada de la interfaz mediante herramientas de IA, así como la creación de la documentación para proporcionar el contexto y los requerimientos necesarios.\n\nSe busca reducir la distancia entre Figma y el código y facilitar la evolución - en rapidez y consistecia - del producto a medida que surjan nuevas necesidad.",
-          en: "The purpose of this case study is to create a design system from scratch - design foundations, tokens and components - so the interface can be built automatically with AI tools, along with the documentation needed to provide context and requirements.\n\nThe aim is to shorten the gap between Figma and code and make it easier for the product to evolve - in speed and consistency - as new needs arise.",
+          es: "El objetivo es crear un sistema automatizado que permita la generación de nuevas interfaces y funcionalidades del producto, creando así un producto rápidamente escalable.\n\nEl desafío de este proyecto es la creación de la documentación necesaria para que el código generado siempre siga las instrucciones y mismos procesos y así obtener resultados consistentes.",
+          en: "The goal is to create an automated system that can generate new product interfaces and features, making the product quickly scalable.\n\nThe challenge is to write the documentation needed so generated code always follows the same instructions and processes, and the results stay consistent.",
         },
         spacing: "default",
       },
@@ -258,16 +264,16 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "section",
         navId: "research",
-        emphasis: { es: "Benchmark", en: "Benchmark" },
+        emphasis: { es: "Investigación", en: "Research" },
         heading: {
-          es: "Investigación del mercado de las plataformas de retiros holísticos",
-          en: "Market research on holistic retreat platforms",
+          es: "Entendiendo el producto",
+          en: "Understanding the product",
         },
         body: {
-          es: "Para comenzar, analicé plataformas del sector travel + wellness que existen actualmente en el mercado. Analicé los flujos de la reserva de retiros y los elementos UI comunes. Al mismo tiempo, recogí los distintos estilos visuales de los competidores para escoger un estilo diferenciador.",
-          en: "I started by analyzing travel + wellness platforms currently on the market. I studied retreat booking flows and common UI patterns, and gathered competitors’ visual styles in order to choose a distinctive direction.",
+          es: "Wellness Stay es un marketplace de reservas de retiros de bienestar ficticio. Para comenzar, analicé plataformas del sector travel y wellness que existen actualmente en el mercado. Analicé los flujos de la reserva de retiros y los patrones UI comunes. Al mismo tiempo, recogí los distintos estilos visuales de los competidores para escoger un estilo diferenciador.",
+          en: "Wellness Stay is a fictional wellness retreat booking marketplace. I started by analyzing travel and wellness platforms currently on the market: retreat booking flows and common UI patterns. At the same time, I gathered competitors’ visual styles in order to choose a distinctive direction.",
         },
-        spacing: "compact",
+        spacing: "lead",
       },
       {
         type: "image",
@@ -284,14 +290,13 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "section",
         navId: "research",
-        emphasis: { es: "Definición", en: "Definition" },
         heading: {
           es: "Task flow del usuario",
           en: "User task flow",
         },
         body: {
-          es: "Tras la investigación de marketplaces del mismo nicho, realicé un task flow para conocer las pantallas principales por las que pasa el usuario desde que llega a la plataforma hasta que hace la reserva.",
-          en: "After researching marketplaces in the same niche, I mapped a task flow to identify the main screens a user goes through from arriving on the platform to completing a booking.",
+          es: "Realicé un task flow para conocer el flujo que realiza el usuario, es decir, las pantallas necesarias por las que pasa el usuario desde que llega a la plataforma, interactúa por medio del buscador, obtiene resultados, accede a una ficha y realiza una reserva.",
+          en: "I mapped a task flow to understand the user’s journey: the screens they go through from arriving on the platform, using search, seeing results, opening a listing, and completing a booking.",
         },
         spacing: "compact",
       },
@@ -310,11 +315,10 @@ export const caseStudies: CaseStudy[] = [
       {
         type: "section",
         navId: "research",
-        emphasis: { es: "Dirección visual", en: "Visual direction" },
         heading: { es: "Referencias visuales", en: "Visual references" },
         body: {
-          es: "Teniendo en cuenta el perfil de usuario, el estilo de los competidores y el tipo de producto, desarrolló un moodboard para definir la dirección visual:",
-          en: "Taking the user profile, competitor styles and product type into account, I developed a moodboard to define the visual direction:",
+          es: "Antes de comenzar a establecer las bases del diseño, tomé referencias visuales para entender los patrones UI habituales de los marketplaces y marcar un estilo visual.",
+          en: "Before setting the design foundations, I gathered visual references to understand typical marketplace UI patterns and define a visual style.",
         },
         spacing: "compact",
       },
@@ -338,7 +342,7 @@ export const caseStudies: CaseStudy[] = [
           es: [
             { text: "Creación de las " },
             { text: "foundations", italic: true },
-            { text: " diseño en Figma" },
+            { text: " de diseño en Figma" },
           ],
           en: [
             { text: "Creating the design " },
@@ -347,22 +351,10 @@ export const caseStudies: CaseStudy[] = [
           ],
         },
         body: {
-          es: [
-            { text: "Comencé estableciendo las " },
-            { text: "foundations", italic: true },
-            {
-              text: ", los elementos visuales fundamentales de la interfaz: el color, la tipografía, los iconos, las grillas, los espaciados (márgenes y paddings), radios de esquina y grosor de los bordes.",
-            },
-          ],
-          en: [
-            { text: "I started by establishing the " },
-            { text: "foundations", italic: true },
-            {
-              text: ", the fundamental visual elements of the interface: color, typography, icons, grids, spacing (margins and paddings), corner radii and border widths.",
-            },
-          ],
+          es: "Comencé estableciendo las foundations, los elementos visuales fundamentales de la interfaz: el color, la tipografía, los iconos, las grillas, los espaciados (márgenes y paddings), radios de esquina y grosor de los bordes.",
+          en: "I started by establishing the foundations, the fundamental visual elements of the interface: color, typography, icons, grids, spacing (margins and paddings), corner radii and border widths.",
         },
-        spacing: "loose",
+        spacing: "lead",
       },
       {
         type: "image",
@@ -384,8 +376,8 @@ export const caseStudies: CaseStudy[] = [
           en: "Custom component design in Figma",
         },
         body: {
-          es: "Con el objetivo de construir una interfaz única y a medida, diseñé los componentes básicos que contienen todo marketplace de alojamientos - buscador, cards, botones y navegación - y los integré en el editor de código median el MPC de Figma. Previamente creé los specs de los elementos para proporcionar la máxima información al IDE.",
-          en: "To build a unique, tailored interface, I designed the core components of an accommodation marketplace - search, cards, buttons and navigation - and brought them into the code editor through the Figma MCP. I first wrote specs for each element so the IDE had as much context as possible.",
+          es: "Con el objetivo de construir una interfaz única y a medida, diseñé los componentes que contienen todos los marketplace de alojamientos: buscador, cards, filtros, botones, navegación, etc. Mi intención es que el sistema no invente arbitrariamente los componentes cuando se generen nuevas de interfaces y que abarquen todas las posibilidades.\n\nPara nuevos componentes que no hayan sido contemplados, se deben incluir nuevos siguiendo el mismo flujo: Figma -> MCP -> Storybook -> Interfaz",
+          en: "To build a unique, tailored interface, I designed the components every accommodation marketplace needs: search, cards, filters, buttons, navigation, and so on. The intent is that the system does not invent components arbitrarily when new interfaces are generated, and that they cover every case.\n\nFor new components that were not anticipated, they should be added following the same flow: Figma -> MCP -> Storybook -> Interface",
         },
         spacing: "compact",
       },
@@ -405,24 +397,12 @@ export const caseStudies: CaseStudy[] = [
         type: "section",
         navId: "sistema-de-diseno",
         heading: {
-          es: "Creación de varialbes de estilo en Figma",
-          en: "Creating style variables in Figma",
+          es: "Creación de variables - tokens- de estilo en Figma",
+          en: "Creating style variables - tokens - in Figma",
         },
         body: {
-          es: [
-            { text: "Comencé estableciendo las " },
-            { text: "foundations", italic: true },
-            {
-              text: ", los elementos visuales fundamentales de la interfaz: el color, la tipografía, los iconos, las grillas, los espaciados (márgenes y paddings), radios de esquina y grosor de los bordes.",
-            },
-          ],
-          en: [
-            { text: "I started by establishing the " },
-            { text: "foundations", italic: true },
-            {
-              text: ", the fundamental visual elements of the interface: color, typography, icons, grids, spacing (margins and paddings), corner radii and border widths.",
-            },
-          ],
+          es: "Desarrolle una arquitectura básica de tokens para que diseño y desarrollo utilizaran el mismo idioma. Los tokens primarios fueron la base para construir el resto de tokens: los tokens semánticos para elementos comunes de la interfaz - bordes, surfaces, fondos, etc - y los tokens de componentes, para componentes específicos.",
+          en: "I developed a basic token architecture so design and development would speak the same language. Primitive tokens were the base for the rest: semantic tokens for shared interface elements - borders, surfaces, backgrounds, etc. - and component tokens for specific components.",
         },
         spacing: "compact",
       },
@@ -440,21 +420,25 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         type: "section",
-        navId: "documentacion",
+        navId: "implementacion",
         emphasis: { es: "Implementación en IDE", en: "IDE implementation" },
+        intro: {
+          es: "En este punto creé la carpeta del proyecto en local para comenzar a integrar la documentación, generar el código y así validar el sistema de diseño en un entorno real. Para implementarlo no utilicé frameworks, sino que opté por una implementación en HTML, CSS y JavaScript con los elementos previamente creados.",
+          en: "At this point I created the local project folder to start integrating the documentation, generating the code, and validating the design system in a real environment. I did not use frameworks; instead I implemented it in HTML, CSS and JavaScript with the elements created beforehand.",
+        },
         heading: {
           es: "Documentación técnica para la IA y para el equipo",
           en: "Technical documentation for AI and the team",
         },
         body: {
-          es: "Para que una IA pueda generar interfaces coherentes, no basta con proporcionarle acceso a los componentes de Figma. También necesita comprender el contexto del sistema, sus reglas de uso y sus limitaciones. Esta indicaciones la realicé documentos AGENTS.md y SKILLS.md\n\nEl siguiente pasó fue generar la documentación formato README.md para incluir en el proyecto. En este documento se explica en qué consiste el proyecto.",
-          en: "For an AI to generate coherent interfaces, access to Figma components is not enough. It also needs to understand the system context, usage rules and constraints. I captured those instructions in AGENTS.md and SKILLS.md.\n\nThe next step was to generate README.md documentation for the project, explaining what it consists of.",
+          es: "Para que una IA pueda generar interfaces coherentes, no basta con proporcionarle acceso a los componentes de Figma. También necesita comprender el contexto del sistema, sus reglas de uso y sus limitaciones. Estas indicaciones las realicé en documentos markdowns con la ayuda de Chatgpt - AGENTS.md y SKILLS.md - y que posteriormente añadí a la carpeta del proyecto.\n\nEl siguiente pasó fue generar la documentación formato README.md para incluir en el proyecto. En este documento se explica en qué consiste el proyecto.",
+          en: "For an AI to generate coherent interfaces, access to Figma components is not enough. It also needs to understand the system context, usage rules and constraints. I wrote those instructions as markdown documents with ChatGPT - AGENTS.md and SKILLS.md - and later added them to the project folder.\n\nThe next step was to generate README.md documentation for the project, explaining what it consists of.",
         },
-        spacing: "loose",
+        spacing: "lead",
       },
       {
         type: "image",
-        navId: "documentacion",
+        navId: "implementacion",
         src: img("w-8.jpg"),
         width: 768,
         height: 237,
@@ -472,8 +456,8 @@ export const caseStudies: CaseStudy[] = [
           en: "Generating component code with MCP and creating Storybook",
         },
         body: {
-          es: "El siguiente pasó fue generar la documentación formato README.md para incluir en el proyecto. En este documento se explica en qué consiste el proyecto.",
-          en: "The next step was to generate README.md documentation for the project, explaining what it consists of.",
+          es: "Una vez creado el contexto para el IDE, las instrucciones y el proceso de generación de código, implementé en el código los tokens y componentes de Figma a través dee MPC.\n\nParalelamente a la generación del código de los componentes, generé el storybook donde almacenar todos los elementos de la interfaz. En un futuro, se irá actualizando según requerimientos nuevos del producto.",
+          en: "Once the IDE context, instructions and code-generation process were in place, I implemented Figma tokens and components in code through MCP.\n\nIn parallel with generating component code, I created Storybook to store every interface element. It will be updated later as new product requirements appear.",
         },
         spacing: "compact",
       },
@@ -500,43 +484,39 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         type: "section",
-        navId: "implementacion",
+        navId: "desarrollo",
         emphasis: { es: "Desarrollo", en: "Development" },
         heading: {
           es: "Generación automatizada de las pantallas del marketplace",
           en: "Automated generation of the marketplace screens",
         },
         body: {
+          es: "Por último, generé los prompts específicos para generar las secciones de la home:",
+          en: "Finally, I wrote the specific prompts to generate the homepage sections:",
+        },
+        list: {
           es: [
-            {
-              text: "Una vez creados el archivo del proyecto, integré lo anterior para validar el sistema de diseño en un entorno real, decidí implementarlo utilizando ",
-            },
-            { text: "Cursor", bold: true },
-            { text: " como IDE. No utilicé frameworks, sino que opté por una " },
-            {
-              text: "implementación en HTML, CSS y JavaScript con los elementos previamente creados.",
-              bold: true,
-            },
+            "Navegación",
+            "hero section (buscador y h1)",
+            "destacados",
+            "categorías principales",
+            "Newsletter",
+            "footer",
           ],
           en: [
-            {
-              text: "Once the project file was set up, I integrated the work above to validate the design system in a real environment and implemented it using ",
-            },
-            { text: "Cursor", bold: true },
-            {
-              text: " as the IDE. I did not use frameworks; instead I chose an ",
-            },
-            {
-              text: "HTML, CSS and JavaScript implementation with the elements created beforehand.",
-              bold: true,
-            },
+            "Navigation",
+            "hero section (search and h1)",
+            "featured",
+            "main categories",
+            "Newsletter",
+            "footer",
           ],
         },
         spacing: "loose",
       },
       {
         type: "image",
-        navId: "implementacion",
+        navId: "desarrollo",
         src: img("ws-home.jpg"),
         width: 768,
         height: 536,
@@ -548,38 +528,13 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         type: "link",
-        navId: "implementacion",
+        navId: "desarrollo",
         href: "https://wellness-stay-web.vercel.app/index.html",
         label: {
           es: "Enlace a la web",
           en: "Link to the website",
         },
-      },
-      {
-        type: "prose",
-        navId: "implementacion",
-        body: {
-          es: "Una vez generado el contexto para el IDE: bases del estilo y documentación, generé los prompts específicos para generar las secciones de la home:",
-          en: "Once the IDE had context — style foundations and documentation — I wrote specific prompts to generate the homepage sections:",
-        },
-        list: {
-          es: [
-            "hero section (buscador y propuesta de valor)",
-            "destacados",
-            "categorías principales",
-            "footer",
-          ],
-          en: [
-            "hero section (search and value proposition)",
-            "featured",
-            "main categories",
-            "footer",
-          ],
-        },
-        after: {
-          es: "Además de esto, generé el storybook como fuente de la verdad, donde almacenar todos los elementos de la interfaz. En un futuro, podrá ir siendo actualizado según requerimientos nuevos del producto.",
-          en: "I also generated Storybook as the source of truth for every interface element. It can be updated later as new product requirements appear.",
-        },
+        spacing: "even",
       },
       {
         type: "section",

@@ -27,7 +27,10 @@ export function CaseStudySection({ locale, block, headingId }: CaseStudySectionP
       {block.type === "section" && block.emphasis ? (
         <p className={styles.emphasis}>{getLocalizedValue(block.emphasis, locale)}</p>
       ) : null}
-      {block.type === "section" ? (
+      {block.type === "section" && block.intro ? (
+        <CaseStudyRichText value={block.intro} locale={locale} className={styles.body} />
+      ) : null}
+      {block.type === "section" && block.heading ? (
         <HeadingTag
           id={headingId}
           className={isH3 ? styles.heading3 : styles.heading}
@@ -50,6 +53,11 @@ export function CaseStudySection({ locale, block, headingId }: CaseStudySectionP
             <li key={item}>{item}</li>
           ))}
         </ul>
+      ) : null}
+      {block.type === "section" && block.quote ? (
+        <blockquote className={styles.pullquote}>
+          <p>{getLocalizedValue(block.quote, locale)}</p>
+        </blockquote>
       ) : null}
       {block.after ? (
         <CaseStudyRichText value={block.after} locale={locale} className={styles.body} />

@@ -47,7 +47,8 @@ function renderBlocks(blocks: CaseStudyBlock[], locale: Locale, groupId: string)
 
   return blocks.map((block, index) => {
     const key = `${groupId}-${block.type}-${index}`;
-    const isSpyHeading = block.type === "section" && (block.level ?? 2) === 2;
+    const isSpyHeading =
+      block.type === "section" && (block.level ?? 2) === 2 && Boolean(block.heading);
     const headingId = isSpyHeading && !headingAssigned ? `${groupId}-title` : undefined;
 
     if (headingId) {
