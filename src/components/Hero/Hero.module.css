@@ -30,10 +30,6 @@
   animation: enter-up 0.85s var(--ease) 0.1s both;
 }
 
-.headline {
-  display: block;
-}
-
 .headlineItalic {
   font-style: italic;
   font-weight: 400;

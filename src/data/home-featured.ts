@@ -6,6 +6,53 @@ export type HomeFeaturedProject = ProjectCardStudy & {
 
 export const homeFeaturedProjects: HomeFeaturedProject[] = [
   {
+    slug: "tuscasasrurales",
+    href: null,
+    tags: [
+      { es: "[proyectos bajo NDA]", en: "[projects under NDA]" },
+    ],
+    title: {
+      es: "TUSCASASRURALES.COM",
+      en: "TUSCASASRURALES.COM",
+    },
+    excerpt: {
+      es: "Lideré el rediseño de la interfaz y construí su Design System y nuevas funcionalidades como la reserva online.",
+      en: "Led the interface redesign and built its Design System and new features as online reservation",
+    },
+    cover: {
+      src: "/images/home/tuscasasrurales-cover.png",
+      width: 900,
+      height: 570,
+      alt: {
+        es: "Portada de TusCasasRurales.com: casa rural y buscador de alojamientos",
+        en: "TusCasasRurales.com cover: rural house and accommodation search",
+      },
+    },
+  },
+  {
+    slug: "wellness-stay",
+    tags: [
+      {
+        es: "[design system IA ready]",
+        en: "[design system IA ready]",
+      },
+    ],
+    title: { es: "WELLNESS STAY", en: "WELLNESS STAY" },
+    excerpt: {
+      es: "De Figma a Código: construyendo un Design System escalable",
+      en: "From Figma to Code: building a scalable Design System",
+    },
+    cover: {
+      src: "/images/home/wellness-stay-cover.png",
+      width: 900,
+      height: 570,
+      alt: {
+        es: "Portada de Wellness Stay: piscina infinita, wordmark y buscador",
+        en: "Wellness Stay cover: infinity pool, wordmark and destination search",
+      },
+    },
+  },
+  {
     slug: "ux-research-2026",
     href: "https://viajes-2026-natalia.nataliabernalher.chatgpt.site/",
     tags: [
@@ -31,30 +78,6 @@ export const homeFeaturedProjects: HomeFeaturedProject[] = [
         src: "/videos/home/como-viajamos.mp4",
         poster: "/images/home/como-viajamos-frame.png",
         overlay: "panel",
-      },
-    },
-  },
-  {
-    slug: "tuscasasrurales",
-    href: null,
-    tags: [
-      { es: "[proyectos bajo NDA]", en: "[projects under NDA]" },
-    ],
-    title: {
-      es: "TUSCASASRURALES.COM",
-      en: "TUSCASASRURALES.COM",
-    },
-    excerpt: {
-      es: "Lideré el rediseño de la interfaz y construí su Design System y nuevas funcionalidades como la reserva online.",
-      en: "Led the interface redesign and built its Design System and new features as online reservation",
-    },
-    cover: {
-      src: "/images/home/tuscasasrurales-cover.png",
-      width: 900,
-      height: 570,
-      alt: {
-        es: "Portada de TusCasasRurales.com: casa rural y buscador de alojamientos",
-        en: "TusCasasRurales.com cover: rural house and accommodation search",
       },
     },
   },
@@ -91,29 +114,6 @@ export const homeFeaturedProjects: HomeFeaturedProject[] = [
           width: 222,
           height: 471,
         },
-      },
-    },
-  },
-  {
-    slug: "wellness-stay",
-    tags: [
-      {
-        es: "[design system IA ready]",
-        en: "[design system IA ready]",
-      },
-    ],
-    title: { es: "WELLNESS STAY", en: "WELLNESS STAY" },
-    excerpt: {
-      es: "De Figma a Código: construyendo un Design System escalable",
-      en: "From Figma to Code: building a scalable Design System",
-    },
-    cover: {
-      src: "/images/home/wellness-stay-cover.png",
-      width: 900,
-      height: 570,
-      alt: {
-        es: "Portada de Wellness Stay: piscina infinita, wordmark y buscador",
-        en: "Wellness Stay cover: infinity pool, wordmark and destination search",
       },
     },
   },

@@ -7,16 +7,13 @@ type HeroProps = {
 };
 
 export function Hero({ messages }: HeroProps) {
-  const { headlineItalic, headlineRest, tags, tagsLabel } = messages.home.hero;
+  const { headlineItalic, tags, tagsLabel } = messages.home.hero;
 
   return (
     <section className={styles.hero} aria-labelledby="hero-heading">
       <div className={styles.wrapper}>
         <h1 id="hero-heading" className={styles.heading}>
-          <span className={styles.headline}>
-            <em className={styles.headlineItalic}>{headlineItalic}</em>
-            {headlineRest}
-          </span>
+          <em className={styles.headlineItalic}>{headlineItalic}</em>
         </h1>
 
         <ul className={styles.tags} aria-label={tagsLabel}>
