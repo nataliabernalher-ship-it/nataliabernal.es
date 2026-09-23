@@ -43,12 +43,12 @@ export const labProjects: LabProject[] = [
       en: "Creation of the design system and implementation within an IDE for automated development.",
     },
     cover: {
-      src: "/images/home/wellness-stay-cover.png",
-      width: 900,
-      height: 570,
+      src: "/images/case-studies/wellness-stay/portadawellness.jpg",
+      width: 1080,
+      height: 674,
       alt: {
-        es: "Portada de Wellness Stay: piscina infinita, wordmark y buscador",
-        en: "Wellness Stay cover: infinity pool, wordmark and destination search",
+        es: "Portada de Wellness Stay: interfaz del marketplace con buscador de retiros sobre el mar",
+        en: "Wellness Stay cover: marketplace interface with retreat search over the sea",
       },
     },
   }),

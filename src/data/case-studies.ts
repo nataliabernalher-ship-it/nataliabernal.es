@@ -177,12 +177,12 @@ export const caseStudies: CaseStudy[] = [
       { es: "[sistema de diseño]", en: "[design system]" },
     ],
     cover: {
-      src: img("portada.png"),
-      width: 768,
-      height: 500,
+      src: img("portadawellness.jpg"),
+      width: 1080,
+      height: 674,
       alt: {
-        es: "Portada de Wellness Stay: piscina infinita, wordmark y buscador de destinos",
-        en: "Wellness Stay cover: infinity pool, wordmark and destination search",
+        es: "Portada de Wellness Stay: interfaz del marketplace con buscador de retiros sobre el mar",
+        en: "Wellness Stay cover: marketplace interface with retreat search over the sea",
       },
     },
     role: {
@@ -203,12 +203,12 @@ export const caseStudies: CaseStudy[] = [
       en: "From Figma to Code: building a scalable Design System",
     },
     heroImage: {
-      src: img("hero.png"),
+      src: img("portadawellness.jpg"),
       width: 1080,
       height: 674,
       alt: {
-        es: "Portada de Wellness Stay: piscina infinita frente al mar, wordmark y buscador de destinos",
-        en: "Wellness Stay cover: infinity pool facing the sea, wordmark and destination search",
+        es: "Portada de Wellness Stay: interfaz del marketplace con buscador de retiros sobre el mar",
+        en: "Wellness Stay cover: marketplace interface with retreat search over the sea",
       },
     },
     nav: [
