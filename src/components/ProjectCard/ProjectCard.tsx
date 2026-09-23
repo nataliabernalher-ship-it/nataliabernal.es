@@ -156,7 +156,7 @@ export function ProjectCard({
     .join(" ");
   const tagClass = mutedTags ? `${styles.tag} ${styles.tagMuted}` : styles.tag;
   const mediaSizes = featured
-    ? "(min-width: 80rem) 900px, (min-width: 48rem) calc(50vw - 1.5rem), calc(100vw - 24px)"
+    ? "(min-width: 80rem) 880px, (min-width: 48rem) calc(50vw - 1.5rem - 20px), calc(100vw - 44px)"
     : "(min-width: 80rem) 604px, (min-width: 48rem) calc(50vw - 2rem), calc(100vw - 24px)";
   const alt = getLocalizedValue(study.cover.alt, locale);
   const videoOverlayClass =

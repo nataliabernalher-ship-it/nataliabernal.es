@@ -225,6 +225,10 @@
   max-height: 2.375rem;
 }
 
+.featured .media {
+  width: calc(100% - 20px);
+}
+
 .brandOverlay {
   position: relative;
   z-index: 2;
