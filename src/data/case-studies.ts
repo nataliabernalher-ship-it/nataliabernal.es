@@ -40,6 +40,16 @@ export type CaseStudyImageBlock = {
   height: number;
   alt: LocalizedString;
   radius?: number;
+  caption?: LocalizedString;
+  layout?: "full" | "inset";
+};
+
+export type CaseStudyHeroDevice = {
+  kind: "image" | "video";
+  src: string;
+  poster?: string;
+  width: number;
+  height: number;
 };
 
 export type CaseStudyProseBlock = {
@@ -141,10 +151,15 @@ export type CaseStudy = {
   pageTitle: LocalizedString;
   excerpt: LocalizedString;
   heroImage?: {
-    src: string;
+    src?: string;
     width: number;
     height: number;
     alt: LocalizedString;
+    devices?: {
+      background: string;
+      left: CaseStudyHeroDevice;
+      right: CaseStudyHeroDevice;
+    };
   };
   nav: CaseStudyNavItem[];
   blocks: CaseStudyBlock[];

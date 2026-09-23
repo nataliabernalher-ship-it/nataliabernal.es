@@ -42,6 +42,17 @@
   aspect-ratio: 1080 / 674;
   overflow: hidden;
   border-radius: var(--radius-image);
+  container-type: inline-size;
+}
+
+.mediaDevices {
+  aspect-ratio: 1080 / 571;
+}
+
+.mediaSurface {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
 }
 
 .image {
@@ -50,6 +61,62 @@
   max-width: none;
   object-fit: cover;
   object-position: center;
+}
+
+.devicePair {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  isolation: isolate;
+}
+
+.deviceLeft,
+.deviceRight {
+  position: relative;
+  height: 82.487%;
+  border-radius: calc(14.633 / 1080 * 100cqw);
+}
+
+.deviceLeft {
+  z-index: 2;
+  aspect-ratio: 237.812 / 471;
+  margin-right: calc(-20 / 1080 * 100cqw);
+  box-shadow: calc(18 / 1080 * 100cqw) calc(20 / 1080 * 100cqw) calc(40 / 1080 * 100cqw)
+    rgb(0 0 0 / 0.6);
+}
+
+.deviceRight {
+  z-index: 1;
+  aspect-ratio: 222.252 / 471;
+  box-shadow: calc(10 / 1080 * 100cqw) calc(10 / 1080 * 100cqw) calc(16 / 1080 * 100cqw)
+    rgb(0 0 0 / 0.25);
+}
+
+.deviceClip {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.deviceMedia {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.deviceRight .deviceVideo {
+  top: -5.6%;
+  bottom: auto;
+  height: 119.3%;
+  object-position: center 38%;
 }
 
 .meta {

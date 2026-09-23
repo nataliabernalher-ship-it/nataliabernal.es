@@ -5,11 +5,8 @@ const video = (name: string) => `/videos/case-studies/noruega-por-tu-cuenta/${na
 
 export const noruegaPorTuCuenta: CaseStudy = {
   slug: "noruega-por-tu-cuenta",
-  year: "2024",
-  tags: [
-    { es: "[diseño basado en datos]", en: "[data-informed design]" },
-    { es: "[diseño UX]", en: "[UX design]" },
-  ],
+  year: "2026",
+  tags: [],
   cover: {
     src: img("hero.png"),
     width: 768,
@@ -30,12 +27,12 @@ export const noruegaPorTuCuenta: CaseStudy = {
       values: ["Diseñadora UX/UI"],
     },
     {
-      label: { es: "Métodos y herramientas", en: "Methods and tools" },
+      label: { es: "Herramientas", en: "Tools" },
       values: ["Figma", "Google Analytics", "Hotjar"],
     },
     {
       label: { es: "Año", en: "Year" },
-      values: ["2024"],
+      values: ["2026"],
     },
   ],
   title: {
@@ -43,27 +40,41 @@ export const noruegaPorTuCuenta: CaseStudy = {
     en: "Noruega por tu cuenta",
   },
   pageTitle: {
-    es: "Uso de métricas UX para mejorar la interacción en una plataforma de contenidos de viajes",
-    en: "Using UX Metrics to Improve Engagement on a Travel Content Platform",
+    es: "Mejorando el engagement en una plataforma de contenido de viajes",
+    en: "Improving engagement on a travel content platform",
   },
   excerpt: {
-    es: "Uso de métricas UX para mejorar la interacción en una plataforma de contenidos de viajes",
-    en: "Using UX Metrics to Improve Engagement on a Travel Content Platform",
+    es: "Mejorando el engagement en una plataforma de contenido de viajes",
+    en: "Improving engagement on a travel content platform",
   },
   heroImage: {
-    src: img("hero.png"),
-    width: 768,
-    height: 478,
+    width: 1080,
+    height: 571,
     alt: {
-      es: "Home de Noruega por tu cuenta con el título sobre un fiordo",
-      en: "Noruega por tu cuenta homepage with the title over a fjord",
+      es: "Mockups móviles de noruegaportucuenta.com sobre fondo verde",
+      en: "Mobile mockups of noruegaportucuenta.com on a green background",
+    },
+    devices: {
+      background: "#357171",
+      left: {
+        kind: "image",
+        src: "/images/home/noruega-phone-left.png",
+        width: 238,
+        height: 471,
+      },
+      right: {
+        kind: "video",
+        src: "/videos/home/noruega-routes.mp4",
+        poster: "/images/home/noruega-routes-poster.png",
+        width: 222,
+        height: 471,
+      },
     },
   },
   nav: [
     { id: "contexto", label: { es: "Contexto", en: "Context" } },
     { id: "problema", label: { es: "Problema", en: "Problem" } },
     { id: "objetivo", label: { es: "Objetivo", en: "Objective" } },
-    { id: "analisis-ux", label: { es: "Análisis UX", en: "UX analysis" } },
     { id: "research", label: { es: "Research", en: "Research" } },
     { id: "solucion", label: { es: "Soluciones", en: "Solutions" } },
     { id: "validacion", label: { es: "Validación", en: "Validation" } },
@@ -78,8 +89,8 @@ export const noruegaPorTuCuenta: CaseStudy = {
         en: "Travel information platform for Norway",
       },
       body: {
-        es: "Noruega Por Tu Cuenta es un blog de viajes enfocado en inspirar y ayudar a planificar viajes a Noruega. El producto se basa en contenido informacional con tráfico orgánico.\n\nMi rol fue analizar el comportamiento del usuario y optimizar la experiencia para aumentar el tiempo de permanencia y la interacción con el contenido.",
-        en: "Noruega Por Tu Cuenta is a travel blog focused on inspiring people and helping them plan trips to Norway. The product is based on informational content with organic traffic.\n\nMy role was to analyze user behavior and optimize the experience to increase time on page and interaction with the content.",
+        es: "Noruega Por Tu Cuenta es un blog de viajes creado para inspirar y ayudar a planificar viajes a Noruega. El producto se basa en contenido informacional con tráfico orgánico.\n\nMi rol fue analizar el comportamiento del usuario y optimizar la experiencia para aumentar el tiempo de permanencia y la interacción con el contenido.",
+        en: "Noruega Por Tu Cuenta is a travel blog created to inspire people and help them plan trips to Norway. The product is based on informational content with organic traffic.\n\nMy role was to analyze user behavior and optimize the experience to increase time on page and interaction with the content.",
       },
       spacing: "start",
     },
@@ -92,10 +103,26 @@ export const noruegaPorTuCuenta: CaseStudy = {
         en: "Lack of user retention",
       },
       body: {
-        es: "Los usuarios accedían a los artículos por buenas prácticas de SEO pero apenas navegaban por el contenido y abandonaban rápidamente el portal.",
-        en: "Users landed on articles thanks to good SEO practices, but they barely browsed the content and left the site quickly.",
+        es: "Los usuarios accedían a los artículos por buenas prácticas de SEO pero apenas navegaban por el contenido y abandonan rápidamente el blog.",
+        en: "Users landed on articles thanks to good SEO practices, but they barely browsed the content and quickly left the blog.",
       },
       spacing: "compact",
+    },
+    {
+      type: "image",
+      navId: "problema",
+      src: img("punto-de-partida.jpg"),
+      width: 361,
+      height: 174,
+      alt: {
+        es: "Métricas de Google Analytics de partida: 1,66 vistas por usuario activo y 1 min 08 s de tiempo de interacción",
+        en: "Baseline Google Analytics metrics: 1.66 views per active user and 1 min 08 s average engagement time",
+      },
+      layout: "inset",
+      caption: {
+        es: "Pantallazo extraído de Google Analytics",
+        en: "Screenshot taken from Google Analytics",
+      },
     },
     {
       type: "section",
@@ -106,15 +133,27 @@ export const noruegaPorTuCuenta: CaseStudy = {
         en: "Increase time on page",
       },
       body: {
-        es: "Aumentar el tiempo de permanencia en la página y mejorar la profundidad de navegación y el tiempo de retención dentro del sitio mediante la mejora de la cantidad del contenido y mediante una nueva arquitectura de página.",
-        en: "Increase time on page and improve navigation depth and retention on the site by improving the amount of content and introducing a new page architecture.",
+        es: "Aumentar el tiempo de permanencia en la página y mejorar la profundidad de navegación y el tiempo de retención dentro del sitio mediante la mejora de la cantidad del contenido y mediante una nueva arquitectura de página.\n\nLas métricas que demostrarán que el objetivo se ha cumplido serán:",
+        en: "Increase time on page and improve navigation depth and retention on the site by improving the amount of content and introducing a new page architecture.\n\nThe metrics that will show the goal has been met are:",
+      },
+      list: {
+        es: [
+          "Aumento en páginas por sesión",
+          "Mejora en tiempo de permanencia",
+          "Mayor interacción con el contenido",
+        ],
+        en: [
+          "Increase in pages per session",
+          "Improvement in time on page",
+          "Greater interaction with the content",
+        ],
       },
       spacing: "compact",
     },
     {
       type: "section",
-      navId: "analisis-ux",
-      emphasis: { es: "Análisis UX", en: "UX analysis" },
+      navId: "research",
+      emphasis: { es: "Research", en: "Research" },
       heading: {
         es: "Análisis UX",
         en: "UX analysis",
@@ -125,13 +164,13 @@ export const noruegaPorTuCuenta: CaseStudy = {
       },
       list: {
         es: [
-          "Contenido pobre: muchas imágenes sin texto",
-          "No existe un copy que se dirija a ningún usuario en concreto y que aborde las necesidades de dicho usuario",
+          "Contenido pobre: muchas imágenes sin texto que aporte valor.",
+          "Dicho texto o copy, no se dirige a ningún usuario en concreto y que aborde las necesidades de dicho usuario",
           "Falta de enlazado interno (entre artículos con temáticas similares)",
         ],
         en: [
-          "Poor content: many images without text",
-          "There is no copy that speaks to a specific user or addresses that user’s needs",
+          "Poor content: many images without text that adds value.",
+          "That copy does not speak to a specific user or address that user’s needs",
           "Lack of internal linking (between articles with similar topics)",
         ],
       },
@@ -139,7 +178,7 @@ export const noruegaPorTuCuenta: CaseStudy = {
     },
     {
       type: "image",
-      navId: "analisis-ux",
+      navId: "research",
       src: img("ux-analysis.png"),
       width: 768,
       height: 389,
@@ -151,22 +190,13 @@ export const noruegaPorTuCuenta: CaseStudy = {
     {
       type: "section",
       navId: "research",
-      emphasis: { es: "Research", en: "Research" },
       heading: {
-        es: "Mapas de empatía para conocer al user persona e historias de usuario",
-        en: "Empathy maps to understand the user persona and user stories",
+        es: "Mapas de empatía para conocer al user persona",
+        en: "Empathy maps to understand the user persona",
       },
-      list: {
-        es: [
-          "El usuario no encuentra puntos claros de continuidad",
-          "La estructura del contenido no facilita la lectura",
-          "No existe una guía clara dentro del contenido",
-        ],
-        en: [
-          "The user finds no clear points of continuity",
-          "The content structure does not make reading easier",
-          "There is no clear guide within the content",
-        ],
+      body: {
+        es: "A consecuencia de lo anterior, se creó un mapa de empatía para abordar los puntos de dolor del usuario ¿cómo puedo ir por mi cuenta? ¿es muy caro? ¿merecerá la pena?. De este modo, el contenido que se realice estará enfocado a las necesidades y puntos de dolor del usuario.",
+        en: "As a result, an empathy map was created to address the user’s pain points: how can I travel independently? is it too expensive? will it be worth it? That way, the content produced would focus on the user’s needs and pain points.",
       },
       spacing: "compact",
     },
@@ -190,10 +220,13 @@ export const noruegaPorTuCuenta: CaseStudy = {
         en: "Hypothesis",
       },
       body: {
+        es: "A partir de la investigación y de los hallazgos obtenidos pude obtener la siguiente hipótesis.",
+        en: "From the research and the findings, I was able to draw the following hypothesis.",
+      },
+      quote: {
         es: "Si se mejora la estructura del contenido y se añaden elementos que faciliten la navegación, los usuarios permanecerán más tiempo en la página e interactuarán más con el contenido.",
         en: "If we improve the content structure and add elements that make navigation easier, users will stay longer on the page and interact more with the content.",
       },
-      surface: "callout",
       spacing: "loose",
     },
     {
@@ -201,7 +234,7 @@ export const noruegaPorTuCuenta: CaseStudy = {
       navId: "solucion",
       emphasis: { es: "Solución", en: "Solution" },
       heading: {
-        es: "Implementación de mejoras de la interfaz de usuario",
+        es: "Implementación de mejoras de la interfaz en la interfaz de usuario",
         en: "Implementing user-interface improvements",
       },
       body: {
@@ -211,17 +244,17 @@ export const noruegaPorTuCuenta: CaseStudy = {
       list: {
         es: [
           "Rediseño de la estructura del contenido en la home",
-          "Contenido que aborda directamente las necesidades del usuario",
-          "Nuevo copy que “habla” directamente al usuario",
+          "Contenido que aborda directamente a las necesidades del usuario",
+          "Nuevo copy que “habla” directamente al user persona",
           "Uso de bloques escaneables",
-          "Secciones que invitan a seguir explorando",
+          "Secciones que invitan a seguir explorando (enlazado interno)",
         ],
         en: [
           "Redesign of the homepage content structure",
           "Content that speaks directly to user needs",
-          "New copy that “talks” directly to the user",
+          "New copy that “talks” directly to the user persona",
           "Use of scannable blocks",
-          "Sections that invite further exploration",
+          "Sections that invite further exploration (internal linking)",
         ],
       },
       spacing: "compact",
@@ -279,67 +312,29 @@ export const noruegaPorTuCuenta: CaseStudy = {
       navId: "validacion",
       emphasis: { es: "Validación de resultados", en: "Results validation" },
       heading: {
-        es: "Definición de KPIs para conocer el impacto",
-        en: "Defining KPIs to understand the impact",
+        es: "Resultados después del rediseño",
+        en: "Results after the redesign",
       },
       body: {
-        es: "Métricas a analizar:",
-        en: "Metrics to analyze:",
-      },
-      list: {
-        es: [
-          "Aumento en páginas por sesión",
-          "Mejora en tiempo de permanencia",
-          "Mayor interacción con el contenido",
-        ],
-        en: [
-          "Increase in pages per session",
-          "Improvement in time on page",
-          "Greater interaction with the content",
-        ],
+        es: "Pasados 3 meses, mediante Google Analytics comprobé si los cambios en el diseño habrían movido las métricas que se establecieron inicialmente que demostrarían si se habría cumplido el objetivo: aumentar el tiempo de permanencia y interacción del usuario. Los resultados se recogen en el siguiente pantallazo",
+        en: "After 3 months, I used Google Analytics to check whether the design changes had moved the metrics set at the start to show if the goal had been met: increasing time on page and user interaction. The results are shown in the following screenshot.",
       },
       spacing: "compact",
     },
     {
-      type: "cards",
+      type: "image",
       navId: "validacion",
-      variant: "kpi",
-      items: [
-        {
-          body: {
-            es: "Tiempo de permanencia",
-            en: "Time on page",
-          },
-          stat: "+ 15%",
-        },
-        {
-          body: {
-            es: "Nº páginas por sesión",
-            en: "Pages per session",
-          },
-          stat: "+ 20%",
-        },
-        {
-          body: {
-            es: "Interacción con el contenido",
-            en: "Content interaction",
-          },
-          stat: "+ 20%",
-        },
-      ],
-    },
-    {
-      type: "section",
-      navId: "validacion",
-      heading: {
-        es: "Herramientas de análisis",
-        en: "Analytics tools",
+      src: img("resultados-nptc.jpg"),
+      width: 768,
+      height: 174,
+      alt: {
+        es: "Comparación interanual en Google Analytics: +13,45% vistas, +10,2% tiempo de interacción y +6,1% eventos por usuario activo",
+        en: "Year-over-year Google Analytics comparison: +13.45% views, +10.2% engagement time and +6.1% events per active user",
       },
-      body: {
-        es: "Mediante Google Analytics se comprobó si una estructura de contenido más clara, junto con una navegación guiada y contextual, mejora el engagement y facilita el descubrimiento de información relevante para el usuario por medio de los datos.",
-        en: "Using Google Analytics, we checked whether a clearer content structure, together with guided, contextual navigation, improves engagement and makes it easier for users to discover relevant information through the data.",
+      caption: {
+        es: "Comparación interanual del periodo posterior al rediseño frente al mismo periodo del año anterior mediante Google Analytics 4.",
+        en: "Year-over-year comparison of the period after the redesign against the same period the previous year, using Google Analytics 4.",
       },
-      spacing: "loose",
     },
     {
       type: "section",
@@ -349,8 +344,8 @@ export const noruegaPorTuCuenta: CaseStudy = {
         en: "Learnings",
       },
       body: {
-        es: "El proyecto no finaliza con el diseño; la siguiente fase consiste en validar mediante datos reales si las decisiones tomadas mejoran la experiencia del usuario.",
-        en: "The project does not end with the design; the next phase is to validate with real data whether the decisions made improve the user experience.",
+        es: "Los resultados muestran una mejora en consumo e interacción, mientras que la profundidad de scroll no mejoró. La siguiente iteración se centraría en analizar qué contenidos generan mayor abandono y optimizar la estructura de los artículos.",
+        en: "The results show an improvement in consumption and interaction, while scroll depth did not improve. The next iteration would focus on analyzing which content causes the most drop-off and optimizing the article structure.",
       },
       spacing: "tight",
     },

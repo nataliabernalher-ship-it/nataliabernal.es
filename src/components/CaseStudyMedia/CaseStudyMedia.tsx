@@ -10,9 +10,12 @@ type CaseStudyMediaProps = {
 };
 
 export function CaseStudyMedia({ locale, block }: CaseStudyMediaProps) {
+  const caption = block.caption ? getLocalizedValue(block.caption, locale) : undefined;
+  const inset = block.layout === "inset";
+
   return (
     <figure
-      className={styles.figure}
+      className={`${styles.figure} ${inset ? styles.inset : ""}`}
       style={block.radius ? { borderRadius: `${block.radius}px` } : undefined}
     >
       <Image
@@ -21,8 +24,9 @@ export function CaseStudyMedia({ locale, block }: CaseStudyMediaProps) {
         width={block.width}
         height={block.height}
         className={styles.image}
-        sizes="(min-width: 48rem) 768px, calc(100vw - 24px)"
+        sizes={inset ? "361px" : "(min-width: 48rem) 768px, calc(100vw - 24px)"}
       />
+      {caption ? <figcaption className={styles.caption}>{caption}</figcaption> : null}
     </figure>
   );
 }
