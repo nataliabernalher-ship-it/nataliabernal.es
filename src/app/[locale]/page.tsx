@@ -9,6 +9,7 @@ import { getMessages } from "@/i18n/get-messages";
 import { buildMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import styles from "./page.module.css";
 
 export async function generateMetadata({
   params,
@@ -40,6 +41,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
 
   return (
     <>
+      <div className={styles.noise} aria-hidden="true" />
       <Hero messages={messages} />
       <CaseStudies locale={locale} messages={messages} />
       <Skills messages={messages} />
