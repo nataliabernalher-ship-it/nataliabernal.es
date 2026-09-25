@@ -5,7 +5,7 @@
   },
   "nav": {
     "home": "Inicio",
-    "lab": "Lab",
+    "lab": "Trabajos",
     "contact": "Contáctame",
     "language": "Idioma",
     "menu": "Menú principal",
@@ -100,7 +100,7 @@
     }
   },
   "lab": {
-    "title": "Lab",
+    "title": "Trabajos",
     "heading": "Otros proyectos",
     "description": "Experimentos y proyectos de Natalia Bernal.",
     "backHome": "Volver al inicio"

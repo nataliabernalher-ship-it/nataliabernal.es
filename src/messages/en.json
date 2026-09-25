@@ -5,7 +5,7 @@
   },
   "nav": {
     "home": "Home",
-    "lab": "Lab",
+    "lab": "Work",
     "contact": "Contact me",
     "language": "Language",
     "menu": "Main menu",
@@ -100,7 +100,7 @@
     }
   },
   "lab": {
-    "title": "Lab",
+    "title": "Work",
     "heading": "Other projects",
     "description": "Experiments and projects by Natalia Bernal.",
     "backHome": "Back to home"
