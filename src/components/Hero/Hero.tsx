@@ -13,7 +13,13 @@ export function Hero({ messages }: HeroProps) {
     <section className={styles.hero} aria-labelledby="hero-heading">
       <div className={styles.wrapper}>
         <h1 id="hero-heading" className={styles.heading}>
-          <em className={styles.headlineItalic}>{headlineItalic}</em>
+          <em className={styles.headlineItalic}>
+            {headlineItalic.split("\n").map((line) => (
+              <span key={line} className={styles.headlineLine}>
+                {line}
+              </span>
+            ))}
+          </em>
         </h1>
 
         <ul className={styles.tags} aria-label={tagsLabel}>

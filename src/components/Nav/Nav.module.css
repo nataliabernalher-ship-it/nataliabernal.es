@@ -65,7 +65,7 @@
   align-items: center;
   justify-content: center;
   color: var(--color-tertiary);
-  font-size: var(--text-big);
+  font-size: 0.9375rem;
   font-weight: 400;
   letter-spacing: -1px;
   line-height: 1.75rem;

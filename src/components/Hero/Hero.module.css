@@ -20,7 +20,7 @@
   margin: 0;
   color: var(--color-titles);
   font-family: var(--font-serif);
-  font-size: var(--text-h2);
+  font-size: min(var(--text-h2), calc((100vw - 2rem) / 12.6));
   font-weight: 400;
   font-style: normal;
   letter-spacing: var(--tracking-heading);
@@ -33,6 +33,11 @@
 .headlineItalic {
   font-style: italic;
   font-weight: 400;
+}
+
+.headlineLine {
+  display: block;
+  white-space: nowrap;
 }
 
 .tags {
@@ -91,7 +96,7 @@
 
 @media (min-width: 48rem) {
   .heading {
-    font-size: var(--text-h1);
+    font-size: min(var(--text-h1), calc(min(100vw - 2rem, 41.875rem) / 12.9));
     line-height: 4.25rem;
   }
 }
