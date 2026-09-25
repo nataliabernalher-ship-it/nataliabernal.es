@@ -8,15 +8,34 @@ type HeroProps = {
 
 export function Hero({ messages }: HeroProps) {
   const { headlineItalic, tags, tagsLabel } = messages.home.hero;
+  const lines = headlineItalic.split("\n");
+  let charIndex = 0;
 
   return (
     <section className={styles.hero} aria-labelledby="hero-heading">
       <div className={styles.wrapper}>
-        <h1 id="hero-heading" className={styles.heading}>
-          <em className={styles.headlineItalic}>
-            {headlineItalic.split("\n").map((line) => (
+        <h1
+          id="hero-heading"
+          className={styles.heading}
+          aria-label={lines.join(" ")}
+        >
+          <em className={styles.headlineItalic} aria-hidden="true">
+            {lines.map((line) => (
               <span key={line} className={styles.headlineLine}>
-                {line}
+                {Array.from(line).map((char) => {
+                  const index = charIndex;
+                  charIndex += 1;
+
+                  return (
+                    <span
+                      key={index}
+                      className={styles.char}
+                      style={{ animationDelay: `${0.08 + index * 0.028}s` }}
+                    >
+                      {char === " " ? "\u00A0" : char}
+                    </span>
+                  );
+                })}
               </span>
             ))}
           </em>

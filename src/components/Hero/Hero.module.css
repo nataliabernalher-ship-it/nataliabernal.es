@@ -26,8 +26,6 @@
   letter-spacing: var(--tracking-heading);
   line-height: 1.26;
   text-align: center;
-  opacity: 0;
-  animation: enter-up 0.85s var(--ease) 0.1s both;
 }
 
 .headlineItalic {
@@ -37,7 +35,13 @@
 
 .headlineLine {
   display: block;
+  overflow: hidden;
   white-space: nowrap;
+}
+
+.char {
+  display: inline-block;
+  animation: char-reveal 0.7s var(--ease) both;
 }
 
 .tags {
@@ -85,8 +89,20 @@
   }
 }
 
+@keyframes char-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(0.72em);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .heading,
+  .char,
   .tags {
     opacity: 1;
     transform: none;
