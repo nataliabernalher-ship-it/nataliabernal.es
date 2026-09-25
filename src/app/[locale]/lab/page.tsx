@@ -56,6 +56,9 @@ export default async function LabPage({ params }: PageProps<"/[locale]/lab">) {
                     ? `/${locale}/case-study/${project.caseStudySlug}`
                     : null
                 }
+                featured
+                accentKicker
+                mutedTags
               />
             </Reveal>
           ))}

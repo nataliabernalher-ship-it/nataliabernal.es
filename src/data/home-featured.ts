@@ -12,8 +12,8 @@ export const homeFeaturedProjects: HomeFeaturedProject[] = [
       { es: "[proyectos bajo NDA]", en: "[projects under NDA]" },
     ],
     title: {
-      es: "TUSCASASRURALES.COM",
-      en: "TUSCASASRURALES.COM",
+      es: "TusCasasRurales.com",
+      en: "TusCasasRurales.com",
     },
     excerpt: {
       es: "Lideré el rediseño de la interfaz y construí su Design System y nuevas funcionalidades como la reserva online.",
@@ -37,7 +37,7 @@ export const homeFeaturedProjects: HomeFeaturedProject[] = [
         en: "[design system IA ready]",
       },
     ],
-    title: { es: "WELLNESS STAY", en: "WELLNESS STAY" },
+    title: { es: "Wellness Stay", en: "Wellness Stay" },
     excerpt: {
       es: "De Figma a Código: construyendo un Design System escalable",
       en: "From Figma to Code: building a scalable Design System",
@@ -61,7 +61,10 @@ export const homeFeaturedProjects: HomeFeaturedProject[] = [
         en: "[case study in progress]",
       },
     ],
-    title: { es: "UX RESEARCH", en: "UX RESEARCH" },
+    title: {
+      es: "Investigación \"Cómo organizamos y reservamos nuestros viajes\"",
+      en: "Research \"How we organize and book our trips\"",
+    },
     excerpt: {
       es: "Caso de investigación: cómo descubren, planifican y reservan viajes los viajeros en 2026",
       en: "Case research: How Travelers Discover, Plan and Book Trips in 2026",
@@ -85,8 +88,8 @@ export const homeFeaturedProjects: HomeFeaturedProject[] = [
     slug: "noruega-por-tu-cuenta",
     tags: [{ es: "[UX design]", en: "[UX design]" }],
     title: {
-      es: "noruegaportucuenta.com",
-      en: "noruegaportucuenta.com",
+      es: "Noruegaportucuenta.com",
+      en: "Noruegaportucuenta.com",
     },
     excerpt: {
       es: "Uso de métricas UX para mejorar la interacción en una plataforma de contenidos de viajes",

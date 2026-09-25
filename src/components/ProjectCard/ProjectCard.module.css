@@ -225,7 +225,8 @@
   max-height: 2.375rem;
 }
 
-.featured .media {
+.featured .media,
+.featured .text {
   width: calc(100% - 20px);
 }
 
@@ -347,9 +348,13 @@
 }
 
 .kickerAccent {
-  color: var(--color-accent);
+  color: var(--color-titles);
+  font-family: var(--font-serif);
+  font-size: 1.875rem;
   font-weight: 400;
   letter-spacing: 0;
+  line-height: 1.2;
+  text-transform: none;
 }
 
 .tags {
@@ -391,6 +396,11 @@
   font-size: var(--text-big);
   font-weight: 600;
   line-height: 1.5625rem;
+}
+
+.featured .title {
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 @media (prefers-reduced-motion: reduce) {
