@@ -116,6 +116,7 @@ export const labProjects: LabProject[] = [
   },
   {
     slug: "tuscasasrurales",
+    caseStudySlug: "tuscasasrurales",
     tags: [{ es: "[diseño marketplace]", en: "[marketplace design]" }],
     title: { es: "TusCasasRurales.com", en: "TusCasasRurales.com" },
     excerpt: {

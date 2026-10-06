@@ -1,6 +1,7 @@
 import { isLocale, type Locale } from "@/i18n/config";
 import { neetySaas } from "@/data/studies/neety-saas";
 import { noruegaPorTuCuenta } from "@/data/studies/noruega-por-tu-cuenta";
+import { tusCasasRurales } from "@/data/studies/tuscasasrurales";
 
 export type LocalizedString = Record<Locale, string>;
 
@@ -569,6 +570,7 @@ export const caseStudies: CaseStudy[] = [
   },
   neetySaas,
   noruegaPorTuCuenta,
+  tusCasasRurales,
 ];
 
 export function getCaseStudy(slug: string): CaseStudy | undefined {

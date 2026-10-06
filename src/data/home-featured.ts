@@ -7,7 +7,6 @@ export type HomeFeaturedProject = ProjectCardStudy & {
 export const homeFeaturedProjects: HomeFeaturedProject[] = [
   {
     slug: "tuscasasrurales",
-    href: null,
     tags: [
       { es: "[proyectos bajo NDA]", en: "[projects under NDA]" },
     ],

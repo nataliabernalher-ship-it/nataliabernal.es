@@ -59,8 +59,16 @@ function renderBlocks(blocks: CaseStudyBlock[], locale: Locale, groupId: string)
   });
 }
 
+function groupHasHeading(blocks: CaseStudyBlock[]) {
+  return blocks.some(
+    (block) =>
+      block.type === "section" && (block.level ?? 2) === 2 && Boolean(block.heading),
+  );
+}
+
 export function CaseStudyLayout({ locale, messages, study }: CaseStudyLayoutProps) {
   const groups = groupCaseStudyBlocks(study.blocks);
+  const showNav = study.nav.length > 0;
 
   return (
     <article className={styles.page}>
@@ -68,13 +76,15 @@ export function CaseStudyLayout({ locale, messages, study }: CaseStudyLayoutProp
         <CaseStudyHero locale={locale} messages={messages} study={study} />
       </div>
       <div className={styles.body}>
-        <div className={styles.sidebar}>
-          <CaseStudyNav
-            locale={locale}
-            label={messages.caseStudy.navLabel}
-            items={study.nav}
-          />
-        </div>
+        {showNav ? (
+          <div className={styles.sidebar}>
+            <CaseStudyNav
+              locale={locale}
+              label={messages.caseStudy.navLabel}
+              items={study.nav}
+            />
+          </div>
+        ) : null}
         <div className={styles.main}>
           <div className={styles.column}>
             {groups.map((group, index) => (
@@ -82,7 +92,9 @@ export function CaseStudyLayout({ locale, messages, study }: CaseStudyLayoutProp
                 <section
                   id={group.id}
                   className={styles.group}
-                  aria-labelledby={`${group.id}-title`}
+                  aria-labelledby={
+                    groupHasHeading(group.blocks) ? `${group.id}-title` : undefined
+                  }
                 >
                   {renderBlocks(group.blocks, locale, group.id)}
                 </section>
